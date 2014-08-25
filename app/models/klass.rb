@@ -19,7 +19,7 @@ class Klass < ActiveRecord::Base
       sections.map(&:hours)
     end
     #Teacher search params
-    text :teacher_names do
+    text :teacher_name do
       sections.map(&:teacher_name)
     end
   end

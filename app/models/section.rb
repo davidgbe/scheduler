@@ -13,6 +13,6 @@ class Section < ActiveRecord::Base
     text :teacher_name do 
       teacher.name
     end
-    
+
   end   
 end
