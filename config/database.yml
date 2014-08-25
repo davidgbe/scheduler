@@ -1,0 +1,24 @@
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: scheduler_db
+  pool: 5
+  username: myapp
+  password: 
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: scheduler_db
+  pool: 5
+  username: myapp
+  password: 
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: scheduler_db
+  pool: 5
+  username: myapp
+  password: 
