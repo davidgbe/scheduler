@@ -2,15 +2,18 @@ class Section < ActiveRecord::Base
   belongs_to :klass
   belongs_to :teacher
 
-  searchable do
-    text :days do
-      days.downcase
-    end
-    text :start do
-      start.to_s.gsub(/:/, '')
-    end
-    #double :hours
-  end   
+  def days
+    @days
+  end
+
+  def start
+   start_time = @start.to_s.sub(':', '')
+   start_time[1] == ':' ? (start_time + '0') : start_time
+  end
+
+  def hours
+    @hours
+  end
 
   def teacher_name 
     teacher ? teacher.name : ''

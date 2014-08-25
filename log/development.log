@@ -3060,3 +3060,405 @@ Processing by KlassesController#index as HTML
   [1m[36mKlass Load (0.4ms)[0m  [1mSELECT "klasses".* FROM "klasses"  WHERE "klasses"."id" IN (2)[0m
   Rendered klasses/index.rabl (2.7ms)
 Completed 200 OK in 13ms (Views: 5.0ms | ActiveRecord: 0.4ms | Solr: 5.4ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "klasses"[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "sections"
+  [1m[32mSOLR Request (6.6ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+  [1m[36mKlass Load (0.7ms)[0m  [1mSELECT  "klasses".* FROM "klasses"   ORDER BY "klasses"."id" ASC LIMIT 50[0m
+[2014-08-25 09:09:12 -0700] Start Indexing
+  [1m[35mSection Load (0.3ms)[0m  SELECT "sections".* FROM "sections"  WHERE "sections"."klass_id" = $1  [["klass_id", 1]]
+  [1m[36mTeacher Load (0.3ms)[0m  [1mSELECT  "teachers".* FROM "teachers"  WHERE "teachers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSection Load (0.3ms)[0m  SELECT "sections".* FROM "sections"  WHERE "sections"."klass_id" = $1  [["klass_id", 2]]
+  [1m[36mTeacher Load (0.2ms)[0m  [1mSELECT  "teachers".* FROM "teachers"  WHERE "teachers"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[32mSOLR Request (7.6ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+[2014-08-25 09:09:12 -0700] Completed Indexing. Rows indexed 50. Rows/sec: 1163.3859183768438 (Elapsed: 0.042978 sec.)
+  [1m[32mSOLR Request (21.4ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+  [1m[32mSOLR Request (6.0ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+  [1m[35mSection Load (0.5ms)[0m  SELECT  "sections".* FROM "sections"   ORDER BY "sections"."id" ASC LIMIT 50
+[2014-08-25 09:09:12 -0700] Start Indexing
+  [1m[32mSOLR Request (5.5ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+[2014-08-25 09:09:12 -0700] Completed Indexing. Rows indexed 50. Rows/sec: 5643.340857787811 (Elapsed: 0.00886 sec.)
+  [1m[32mSOLR Request (15.1ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+
+
+Started GET "/klasses?search=elderon" for 127.0.0.1 at 2014-08-25 09:09:18 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by KlassesController#index as HTML
+  Parameters: {"search"=>"elderon"}
+  [1m[32mSOLR Request (9.4ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:Klass"][0m, q: [1m[1m"elderon"[0m, fl: [1m[1m"* score"[0m, qf: [1m[1m"subject_text description_text days_text starts_text hours_text teacher_names_text"[0m, defType: [1m[1m"edismax"[0m, start: [1m[1m0[0m, rows: [1m[1m30[0m} ]
+  [1m[35mKlass Load (0.4ms)[0m  SELECT "klasses".* FROM "klasses"  WHERE "klasses"."id" IN (2)
+  Rendered klasses/index.rabl (1.6ms)
+Completed 200 OK in 57ms (Views: 10.1ms | ActiveRecord: 2.1ms | Solr: 9.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-25 09:09:24 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 68ms (Views: 66.9ms | ActiveRecord: 0.0ms | Solr: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-25 09:09:24 -0700
+
+
+Started GET "/assets/scheduler.js?body=1" for 127.0.0.1 at 2014-08-25 09:09:24 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-25 09:09:24 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-25 09:09:24 -0700
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2014-08-25 09:09:24 -0700
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2014-08-25 09:09:24 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-25 09:09:24 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-25 09:09:24 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-25 09:09:24 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-25 09:09:24 -0700
+
+
+Started GET "/assets/scheduler.js?body=1" for 127.0.0.1 at 2014-08-25 09:09:24 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-25 09:09:24 -0700
+
+
+Started GET "/klasses?search=math" for 127.0.0.1 at 2014-08-25 09:09:29 -0700
+Processing by KlassesController#index as HTML
+  Parameters: {"search"=>"math"}
+  [1m[32mSOLR Request (37.8ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:Klass"][0m, q: [1m[1m"math"[0m, fl: [1m[1m"* score"[0m, qf: [1m[1m"subject_text description_text days_text starts_text hours_text teacher_names_text"[0m, defType: [1m[1m"edismax"[0m, start: [1m[1m0[0m, rows: [1m[1m30[0m} ]
+  [1m[36mKlass Load (0.5ms)[0m  [1mSELECT "klasses".* FROM "klasses"  WHERE "klasses"."id" IN (1)[0m
+  Rendered klasses/index.rabl (0.7ms)
+Completed 200 OK in 44ms (Views: 2.9ms | ActiveRecord: 0.5ms | Solr: 37.8ms)
+
+
+Started GET "/klasses?search=7:30" for 127.0.0.1 at 2014-08-25 09:09:33 -0700
+Processing by KlassesController#index as HTML
+  Parameters: {"search"=>"7:30"}
+  [1m[32mSOLR Request (7.1ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:Klass"][0m, q: [1m[1m"7:30"[0m, fl: [1m[1m"* score"[0m, qf: [1m[1m"subject_text description_text days_text starts_text hours_text teacher_names_text"[0m, defType: [1m[1m"edismax"[0m, start: [1m[1m0[0m, rows: [1m[1m30[0m} ]
+  Rendered klasses/index.rabl (0.4ms)
+Completed 200 OK in 11ms (Views: 2.5ms | ActiveRecord: 0.0ms | Solr: 7.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-25 09:11:37 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 64ms (Views: 50.7ms | ActiveRecord: 0.0ms | Solr: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-25 09:11:37 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-25 09:11:37 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-25 09:11:37 -0700
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2014-08-25 09:11:37 -0700
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2014-08-25 09:11:37 -0700
+
+
+Started GET "/assets/scheduler.js?body=1" for 127.0.0.1 at 2014-08-25 09:11:37 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-25 09:11:37 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-25 09:11:37 -0700
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "klasses"[0m
+  [1m[32mSOLR Request (6.5ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+  [1m[35mKlass Load (0.7ms)[0m  SELECT  "klasses".* FROM "klasses"   ORDER BY "klasses"."id" ASC LIMIT 50
+[2014-08-25 09:11:39 -0700] Start Indexing
+  [1m[36mSection Load (0.3ms)[0m  [1mSELECT "sections".* FROM "sections"  WHERE "sections"."klass_id" = $1[0m  [["klass_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "klasses"[0m
+  [1m[32mSOLR Request (5.9ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+  [1m[35mKlass Load (0.7ms)[0m  SELECT  "klasses".* FROM "klasses"   ORDER BY "klasses"."id" ASC LIMIT 50
+[2014-08-25 09:14:03 -0700] Start Indexing
+  [1m[36mSection Load (0.5ms)[0m  [1mSELECT "sections".* FROM "sections"  WHERE "sections"."klass_id" = $1[0m  [["klass_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "klasses"[0m
+  [1m[32mSOLR Request (7.1ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+  [1m[35mKlass Load (0.7ms)[0m  SELECT  "klasses".* FROM "klasses"   ORDER BY "klasses"."id" ASC LIMIT 50
+[2014-08-25 09:14:22 -0700] Start Indexing
+  [1m[36mSection Load (0.4ms)[0m  [1mSELECT "sections".* FROM "sections"  WHERE "sections"."klass_id" = $1[0m  [["klass_id", 1]]
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-25 09:15:28 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 66ms (Views: 52.6ms | ActiveRecord: 0.0ms | Solr: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-25 09:15:28 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-25 09:15:28 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-25 09:15:28 -0700
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2014-08-25 09:15:28 -0700
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2014-08-25 09:15:28 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-25 09:15:28 -0700
+
+
+Started GET "/assets/scheduler.js?body=1" for 127.0.0.1 at 2014-08-25 09:15:28 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-25 09:15:28 -0700
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "klasses"[0m
+  [1m[32mSOLR Request (6.4ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+  [1m[35mKlass Load (0.7ms)[0m  SELECT  "klasses".* FROM "klasses"   ORDER BY "klasses"."id" ASC LIMIT 50
+[2014-08-25 09:18:08 -0700] Start Indexing
+  [1m[36mSection Load (0.7ms)[0m  [1mSELECT "sections".* FROM "sections"  WHERE "sections"."klass_id" = $1[0m  [["klass_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "klasses"[0m
+  [1m[32mSOLR Request (5.4ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+  [1m[35mKlass Load (0.7ms)[0m  SELECT  "klasses".* FROM "klasses"   ORDER BY "klasses"."id" ASC LIMIT 50
+[2014-08-25 09:21:57 -0700] Start Indexing
+  [1m[36mSection Load (0.4ms)[0m  [1mSELECT "sections".* FROM "sections"  WHERE "sections"."klass_id" = $1[0m  [["klass_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "klasses"[0m
+  [1m[32mSOLR Request (21.0ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+  [1m[35mKlass Load (0.8ms)[0m  SELECT  "klasses".* FROM "klasses"   ORDER BY "klasses"."id" ASC LIMIT 50
+[2014-08-25 09:23:13 -0700] Start Indexing
+  [1m[36mSection Load (3.1ms)[0m  [1mSELECT "sections".* FROM "sections"  WHERE "sections"."klass_id" = $1[0m  [["klass_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "klasses"[0m
+  [1m[32mSOLR Request (11.2ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+  [1m[35mKlass Load (0.9ms)[0m  SELECT  "klasses".* FROM "klasses"   ORDER BY "klasses"."id" ASC LIMIT 50
+[2014-08-25 09:24:27 -0700] Start Indexing
+  [1m[36mSection Load (0.4ms)[0m  [1mSELECT "sections".* FROM "sections"  WHERE "sections"."klass_id" = $1[0m  [["klass_id", 1]]
+  [1m[35mSection Load (0.2ms)[0m  SELECT "sections".* FROM "sections"  WHERE "sections"."klass_id" = $1  [["klass_id", 2]]
+  [1m[32mSOLR Request (12.5ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+[2014-08-25 09:24:27 -0700] Completed Indexing. Rows indexed 50. Rows/sec: 1119.0188442773376 (Elapsed: 0.044682 sec.)
+  [1m[32mSOLR Request (18.5ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "klasses"[0m
+  [1m[32mSOLR Request (41.1ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+  [1m[35mKlass Load (0.8ms)[0m  SELECT  "klasses".* FROM "klasses"   ORDER BY "klasses"."id" ASC LIMIT 50
+[2014-08-25 09:25:03 -0700] Start Indexing
+  [1m[36mSection Load (0.6ms)[0m  [1mSELECT "sections".* FROM "sections"  WHERE "sections"."klass_id" = $1[0m  [["klass_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "klasses"[0m
+  [1m[32mSOLR Request (5.7ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+  [1m[35mKlass Load (0.7ms)[0m  SELECT  "klasses".* FROM "klasses"   ORDER BY "klasses"."id" ASC LIMIT 50
+[2014-08-25 09:26:13 -0700] Start Indexing
+  [1m[36mSection Load (0.3ms)[0m  [1mSELECT "sections".* FROM "sections"  WHERE "sections"."klass_id" = $1[0m  [["klass_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "klasses"[0m
+  [1m[32mSOLR Request (5.4ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+  [1m[35mKlass Load (0.7ms)[0m  SELECT  "klasses".* FROM "klasses"   ORDER BY "klasses"."id" ASC LIMIT 50
+[2014-08-25 09:29:54 -0700] Start Indexing
+  [1m[36mSection Load (0.4ms)[0m  [1mSELECT "sections".* FROM "sections"  WHERE "sections"."klass_id" = $1[0m  [["klass_id", 1]]
+  [1m[35mSection Load (0.3ms)[0m  SELECT "sections".* FROM "sections"  WHERE "sections"."klass_id" = $1  [["klass_id", 2]]
+  [1m[32mSOLR Request (7.3ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+[2014-08-25 09:29:54 -0700] Completed Indexing. Rows indexed 50. Rows/sec: 1346.9464723471888 (Elapsed: 0.037121 sec.)
+  [1m[32mSOLR Request (51.7ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "klasses"[0m
+  [1m[32mSOLR Request (17.9ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+  [1m[35mKlass Load (0.7ms)[0m  SELECT  "klasses".* FROM "klasses"   ORDER BY "klasses"."id" ASC LIMIT 50
+[2014-08-25 09:35:48 -0700] Start Indexing
+  [1m[36mSection Load (0.8ms)[0m  [1mSELECT "sections".* FROM "sections"  WHERE "sections"."klass_id" = $1[0m  [["klass_id", 1]]
+  [1m[35mTeacher Load (0.3ms)[0m  SELECT  "teachers".* FROM "teachers"  WHERE "teachers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT "sections".* FROM "sections"  WHERE "sections"."klass_id" = $1[0m  [["klass_id", 2]]
+  [1m[35mTeacher Load (0.2ms)[0m  SELECT  "teachers".* FROM "teachers"  WHERE "teachers"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[32mSOLR Request (8.4ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+[2014-08-25 09:35:49 -0700] Completed Indexing. Rows indexed 50. Rows/sec: 358.8988981803826 (Elapsed: 0.139315 sec.)
+  [1m[32mSOLR Request (54.0ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-25 09:35:57 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (12.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 1336ms (Views: 1304.3ms | ActiveRecord: 0.0ms | Solr: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-25 09:35:59 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-25 09:35:59 -0700
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2014-08-25 09:35:59 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-25 09:35:59 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-25 09:35:59 -0700
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2014-08-25 09:35:59 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-25 09:35:59 -0700
+
+
+Started GET "/assets/scheduler.js?body=1" for 127.0.0.1 at 2014-08-25 09:35:59 -0700
+
+
+Started GET "/klasses?search=math" for 127.0.0.1 at 2014-08-25 09:36:11 -0700
+Processing by KlassesController#index as HTML
+  Parameters: {"search"=>"math"}
+  [1m[32mSOLR Request (7.5ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:Klass"][0m, q: [1m[1m"math"[0m, fl: [1m[1m"* score"[0m, qf: [1m[1m"subject_text description_text days_text starts_text hours_text teacher_names_text"[0m, defType: [1m[1m"edismax"[0m, start: [1m[1m0[0m, rows: [1m[1m30[0m} ]
+  [1m[35mKlass Load (0.5ms)[0m  SELECT "klasses".* FROM "klasses"  WHERE "klasses"."id" IN (1)
+  Rendered klasses/index.rabl (1.9ms)
+Completed 200 OK in 69ms (Views: 17.3ms | ActiveRecord: 2.8ms | Solr: 7.5ms)
+
+
+Started GET "/klasses?search=7:30" for 127.0.0.1 at 2014-08-25 09:36:19 -0700
+Processing by KlassesController#index as HTML
+  Parameters: {"search"=>"7:30"}
+  [1m[32mSOLR Request (7.4ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:Klass"][0m, q: [1m[1m"7:30"[0m, fl: [1m[1m"* score"[0m, qf: [1m[1m"subject_text description_text days_text starts_text hours_text teacher_names_text"[0m, defType: [1m[1m"edismax"[0m, start: [1m[1m0[0m, rows: [1m[1m30[0m} ]
+  Rendered klasses/index.rabl (0.4ms)
+Completed 200 OK in 11ms (Views: 2.6ms | ActiveRecord: 0.0ms | Solr: 7.4ms)
+
+
+Started GET "/klasses?search=7:30" for 127.0.0.1 at 2014-08-25 09:36:22 -0700
+Processing by KlassesController#index as HTML
+  Parameters: {"search"=>"7:30"}
+  [1m[32mSOLR Request (6.5ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:Klass"][0m, q: [1m[1m"7:30"[0m, fl: [1m[1m"* score"[0m, qf: [1m[1m"subject_text description_text days_text starts_text hours_text teacher_names_text"[0m, defType: [1m[1m"edismax"[0m, start: [1m[1m0[0m, rows: [1m[1m30[0m} ]
+  Rendered klasses/index.rabl (0.4ms)
+Completed 200 OK in 10ms (Views: 2.5ms | ActiveRecord: 0.0ms | Solr: 6.5ms)
+
+
+Started GET "/klasses?search=7:3" for 127.0.0.1 at 2014-08-25 09:36:24 -0700
+Processing by KlassesController#index as HTML
+  Parameters: {"search"=>"7:3"}
+  [1m[32mSOLR Request (6.3ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:Klass"][0m, q: [1m[1m"7:3"[0m, fl: [1m[1m"* score"[0m, qf: [1m[1m"subject_text description_text days_text starts_text hours_text teacher_names_text"[0m, defType: [1m[1m"edismax"[0m, start: [1m[1m0[0m, rows: [1m[1m30[0m} ]
+  Rendered klasses/index.rabl (0.4ms)
+Completed 200 OK in 10ms (Views: 2.5ms | ActiveRecord: 0.0ms | Solr: 6.3ms)
+
+
+Started GET "/klasses?search=7:30" for 127.0.0.1 at 2014-08-25 09:36:28 -0700
+Processing by KlassesController#index as HTML
+  Parameters: {"search"=>"7:30"}
+  [1m[32mSOLR Request (13.0ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:Klass"][0m, q: [1m[1m"7:30"[0m, fl: [1m[1m"* score"[0m, qf: [1m[1m"subject_text description_text days_text starts_text hours_text teacher_names_text"[0m, defType: [1m[1m"edismax"[0m, start: [1m[1m0[0m, rows: [1m[1m30[0m} ]
+  Rendered klasses/index.rabl (0.7ms)
+Completed 200 OK in 21ms (Views: 4.3ms | ActiveRecord: 0.0ms | Solr: 13.0ms)
+
+
+Started GET "/klasses?search=7:30" for 127.0.0.1 at 2014-08-25 09:36:28 -0700
+Processing by KlassesController#index as HTML
+  Parameters: {"search"=>"7:30"}
+  [1m[32mSOLR Request (6.1ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:Klass"][0m, q: [1m[1m"7:30"[0m, fl: [1m[1m"* score"[0m, qf: [1m[1m"subject_text description_text days_text starts_text hours_text teacher_names_text"[0m, defType: [1m[1m"edismax"[0m, start: [1m[1m0[0m, rows: [1m[1m30[0m} ]
+  Rendered klasses/index.rabl (0.3ms)
+Completed 200 OK in 10ms (Views: 2.5ms | ActiveRecord: 0.0ms | Solr: 6.1ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "klasses"[0m
+  [1m[32mSOLR Request (7.2ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+  [1m[35mKlass Load (1.0ms)[0m  SELECT  "klasses".* FROM "klasses"   ORDER BY "klasses"."id" ASC LIMIT 50
+[2014-08-25 09:37:40 -0700] Start Indexing
+  [1m[36mSection Load (3.5ms)[0m  [1mSELECT "sections".* FROM "sections"  WHERE "sections"."klass_id" = $1[0m  [["klass_id", 1]]
+  [1m[35mTeacher Load (0.3ms)[0m  SELECT  "teachers".* FROM "teachers"  WHERE "teachers"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSection Load (0.3ms)[0m  [1mSELECT "sections".* FROM "sections"  WHERE "sections"."klass_id" = $1[0m  [["klass_id", 2]]
+  [1m[35mTeacher Load (0.3ms)[0m  SELECT  "teachers".* FROM "teachers"  WHERE "teachers"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[32mSOLR Request (8.3ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+[2014-08-25 09:37:40 -0700] Completed Indexing. Rows indexed 50. Rows/sec: 930.6134603930911 (Elapsed: 0.053728 sec.)
+  [1m[32mSOLR Request (16.8ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
+
+
+Started GET "/klasses?search=7:30" for 127.0.0.1 at 2014-08-25 09:37:53 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by KlassesController#index as HTML
+  Parameters: {"search"=>"7:30"}
+  [1m[32mSOLR Request (10.1ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:Klass"][0m, q: [1m[1m"7:30"[0m, fl: [1m[1m"* score"[0m, qf: [1m[1m"subject_text description_text days_text starts_text hours_text teacher_names_text"[0m, defType: [1m[1m"edismax"[0m, start: [1m[1m0[0m, rows: [1m[1m30[0m} ]
+  Rendered klasses/index.rabl (1.2ms)
+Completed 200 OK in 43ms (Views: 11.0ms | ActiveRecord: 0.0ms | Solr: 10.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-25 09:37:57 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 135ms (Views: 134.5ms | ActiveRecord: 0.0ms | Solr: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-25 09:37:57 -0700
+
+
+Started GET "/assets/scheduler.js?body=1" for 127.0.0.1 at 2014-08-25 09:37:57 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-25 09:37:57 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-25 09:37:57 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-25 09:37:57 -0700
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2014-08-25 09:37:57 -0700
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2014-08-25 09:37:57 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-25 09:37:57 -0700
+
+
+Started GET "/klasses" for 127.0.0.1 at 2014-08-25 09:38:03 -0700
+Processing by KlassesController#index as HTML
+  [1m[35mKlass Load (0.6ms)[0m  SELECT "klasses".* FROM "klasses"
+  Rendered klasses/index.rabl (11.5ms)
+Completed 200 OK in 15ms (Views: 11.4ms | ActiveRecord: 2.8ms | Solr: 0.0ms)
+
+
+Started GET "/klasses?search=math" for 127.0.0.1 at 2014-08-25 09:38:07 -0700
+Processing by KlassesController#index as HTML
+  Parameters: {"search"=>"math"}
+  [1m[32mSOLR Request (6.3ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:Klass"][0m, q: [1m[1m"math"[0m, fl: [1m[1m"* score"[0m, qf: [1m[1m"subject_text description_text days_text starts_text hours_text teacher_names_text"[0m, defType: [1m[1m"edismax"[0m, start: [1m[1m0[0m, rows: [1m[1m30[0m} ]
+  [1m[36mKlass Load (0.6ms)[0m  [1mSELECT "klasses".* FROM "klasses"  WHERE "klasses"."id" IN (1)[0m
+  Rendered klasses/index.rabl (0.7ms)
+Completed 200 OK in 19ms (Views: 2.9ms | ActiveRecord: 0.6ms | Solr: 6.3ms)
+
+
+Started GET "/klasses?search=7:30" for 127.0.0.1 at 2014-08-25 09:38:14 -0700
+Processing by KlassesController#index as HTML
+  Parameters: {"search"=>"7:30"}
+  [1m[32mSOLR Request (5.6ms)[0m  [ path=[1m[1mselect[0m parameters={fq: [1m[1m["type:Klass"][0m, q: [1m[1m"7:30"[0m, fl: [1m[1m"* score"[0m, qf: [1m[1m"subject_text description_text days_text starts_text hours_text teacher_names_text"[0m, defType: [1m[1m"edismax"[0m, start: [1m[1m0[0m, rows: [1m[1m30[0m} ]
+  Rendered klasses/index.rabl (0.4ms)
+Completed 200 OK in 9ms (Views: 2.5ms | ActiveRecord: 0.0ms | Solr: 5.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-25 11:36:14 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 92ms (Views: 91.1ms | ActiveRecord: 0.0ms | Solr: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-25 11:36:14 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-25 11:36:14 -0700
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2014-08-25 11:36:14 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-25 11:36:14 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-25 11:36:14 -0700
+
+
+Started GET "/assets/scheduler.js?body=1" for 127.0.0.1 at 2014-08-25 11:36:14 -0700
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2014-08-25 11:36:14 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-25 11:36:14 -0700
