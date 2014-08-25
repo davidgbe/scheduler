@@ -10,9 +10,9 @@ class Section < ActiveRecord::Base
       start.to_s.gsub(/:/, '')
     end
     #double :hours
-    text :teacher_name do 
-      teacher.name
-    end
-
   end   
+
+  def teacher_name 
+    teacher ? teacher.name : ''
+  end
 end
