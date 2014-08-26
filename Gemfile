@@ -42,6 +42,8 @@ gem 'sunspot_rails', '~> 2.1.1'
 gem 'highline', '~> 1.6.21'
 gem 'options', '~> 2.3.2'
 gem 'progress_bar', '~> 1.0.3'
+
+gem 'omniauth-google-oauth2'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
