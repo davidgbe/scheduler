@@ -3,10 +3,10 @@ class KlassesController < ApplicationController
 
   def index
     if params[:search]
-      @klasses = Klass.search do 
+      @search = Klass.search do 
         fulltext params[:search].sub('+', ' ')
       end
-      @klasses = @klasses.results
+      @klasses = @search.results
     else 
       @klasses = Klass.all
     end

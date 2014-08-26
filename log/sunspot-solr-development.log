@@ -1507,3 +1507,99 @@ Aug 25, 2014 5:56:45 PM org.apache.solr.core.SolrCore execute
 INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=7:30&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=2 status=0 QTime=3 
 Aug 25, 2014 5:56:48 PM org.apache.solr.core.SolrCore execute
 INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=7:30+elderon&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=1 status=0 QTime=4 
+Aug 25, 2014 6:04:31 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@31602bbc realtime
+Aug 25, 2014 6:04:31 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {deleteByQuery=type:Klass (-1477459387314339840)} 0 86
+Aug 25, 2014 6:04:31 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {add=[Klass 1 (1477459387560755200), Klass 2 (1477459387562852352), Klass 3 (1477459387564949504)]} 0 6
+Aug 25, 2014 6:04:31 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+Aug 25, 2014 6:04:31 PM org.apache.solr.core.SolrDeletionPolicy onCommit
+INFO: SolrDeletionPolicy.onCommit: commits:num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/dbell/work/scheduler/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1f8a6890; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_27,generation=79,filenames=[_w.si, _w_Lucene41_0.pos, _w.nvd, _w.nvm, _n.nvd, _n_Lucene41_0.doc, _n.si, _d_Lucene41_0.doc, segments_27, _w.fnm, _n.fnm, _w.fdt, _w.fdx, _n.fdt, _d.fnm, _n.fdx, _w_Lucene41_0.doc, _d.fdx, _n_Lucene41_0.tim, _d.fdt, _n_Lucene41_0.pos, _w_Lucene41_0.tip, _w_Lucene41_0.tim, _d.nvd, _n_Lucene41_0.tip, _n.nvm, _d.si, _d_Lucene41_0.tim, _d.nvm, _d_Lucene41_0.tip, _d_Lucene41_0.pos]
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/dbell/work/scheduler/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1f8a6890; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_28,generation=80,filenames=[_x.fdt, _x.si, _x.fdx, _n.nvd, _n_Lucene41_0.doc, _x_Lucene41_0.pos, _n.si, _x_Lucene41_0.tip, _x_Lucene41_0.tim, _d_Lucene41_0.doc, segments_28, _n.fnm, _x.fnm, _x.nvd, _n.fdt, _d.fnm, _n.fdx, _d.fdx, _n_Lucene41_0.tim, _x.nvm, _d.fdt, _x_Lucene41_0.doc, _n_Lucene41_0.pos, _d.nvd, _n_Lucene41_0.tip, _n.nvm, _d.si, _d_Lucene41_0.tim, _d.nvm, _d_Lucene41_0.tip, _d_Lucene41_0.pos]
+Aug 25, 2014 6:04:31 PM org.apache.solr.core.SolrDeletionPolicy updateCommits
+INFO: newest commit = 80[_x.fdt, _x.si, _x.fdx, _n.nvd, _n_Lucene41_0.doc, _x_Lucene41_0.pos, _n.si, _x_Lucene41_0.tip, _x_Lucene41_0.tim, _d_Lucene41_0.doc, segments_28, _n.fnm, _x.fnm, _x.nvd, _n.fdt, _d.fnm, _n.fdx, _d.fdx, _n_Lucene41_0.tim, _x.nvm, _d.fdt, _x_Lucene41_0.doc, _n_Lucene41_0.pos, _d.nvd, _n_Lucene41_0.tip, _n.nvm, _d.si, _d_Lucene41_0.tim, _d.nvm, _d_Lucene41_0.tip, _d_Lucene41_0.pos]
+Aug 25, 2014 6:04:31 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@6135b95d main
+Aug 25, 2014 6:04:31 PM org.apache.solr.core.SolrCore registerSearcher
+INFO: [development] Registered new searcher Searcher@6135b95d main{StandardDirectoryReader(segments_28:131:nrt _d(4.2):C2 _n(4.2):C2 _x(4.2):C3)}
+Aug 25, 2014 6:04:31 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+Aug 25, 2014 6:04:31 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {commit=} 0 47
+Aug 25, 2014 6:04:41 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=7:30+elderon&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=1 status=0 QTime=4 
+Aug 25, 2014 6:05:49 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=7:30&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=3 status=0 QTime=5 
+Aug 25, 2014 6:05:50 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=math&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=2 status=0 QTime=2 
+Aug 25, 2014 6:05:54 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=math+chem+phys&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=0 status=0 QTime=4 
+Aug 25, 2014 6:05:59 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=math+chem&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=0 status=0 QTime=3 
+Aug 25, 2014 6:09:51 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@788c1852 realtime
+Aug 25, 2014 6:09:51 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {deleteByQuery=type:Klass (-1477459723373510656)} 0 59
+Aug 25, 2014 6:09:51 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {add=[Klass 1 (1477459723657674752), Klass 2 (1477459723659771904), Klass 3 (1477459723661869056)]} 0 5
+Aug 25, 2014 6:09:52 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+Aug 25, 2014 6:09:52 PM org.apache.solr.core.SolrDeletionPolicy onCommit
+INFO: SolrDeletionPolicy.onCommit: commits:num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/dbell/work/scheduler/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1f8a6890; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_28,generation=80,filenames=[_x.fdt, _x.si, _x.fdx, _n.nvd, _n_Lucene41_0.doc, _x_Lucene41_0.pos, _n.si, _x_Lucene41_0.tip, _x_Lucene41_0.tim, _d_Lucene41_0.doc, segments_28, _n.fnm, _x.fnm, _x.nvd, _n.fdt, _d.fnm, _n.fdx, _d.fdx, _n_Lucene41_0.tim, _x.nvm, _d.fdt, _x_Lucene41_0.doc, _n_Lucene41_0.pos, _d.nvd, _n_Lucene41_0.tip, _n.nvm, _d.si, _d_Lucene41_0.tim, _d.nvm, _d_Lucene41_0.tip, _d_Lucene41_0.pos]
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/dbell/work/scheduler/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1f8a6890; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_29,generation=81,filenames=[_y.nvd, _y.si, _n.nvd, _n_Lucene41_0.doc, _y.fdt, _n.si, _y_Lucene41_0.tip, _y.fdx, segments_29, _d_Lucene41_0.doc, _y.nvm, _y.fnm, _n.fnm, _n.fdt, _d.fnm, _n.fdx, _y_Lucene41_0.tim, _d.fdx, _n_Lucene41_0.tim, _d.fdt, _n_Lucene41_0.pos, _d.nvd, _n_Lucene41_0.tip, _y_Lucene41_0.pos, _n.nvm, _d.si, _d_Lucene41_0.tim, _d.nvm, _d_Lucene41_0.tip, _d_Lucene41_0.pos, _y_Lucene41_0.doc]
+Aug 25, 2014 6:09:52 PM org.apache.solr.core.SolrDeletionPolicy updateCommits
+INFO: newest commit = 81[_y.nvd, _y.si, _n.nvd, _n_Lucene41_0.doc, _y.fdt, _n.si, _y_Lucene41_0.tip, _y.fdx, segments_29, _d_Lucene41_0.doc, _y.nvm, _y.fnm, _n.fnm, _n.fdt, _d.fnm, _n.fdx, _y_Lucene41_0.tim, _d.fdx, _n_Lucene41_0.tim, _d.fdt, _n_Lucene41_0.pos, _d.nvd, _n_Lucene41_0.tip, _y_Lucene41_0.pos, _n.nvm, _d.si, _d_Lucene41_0.tim, _d.nvm, _d_Lucene41_0.tip, _d_Lucene41_0.pos, _y_Lucene41_0.doc]
+Aug 25, 2014 6:09:52 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@17698cbe main
+Aug 25, 2014 6:09:52 PM org.apache.solr.core.SolrCore registerSearcher
+INFO: [development] Registered new searcher Searcher@17698cbe main{StandardDirectoryReader(segments_29:135:nrt _d(4.2):C2 _n(4.2):C2 _y(4.2):C3)}
+Aug 25, 2014 6:09:52 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+Aug 25, 2014 6:09:52 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {commit=} 0 19
+Aug 25, 2014 6:09:57 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=math&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=2 status=0 QTime=2 
+Aug 25, 2014 6:10:12 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=math+chem&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=0 status=0 QTime=4 
+Aug 25, 2014 6:11:45 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=math&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=2 status=0 QTime=2 
+Aug 25, 2014 6:12:00 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=math+this&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=1 status=0 QTime=3 
+Aug 25, 2014 6:12:04 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=math&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=2 status=0 QTime=3 
+Aug 25, 2014 6:12:09 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=math+nothing&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=1 status=0 QTime=3 
+Aug 25, 2014 6:13:31 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=math&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=2 status=0 QTime=15 
+Aug 25, 2014 6:13:35 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=math+chem&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=0 status=0 QTime=1 
+Aug 25, 2014 6:13:38 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=math&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=2 status=0 QTime=2 
+Aug 25, 2014 6:13:40 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=math+nothing&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=1 status=0 QTime=5 
+Aug 25, 2014 11:14:02 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=math+nothing&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=1 status=0 QTime=32 
+Aug 25, 2014 11:14:06 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=math&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=2 status=0 QTime=1 
+Aug 25, 2014 11:14:21 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=math&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=2 status=0 QTime=1 
+Aug 25, 2014 11:14:25 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=math+chem&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=0 status=0 QTime=2 
+Aug 25, 2014 11:14:30 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=math&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=2 status=0 QTime=1 
+Aug 25, 2014 11:14:30 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=math+nothing&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=1 status=0 QTime=2 
+Aug 25, 2014 11:14:32 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=math+nothing&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=1 status=0 QTime=3 
+Aug 25, 2014 11:14:48 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=math+this&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=1 status=0 QTime=1 
+Aug 25, 2014 11:14:54 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=math+is&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=1 status=0 QTime=508 
+Aug 25, 2014 11:20:46 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=math+is&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=1 status=0 QTime=1 
+Aug 25, 2014 11:20:51 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=math&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=2 status=0 QTime=1 
