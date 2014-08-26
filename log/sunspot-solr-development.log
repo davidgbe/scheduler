@@ -1185,3 +1185,325 @@ Aug 25, 2014 9:38:07 AM org.apache.solr.core.SolrCore execute
 INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=math&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=1 status=0 QTime=2 
 Aug 25, 2014 9:38:14 AM org.apache.solr.core.SolrCore execute
 INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=7:30&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=0 status=0 QTime=1 
+Aug 25, 2014 5:16:53 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@333cb1eb realtime
+Aug 25, 2014 5:16:53 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {deleteByQuery=type:Klass (-1477456390819676160)} 0 108
+Aug 25, 2014 5:16:53 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {add=[Klass 1 (1477456391197163520), Klass 2 (1477456391259029504)]} 0 61
+Aug 25, 2014 5:16:54 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+Aug 25, 2014 5:16:54 PM org.apache.solr.core.SolrDeletionPolicy onCommit
+INFO: SolrDeletionPolicy.onCommit: commits:num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/dbell/work/scheduler/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1f8a6890; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1u,generation=66,filenames=[_n.nvd, _n_Lucene41_0.doc, _r.fnm, _r.fdt, _r_Lucene41_0.pos, _n.si, _r.fdx, _r.nvd, _d_Lucene41_0.doc, _r.nvm, _n.fnm, _r_Lucene41_0.tip, _n.fdt, _r_Lucene41_0.tim, _d.fnm, _n.fdx, _d.fdx, _n_Lucene41_0.tim, _d.fdt, _n_Lucene41_0.pos, _d.nvd, _n_Lucene41_0.tip, _n.nvm, _d.si, _d_Lucene41_0.tim, _d.nvm, _d_Lucene41_0.tip, _r.si, _r_Lucene41_0.doc, _d_Lucene41_0.pos, segments_1u]
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/dbell/work/scheduler/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1f8a6890; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1v,generation=67,filenames=[_s.fdt, _s.fnm, _s_Lucene41_0.pos, _n.nvd, _n_Lucene41_0.doc, _n.si, _s.nvm, _d_Lucene41_0.doc, _n.fnm, _s.nvd, _s_Lucene41_0.doc, _s.si, _n.fdt, _d.fnm, _n.fdx, _d.fdx, _n_Lucene41_0.tim, _s_Lucene41_0.tim, _s.fdx, _d.fdt, _n_Lucene41_0.pos, _d.nvd, _n_Lucene41_0.tip, _n.nvm, _d.si, _d_Lucene41_0.tim, _d.nvm, segments_1v, _d_Lucene41_0.tip, _s_Lucene41_0.tip, _d_Lucene41_0.pos]
+Aug 25, 2014 5:16:54 PM org.apache.solr.core.SolrDeletionPolicy updateCommits
+INFO: newest commit = 67[_s.fdt, _s.fnm, _s_Lucene41_0.pos, _n.nvd, _n_Lucene41_0.doc, _n.si, _s.nvm, _d_Lucene41_0.doc, _n.fnm, _s.nvd, _s_Lucene41_0.doc, _s.si, _n.fdt, _d.fnm, _n.fdx, _d.fdx, _n_Lucene41_0.tim, _s_Lucene41_0.tim, _s.fdx, _d.fdt, _n_Lucene41_0.pos, _d.nvd, _n_Lucene41_0.tip, _n.nvm, _d.si, _d_Lucene41_0.tim, _d.nvm, segments_1v, _d_Lucene41_0.tip, _s_Lucene41_0.tip, _d_Lucene41_0.pos]
+Aug 25, 2014 5:16:54 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@4d885088 main
+Aug 25, 2014 5:16:54 PM org.apache.solr.core.SolrCore registerSearcher
+INFO: [development] Registered new searcher Searcher@4d885088 main{StandardDirectoryReader(segments_1v:111:nrt _d(4.2):C2 _n(4.2):C2 _s(4.2):C2)}
+Aug 25, 2014 5:16:54 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+Aug 25, 2014 5:16:54 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {commit=} 0 216
+Aug 25, 2014 5:17:25 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=math&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=1 status=0 QTime=3 
+Aug 25, 2014 5:17:30 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=7:30&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=0 status=0 QTime=3 
+Aug 25, 2014 5:17:33 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=7:3&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=0 status=0 QTime=3 
+Aug 25, 2014 5:21:34 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=7.3&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=0 status=0 QTime=2 
+Aug 25, 2014 5:22:09 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=7:30&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=0 status=0 QTime=1 
+Aug 25, 2014 5:25:50 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=7:30&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=0 status=0 QTime=2 
+Aug 25, 2014 5:25:52 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=7:30&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=0 status=0 QTime=1 
+Aug 25, 2014 5:26:31 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=wednesday&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=0 status=0 QTime=28 
+Aug 25, 2014 5:26:34 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=wednesday&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=0 status=0 QTime=1 
+Aug 25, 2014 5:26:45 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@df5cbd6 realtime
+Aug 25, 2014 5:26:45 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {deleteByQuery=type:Klass (-1477457011447693312)} 0 54
+Aug 25, 2014 5:26:50 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=true,prepareCommit=false}
+Aug 25, 2014 5:26:50 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@7096985e main
+Aug 25, 2014 5:26:50 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+Aug 25, 2014 5:26:50 PM org.apache.solr.core.SolrCore registerSearcher
+INFO: [development] Registered new searcher Searcher@7096985e main{StandardDirectoryReader(segments_1v:113:nrt _d(4.2):C2 _n(4.2):C2)}
+Aug 25, 2014 5:27:00 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+Aug 25, 2014 5:27:00 PM org.apache.solr.core.SolrDeletionPolicy onCommit
+INFO: SolrDeletionPolicy.onCommit: commits:num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/dbell/work/scheduler/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1f8a6890; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1v,generation=67,filenames=[_s.fdt, _s.fnm, _s_Lucene41_0.pos, _n.nvd, _n_Lucene41_0.doc, _n.si, _s.nvm, _d_Lucene41_0.doc, _n.fnm, _s.nvd, _s_Lucene41_0.doc, _s.si, _n.fdt, _d.fnm, _n.fdx, _d.fdx, _n_Lucene41_0.tim, _s_Lucene41_0.tim, _s.fdx, _d.fdt, _n_Lucene41_0.pos, _d.nvd, _n_Lucene41_0.tip, _n.nvm, _d.si, _d_Lucene41_0.tim, _d.nvm, segments_1v, _d_Lucene41_0.tip, _s_Lucene41_0.tip, _d_Lucene41_0.pos]
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/dbell/work/scheduler/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1f8a6890; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1w,generation=68,filenames=[_n.fdt, _d.fnm, _n.fdx, _n.nvd, _d.fdx, _n_Lucene41_0.doc, _n_Lucene41_0.tim, _d.fdt, _n.si, _n_Lucene41_0.pos, _n_Lucene41_0.tip, _d.nvd, _n.nvm, segments_1w, _d.nvm, _d_Lucene41_0.tim, _d.si, _d_Lucene41_0.tip, _d_Lucene41_0.doc, _d_Lucene41_0.pos, _n.fnm]
+Aug 25, 2014 5:27:00 PM org.apache.solr.core.SolrDeletionPolicy updateCommits
+INFO: newest commit = 68[_n.fdt, _d.fnm, _n.fdx, _n.nvd, _d.fdx, _n_Lucene41_0.doc, _n_Lucene41_0.tim, _d.fdt, _n.si, _n_Lucene41_0.pos, _n_Lucene41_0.tip, _d.nvd, _n.nvm, segments_1w, _d.nvm, _d_Lucene41_0.tim, _d.si, _d_Lucene41_0.tip, _d_Lucene41_0.doc, _d_Lucene41_0.pos, _n.fnm]
+Aug 25, 2014 5:27:00 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+Aug 25, 2014 5:29:19 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {deleteByQuery=type:Klass (-1477457172540424192)} 0 24
+Aug 25, 2014 5:29:19 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {add=[Klass 1 (1477457172705050624), Klass 2 (1477457172708196352)]} 0 6
+Aug 25, 2014 5:29:19 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+Aug 25, 2014 5:29:19 PM org.apache.solr.core.SolrDeletionPolicy onCommit
+INFO: SolrDeletionPolicy.onCommit: commits:num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/dbell/work/scheduler/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1f8a6890; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1w,generation=68,filenames=[_n.fdt, _d.fnm, _n.fdx, _n.nvd, _d.fdx, _n_Lucene41_0.doc, _n_Lucene41_0.tim, _d.fdt, _n.si, _n_Lucene41_0.pos, _n_Lucene41_0.tip, _d.nvd, _n.nvm, segments_1w, _d.nvm, _d_Lucene41_0.tim, _d.si, _d_Lucene41_0.tip, _d_Lucene41_0.doc, _d_Lucene41_0.pos, _n.fnm]
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/dbell/work/scheduler/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1f8a6890; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1x,generation=69,filenames=[_t.fnm, _n.nvd, _n_Lucene41_0.doc, _t.si, _n.si, _t.nvd, _t.nvm, _d_Lucene41_0.doc, _n.fnm, _t_Lucene41_0.tim, _t_Lucene41_0.tip, _t_Lucene41_0.doc, _n.fdt, _d.fnm, _n.fdx, _d.fdx, _n_Lucene41_0.tim, _d.fdt, _n_Lucene41_0.pos, _d.nvd, _n_Lucene41_0.tip, _n.nvm, _t.fdx, _d.si, _d_Lucene41_0.tim, _d.nvm, _d_Lucene41_0.tip, segments_1x, _t_Lucene41_0.pos, _d_Lucene41_0.pos, _t.fdt]
+Aug 25, 2014 5:29:19 PM org.apache.solr.core.SolrDeletionPolicy updateCommits
+INFO: newest commit = 69[_t.fnm, _n.nvd, _n_Lucene41_0.doc, _t.si, _n.si, _t.nvd, _t.nvm, _d_Lucene41_0.doc, _n.fnm, _t_Lucene41_0.tim, _t_Lucene41_0.tip, _t_Lucene41_0.doc, _n.fdt, _d.fnm, _n.fdx, _d.fdx, _n_Lucene41_0.tim, _d.fdt, _n_Lucene41_0.pos, _d.nvd, _n_Lucene41_0.tip, _n.nvm, _t.fdx, _d.si, _d_Lucene41_0.tim, _d.nvm, _d_Lucene41_0.tip, segments_1x, _t_Lucene41_0.pos, _d_Lucene41_0.pos, _t.fdt]
+Aug 25, 2014 5:29:19 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@53d9f80 main
+Aug 25, 2014 5:29:19 PM org.apache.solr.core.SolrCore registerSearcher
+INFO: [development] Registered new searcher Searcher@53d9f80 main{StandardDirectoryReader(segments_1x:115:nrt _d(4.2):C2 _n(4.2):C2 _t(4.2):C2)}
+Aug 25, 2014 5:29:19 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+Aug 25, 2014 5:29:19 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {commit=} 0 26
+Aug 25, 2014 5:29:29 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=wednesday&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=0 status=0 QTime=2 
+Aug 25, 2014 5:29:45 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=wednesday&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=0 status=0 QTime=1 
+Aug 25, 2014 5:30:38 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=hernandez&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=1 status=0 QTime=3 
+Aug 25, 2014 5:30:56 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=monday&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=0 status=0 QTime=2 
+Aug 25, 2014 5:31:39 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=monday&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=0 status=0 QTime=1 
+Aug 25, 2014 5:31:51 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=math&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=1 status=0 QTime=2 
+Aug 25, 2014 5:31:55 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=monday&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=0 status=0 QTime=1 
+Aug 25, 2014 5:31:58 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=monday&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=0 status=0 QTime=1 
+Aug 25, 2014 5:33:44 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@31b27882 realtime
+Aug 25, 2014 5:33:44 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {deleteByQuery=type:Klass (-1477457450858708992)} 0 54
+Aug 25, 2014 5:33:44 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {add=[Klass 1 (1477457451185864704), Klass 2 (1477457451187961856)]} 0 6
+Aug 25, 2014 5:33:44 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+Aug 25, 2014 5:33:44 PM org.apache.solr.core.SolrDeletionPolicy onCommit
+INFO: SolrDeletionPolicy.onCommit: commits:num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/dbell/work/scheduler/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1f8a6890; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1x,generation=69,filenames=[_t.fnm, _n.nvd, _n_Lucene41_0.doc, _t.si, _n.si, _t.nvd, _t.nvm, _d_Lucene41_0.doc, _n.fnm, _t_Lucene41_0.tim, _t_Lucene41_0.tip, _t_Lucene41_0.doc, _n.fdt, _d.fnm, _n.fdx, _d.fdx, _n_Lucene41_0.tim, _d.fdt, _n_Lucene41_0.pos, _d.nvd, _n_Lucene41_0.tip, _n.nvm, _t.fdx, _d.si, _d_Lucene41_0.tim, _d.nvm, _d_Lucene41_0.tip, segments_1x, _t_Lucene41_0.pos, _d_Lucene41_0.pos, _t.fdt]
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/dbell/work/scheduler/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1f8a6890; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1y,generation=70,filenames=[_u_Lucene41_0.tip, _u_Lucene41_0.tim, _u_Lucene41_0.doc, _u.fdx, _n.nvd, _n_Lucene41_0.doc, _n.si, _u.fnm, _d_Lucene41_0.doc, _n.fnm, _u.nvm, _n.fdt, _d.fnm, _n.fdx, _u.nvd, _d.fdx, _n_Lucene41_0.tim, _d.fdt, _n_Lucene41_0.pos, _u_Lucene41_0.pos, _d.nvd, _n_Lucene41_0.tip, _n.nvm, _d.si, _d_Lucene41_0.tim, _d.nvm, _u.si, _u.fdt, _d_Lucene41_0.tip, segments_1y, _d_Lucene41_0.pos]
+Aug 25, 2014 5:33:44 PM org.apache.solr.core.SolrDeletionPolicy updateCommits
+INFO: newest commit = 70[_u_Lucene41_0.tip, _u_Lucene41_0.tim, _u_Lucene41_0.doc, _u.fdx, _n.nvd, _n_Lucene41_0.doc, _n.si, _u.fnm, _d_Lucene41_0.doc, _n.fnm, _u.nvm, _n.fdt, _d.fnm, _n.fdx, _u.nvd, _d.fdx, _n_Lucene41_0.tim, _d.fdt, _n_Lucene41_0.pos, _u_Lucene41_0.pos, _d.nvd, _n_Lucene41_0.tip, _n.nvm, _d.si, _d_Lucene41_0.tim, _d.nvm, _u.si, _u.fdt, _d_Lucene41_0.tip, segments_1y, _d_Lucene41_0.pos]
+Aug 25, 2014 5:33:44 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@36ddc581 main
+Aug 25, 2014 5:33:44 PM org.apache.solr.core.SolrCore registerSearcher
+INFO: [development] Registered new searcher Searcher@36ddc581 main{StandardDirectoryReader(segments_1y:119:nrt _d(4.2):C2 _n(4.2):C2 _u(4.2):C2)}
+Aug 25, 2014 5:33:44 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+Aug 25, 2014 5:33:44 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {commit=} 0 89
+Aug 25, 2014 5:33:50 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=monday&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=2 status=0 QTime=2 
+Aug 25, 2014 5:34:09 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=7:30&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=0 status=0 QTime=3 
+Aug 25, 2014 5:34:13 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=7:3&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=0 status=0 QTime=3 
+Aug 25, 2014 5:36:32 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@60f0761a realtime
+Aug 25, 2014 5:36:32 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {deleteByQuery=type:Klass (-1477457626783547392)} 0 53
+Aug 25, 2014 5:36:37 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=true,prepareCommit=false}
+Aug 25, 2014 5:36:37 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@3dd4ab05 main
+Aug 25, 2014 5:36:37 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+Aug 25, 2014 5:36:37 PM org.apache.solr.core.SolrCore registerSearcher
+INFO: [development] Registered new searcher Searcher@3dd4ab05 main{StandardDirectoryReader(segments_1y:121:nrt _d(4.2):C2 _n(4.2):C2)}
+Aug 25, 2014 5:36:47 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+Aug 25, 2014 5:36:47 PM org.apache.solr.core.SolrDeletionPolicy onCommit
+INFO: SolrDeletionPolicy.onCommit: commits:num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/dbell/work/scheduler/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1f8a6890; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1y,generation=70,filenames=[_u_Lucene41_0.tip, _u_Lucene41_0.tim, _u_Lucene41_0.doc, _u.fdx, _n.nvd, _n_Lucene41_0.doc, _n.si, _u.fnm, _d_Lucene41_0.doc, _n.fnm, _u.nvm, _n.fdt, _d.fnm, _n.fdx, _u.nvd, _d.fdx, _n_Lucene41_0.tim, _d.fdt, _n_Lucene41_0.pos, _u_Lucene41_0.pos, _d.nvd, _n_Lucene41_0.tip, _n.nvm, _d.si, _d_Lucene41_0.tim, _d.nvm, _u.si, _u.fdt, _d_Lucene41_0.tip, segments_1y, _d_Lucene41_0.pos]
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/dbell/work/scheduler/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1f8a6890; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1z,generation=71,filenames=[_n.fdt, _d.fnm, _n.fdx, _n.nvd, _d.fdx, _n_Lucene41_0.doc, _n_Lucene41_0.tim, _d.fdt, _n.si, _n_Lucene41_0.pos, segments_1z, _n_Lucene41_0.tip, _d.nvd, _n.nvm, _d.nvm, _d_Lucene41_0.tim, _d.si, _d_Lucene41_0.tip, _d_Lucene41_0.doc, _d_Lucene41_0.pos, _n.fnm]
+Aug 25, 2014 5:36:47 PM org.apache.solr.core.SolrDeletionPolicy updateCommits
+INFO: newest commit = 71[_n.fdt, _d.fnm, _n.fdx, _n.nvd, _d.fdx, _n_Lucene41_0.doc, _n_Lucene41_0.tim, _d.fdt, _n.si, _n_Lucene41_0.pos, segments_1z, _n_Lucene41_0.tip, _d.nvd, _n.nvm, _d.nvm, _d_Lucene41_0.tim, _d.si, _d_Lucene41_0.tip, _d_Lucene41_0.doc, _d_Lucene41_0.pos, _n.fnm]
+Aug 25, 2014 5:36:47 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+Aug 25, 2014 5:39:28 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {deleteByQuery=type:Klass (-1477457811235405824)} 0 47
+Aug 25, 2014 5:39:33 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=true,prepareCommit=false}
+Aug 25, 2014 5:39:33 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@1bd4f279 main
+Aug 25, 2014 5:39:33 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+Aug 25, 2014 5:39:33 PM org.apache.solr.core.SolrCore registerSearcher
+INFO: [development] Registered new searcher Searcher@1bd4f279 main{StandardDirectoryReader(segments_1y:121:nrt _d(4.2):C2 _n(4.2):C2)}
+Aug 25, 2014 5:39:43 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+Aug 25, 2014 5:39:43 PM org.apache.solr.core.SolrDeletionPolicy onCommit
+INFO: SolrDeletionPolicy.onCommit: commits:num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/dbell/work/scheduler/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1f8a6890; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_1z,generation=71,filenames=[_n.fdt, _d.fnm, _n.fdx, _n.nvd, _d.fdx, _n_Lucene41_0.doc, _n_Lucene41_0.tim, _d.fdt, _n.si, _n_Lucene41_0.pos, segments_1z, _n_Lucene41_0.tip, _d.nvd, _n.nvm, _d.nvm, _d_Lucene41_0.tim, _d.si, _d_Lucene41_0.tip, _d_Lucene41_0.doc, _d_Lucene41_0.pos, _n.fnm]
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/dbell/work/scheduler/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1f8a6890; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_20,generation=72,filenames=[segments_20, _n.fdt, _d.fnm, _n.fdx, _n.nvd, _d.fdx, _n_Lucene41_0.doc, _n_Lucene41_0.tim, _d.fdt, _n.si, _n_Lucene41_0.pos, _n_Lucene41_0.tip, _d.nvd, _n.nvm, _d.nvm, _d_Lucene41_0.tim, _d.si, _d_Lucene41_0.tip, _d_Lucene41_0.doc, _d_Lucene41_0.pos, _n.fnm]
+Aug 25, 2014 5:39:43 PM org.apache.solr.core.SolrDeletionPolicy updateCommits
+INFO: newest commit = 72[segments_20, _n.fdt, _d.fnm, _n.fdx, _n.nvd, _d.fdx, _n_Lucene41_0.doc, _n_Lucene41_0.tim, _d.fdt, _n.si, _n_Lucene41_0.pos, _n_Lucene41_0.tip, _d.nvd, _n.nvm, _d.nvm, _d_Lucene41_0.tim, _d.si, _d_Lucene41_0.tip, _d_Lucene41_0.doc, _d_Lucene41_0.pos, _n.fnm]
+Aug 25, 2014 5:39:43 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+Aug 25, 2014 5:40:56 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {deleteByQuery=type:Klass (-1477457904085762048)} 0 25
+Aug 25, 2014 5:41:01 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=true,prepareCommit=false}
+Aug 25, 2014 5:41:01 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@5999ae9c main
+Aug 25, 2014 5:41:01 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+Aug 25, 2014 5:41:01 PM org.apache.solr.core.SolrCore registerSearcher
+INFO: [development] Registered new searcher Searcher@5999ae9c main{StandardDirectoryReader(segments_1y:121:nrt _d(4.2):C2 _n(4.2):C2)}
+Aug 25, 2014 5:41:11 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+Aug 25, 2014 5:41:11 PM org.apache.solr.core.SolrDeletionPolicy onCommit
+INFO: SolrDeletionPolicy.onCommit: commits:num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/dbell/work/scheduler/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1f8a6890; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_20,generation=72,filenames=[segments_20, _n.fdt, _d.fnm, _n.fdx, _n.nvd, _d.fdx, _n_Lucene41_0.doc, _n_Lucene41_0.tim, _d.fdt, _n.si, _n_Lucene41_0.pos, _n_Lucene41_0.tip, _d.nvd, _n.nvm, _d.nvm, _d_Lucene41_0.tim, _d.si, _d_Lucene41_0.tip, _d_Lucene41_0.doc, _d_Lucene41_0.pos, _n.fnm]
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/dbell/work/scheduler/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1f8a6890; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_21,generation=73,filenames=[segments_21, _n.fdt, _d.fnm, _n.fdx, _n.nvd, _d.fdx, _n_Lucene41_0.doc, _n_Lucene41_0.tim, _d.fdt, _n.si, _n_Lucene41_0.pos, _n_Lucene41_0.tip, _d.nvd, _n.nvm, _d.nvm, _d_Lucene41_0.tim, _d.si, _d_Lucene41_0.tip, _d_Lucene41_0.doc, _d_Lucene41_0.pos, _n.fnm]
+Aug 25, 2014 5:41:11 PM org.apache.solr.core.SolrDeletionPolicy updateCommits
+INFO: newest commit = 73[segments_21, _n.fdt, _d.fnm, _n.fdx, _n.nvd, _d.fdx, _n_Lucene41_0.doc, _n_Lucene41_0.tim, _d.fdt, _n.si, _n_Lucene41_0.pos, _n_Lucene41_0.tip, _d.nvd, _n.nvm, _d.nvm, _d_Lucene41_0.tim, _d.si, _d_Lucene41_0.tip, _d_Lucene41_0.doc, _d_Lucene41_0.pos, _n.fnm]
+Aug 25, 2014 5:41:11 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+Aug 25, 2014 5:43:42 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {deleteByQuery=type:Klass (-1477458077845291008)} 0 68
+Aug 25, 2014 5:43:47 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=true,prepareCommit=false}
+Aug 25, 2014 5:43:47 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@3cdc904a main
+Aug 25, 2014 5:43:47 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+Aug 25, 2014 5:43:47 PM org.apache.solr.core.SolrCore registerSearcher
+INFO: [development] Registered new searcher Searcher@3cdc904a main{StandardDirectoryReader(segments_1y:121:nrt _d(4.2):C2 _n(4.2):C2)}
+Aug 25, 2014 5:43:57 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+Aug 25, 2014 5:43:57 PM org.apache.solr.core.SolrDeletionPolicy onCommit
+INFO: SolrDeletionPolicy.onCommit: commits:num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/dbell/work/scheduler/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1f8a6890; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_21,generation=73,filenames=[segments_21, _n.fdt, _d.fnm, _n.fdx, _n.nvd, _d.fdx, _n_Lucene41_0.doc, _n_Lucene41_0.tim, _d.fdt, _n.si, _n_Lucene41_0.pos, _n_Lucene41_0.tip, _d.nvd, _n.nvm, _d.nvm, _d_Lucene41_0.tim, _d.si, _d_Lucene41_0.tip, _d_Lucene41_0.doc, _d_Lucene41_0.pos, _n.fnm]
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/dbell/work/scheduler/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1f8a6890; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_22,generation=74,filenames=[_n.fdt, segments_22, _d.fnm, _n.fdx, _n.nvd, _d.fdx, _n_Lucene41_0.doc, _n_Lucene41_0.tim, _d.fdt, _n.si, _n_Lucene41_0.pos, _n_Lucene41_0.tip, _d.nvd, _n.nvm, _d.nvm, _d_Lucene41_0.tim, _d.si, _d_Lucene41_0.tip, _d_Lucene41_0.doc, _d_Lucene41_0.pos, _n.fnm]
+Aug 25, 2014 5:43:57 PM org.apache.solr.core.SolrDeletionPolicy updateCommits
+INFO: newest commit = 74[_n.fdt, segments_22, _d.fnm, _n.fdx, _n.nvd, _d.fdx, _n_Lucene41_0.doc, _n_Lucene41_0.tim, _d.fdt, _n.si, _n_Lucene41_0.pos, _n_Lucene41_0.tip, _d.nvd, _n.nvm, _d.nvm, _d_Lucene41_0.tim, _d.si, _d_Lucene41_0.tip, _d_Lucene41_0.doc, _d_Lucene41_0.pos, _n.fnm]
+Aug 25, 2014 5:43:57 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+Aug 25, 2014 5:44:37 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {deleteByQuery=type:Klass (-1477458135354441728)} 0 47
+Aug 25, 2014 5:44:42 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=true,prepareCommit=false}
+Aug 25, 2014 5:44:42 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@7e820d53 main
+Aug 25, 2014 5:44:42 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+Aug 25, 2014 5:44:42 PM org.apache.solr.core.SolrCore registerSearcher
+INFO: [development] Registered new searcher Searcher@7e820d53 main{StandardDirectoryReader(segments_1y:121:nrt _d(4.2):C2 _n(4.2):C2)}
+Aug 25, 2014 5:44:52 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+Aug 25, 2014 5:44:52 PM org.apache.solr.core.SolrDeletionPolicy onCommit
+INFO: SolrDeletionPolicy.onCommit: commits:num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/dbell/work/scheduler/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1f8a6890; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_22,generation=74,filenames=[_n.fdt, segments_22, _d.fnm, _n.fdx, _n.nvd, _d.fdx, _n_Lucene41_0.doc, _n_Lucene41_0.tim, _d.fdt, _n.si, _n_Lucene41_0.pos, _n_Lucene41_0.tip, _d.nvd, _n.nvm, _d.nvm, _d_Lucene41_0.tim, _d.si, _d_Lucene41_0.tip, _d_Lucene41_0.doc, _d_Lucene41_0.pos, _n.fnm]
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/dbell/work/scheduler/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1f8a6890; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_23,generation=75,filenames=[_n.fdt, _d.fnm, _n.fdx, _n.nvd, _d.fdx, _n_Lucene41_0.doc, _n_Lucene41_0.tim, _d.fdt, _n.si, _n_Lucene41_0.pos, _n_Lucene41_0.tip, _d.nvd, _n.nvm, _d.nvm, _d_Lucene41_0.tim, _d.si, _d_Lucene41_0.tip, _d_Lucene41_0.doc, _d_Lucene41_0.pos, _n.fnm, segments_23]
+Aug 25, 2014 5:44:52 PM org.apache.solr.core.SolrDeletionPolicy updateCommits
+INFO: newest commit = 75[_n.fdt, _d.fnm, _n.fdx, _n.nvd, _d.fdx, _n_Lucene41_0.doc, _n_Lucene41_0.tim, _d.fdt, _n.si, _n_Lucene41_0.pos, _n_Lucene41_0.tip, _d.nvd, _n.nvm, _d.nvm, _d_Lucene41_0.tim, _d.si, _d_Lucene41_0.tip, _d_Lucene41_0.doc, _d_Lucene41_0.pos, _n.fnm, segments_23]
+Aug 25, 2014 5:44:52 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+Aug 25, 2014 5:50:30 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {deleteByQuery=type:Klass (-1477458505806905344)} 0 29
+Aug 25, 2014 5:50:35 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=true,prepareCommit=false}
+Aug 25, 2014 5:50:35 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@1837b90c main
+Aug 25, 2014 5:50:35 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+Aug 25, 2014 5:50:35 PM org.apache.solr.core.SolrCore registerSearcher
+INFO: [development] Registered new searcher Searcher@1837b90c main{StandardDirectoryReader(segments_1y:121:nrt _d(4.2):C2 _n(4.2):C2)}
+Aug 25, 2014 5:50:45 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+Aug 25, 2014 5:50:45 PM org.apache.solr.core.SolrDeletionPolicy onCommit
+INFO: SolrDeletionPolicy.onCommit: commits:num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/dbell/work/scheduler/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1f8a6890; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_23,generation=75,filenames=[_n.fdt, _d.fnm, _n.fdx, _n.nvd, _d.fdx, _n_Lucene41_0.doc, _n_Lucene41_0.tim, _d.fdt, _n.si, _n_Lucene41_0.pos, _n_Lucene41_0.tip, _d.nvd, _n.nvm, _d.nvm, _d_Lucene41_0.tim, _d.si, _d_Lucene41_0.tip, _d_Lucene41_0.doc, _d_Lucene41_0.pos, _n.fnm, segments_23]
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/dbell/work/scheduler/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1f8a6890; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_24,generation=76,filenames=[_n.fdt, _d.fnm, _n.fdx, _n.nvd, _d.fdx, _n_Lucene41_0.doc, _n_Lucene41_0.tim, _d.fdt, _n.si, _n_Lucene41_0.pos, _n_Lucene41_0.tip, _d.nvd, _n.nvm, _d.nvm, _d_Lucene41_0.tim, _d.si, _d_Lucene41_0.tip, _d_Lucene41_0.doc, _d_Lucene41_0.pos, _n.fnm, segments_24]
+Aug 25, 2014 5:50:45 PM org.apache.solr.core.SolrDeletionPolicy updateCommits
+INFO: newest commit = 76[_n.fdt, _d.fnm, _n.fdx, _n.nvd, _d.fdx, _n_Lucene41_0.doc, _n_Lucene41_0.tim, _d.fdt, _n.si, _n_Lucene41_0.pos, _n_Lucene41_0.tip, _d.nvd, _n.nvm, _d.nvm, _d_Lucene41_0.tim, _d.si, _d_Lucene41_0.tip, _d_Lucene41_0.doc, _d_Lucene41_0.pos, _n.fnm, segments_24]
+Aug 25, 2014 5:50:45 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+Aug 25, 2014 5:51:36 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {deleteByQuery=type:Klass (-1477458574952103936)} 0 25
+Aug 25, 2014 5:51:41 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=true,prepareCommit=false}
+Aug 25, 2014 5:51:41 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@60437dcb main
+Aug 25, 2014 5:51:41 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+Aug 25, 2014 5:51:41 PM org.apache.solr.core.SolrCore registerSearcher
+INFO: [development] Registered new searcher Searcher@60437dcb main{StandardDirectoryReader(segments_1y:121:nrt _d(4.2):C2 _n(4.2):C2)}
+Aug 25, 2014 5:51:51 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+Aug 25, 2014 5:51:51 PM org.apache.solr.core.SolrDeletionPolicy onCommit
+INFO: SolrDeletionPolicy.onCommit: commits:num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/dbell/work/scheduler/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1f8a6890; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_24,generation=76,filenames=[_n.fdt, _d.fnm, _n.fdx, _n.nvd, _d.fdx, _n_Lucene41_0.doc, _n_Lucene41_0.tim, _d.fdt, _n.si, _n_Lucene41_0.pos, _n_Lucene41_0.tip, _d.nvd, _n.nvm, _d.nvm, _d_Lucene41_0.tim, _d.si, _d_Lucene41_0.tip, _d_Lucene41_0.doc, _d_Lucene41_0.pos, _n.fnm, segments_24]
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/dbell/work/scheduler/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1f8a6890; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_25,generation=77,filenames=[_n.fdt, _d.fnm, _n.fdx, _n.nvd, _d.fdx, _n_Lucene41_0.doc, _n_Lucene41_0.tim, _d.fdt, _n.si, _n_Lucene41_0.pos, _n_Lucene41_0.tip, _d.nvd, _n.nvm, _d.nvm, _d_Lucene41_0.tim, _d.si, _d_Lucene41_0.tip, _d_Lucene41_0.doc, _d_Lucene41_0.pos, segments_25, _n.fnm]
+Aug 25, 2014 5:51:51 PM org.apache.solr.core.SolrDeletionPolicy updateCommits
+INFO: newest commit = 77[_n.fdt, _d.fnm, _n.fdx, _n.nvd, _d.fdx, _n_Lucene41_0.doc, _n_Lucene41_0.tim, _d.fdt, _n.si, _n_Lucene41_0.pos, _n_Lucene41_0.tip, _d.nvd, _n.nvm, _d.nvm, _d_Lucene41_0.tim, _d.si, _d_Lucene41_0.tip, _d_Lucene41_0.doc, _d_Lucene41_0.pos, segments_25, _n.fnm]
+Aug 25, 2014 5:51:51 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+Aug 25, 2014 5:52:42 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {deleteByQuery=type:Klass (-1477458643657949184)} 0 26
+Aug 25, 2014 5:52:42 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {add=[Klass 1 (1477458643942113280), Klass 2 (1477458644005027840)]} 0 63
+Aug 25, 2014 5:52:42 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+Aug 25, 2014 5:52:42 PM org.apache.solr.core.SolrDeletionPolicy onCommit
+INFO: SolrDeletionPolicy.onCommit: commits:num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/dbell/work/scheduler/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1f8a6890; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_25,generation=77,filenames=[_n.fdt, _d.fnm, _n.fdx, _n.nvd, _d.fdx, _n_Lucene41_0.doc, _n_Lucene41_0.tim, _d.fdt, _n.si, _n_Lucene41_0.pos, _n_Lucene41_0.tip, _d.nvd, _n.nvm, _d.nvm, _d_Lucene41_0.tim, _d.si, _d_Lucene41_0.tip, _d_Lucene41_0.doc, _d_Lucene41_0.pos, segments_25, _n.fnm]
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/dbell/work/scheduler/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1f8a6890; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_26,generation=78,filenames=[_v.fdx, _n.nvd, _n_Lucene41_0.doc, _v_Lucene41_0.tip, _v_Lucene41_0.doc, _n.si, _v_Lucene41_0.tim, _d_Lucene41_0.doc, _v.fnm, segments_26, _n.fnm, _v.nvd, _v.fdt, _v.si, _n.fdt, _v_Lucene41_0.pos, _d.fnm, _v.nvm, _n.fdx, _d.fdx, _n_Lucene41_0.tim, _d.fdt, _n_Lucene41_0.pos, _d.nvd, _n_Lucene41_0.tip, _n.nvm, _d.si, _d_Lucene41_0.tim, _d.nvm, _d_Lucene41_0.tip, _d_Lucene41_0.pos]
+Aug 25, 2014 5:52:42 PM org.apache.solr.core.SolrDeletionPolicy updateCommits
+INFO: newest commit = 78[_v.fdx, _n.nvd, _n_Lucene41_0.doc, _v_Lucene41_0.tip, _v_Lucene41_0.doc, _n.si, _v_Lucene41_0.tim, _d_Lucene41_0.doc, _v.fnm, segments_26, _n.fnm, _v.nvd, _v.fdt, _v.si, _n.fdt, _v_Lucene41_0.pos, _d.fnm, _v.nvm, _n.fdx, _d.fdx, _n_Lucene41_0.tim, _d.fdt, _n_Lucene41_0.pos, _d.nvd, _n_Lucene41_0.tip, _n.nvm, _d.si, _d_Lucene41_0.tim, _d.nvm, _d_Lucene41_0.tip, _d_Lucene41_0.pos]
+Aug 25, 2014 5:52:42 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@78faa02 main
+Aug 25, 2014 5:52:42 PM org.apache.solr.core.SolrCore registerSearcher
+INFO: [development] Registered new searcher Searcher@78faa02 main{StandardDirectoryReader(segments_26:123:nrt _d(4.2):C2 _n(4.2):C2 _v(4.2):C2)}
+Aug 25, 2014 5:52:42 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+Aug 25, 2014 5:52:42 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {commit=} 0 35
+Aug 25, 2014 5:52:48 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=7:3&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=0 status=0 QTime=103 
+Aug 25, 2014 5:52:51 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=7:30&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=2 status=0 QTime=30 
+Aug 25, 2014 5:56:16 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@391a74ef realtime
+Aug 25, 2014 5:56:16 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {deleteByQuery=type:Klass (-1477458868670824448)} 0 44
+Aug 25, 2014 5:56:16 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {add=[Klass 1 (1477458868835450880), Klass 2 (1477458868837548032)]} 0 5
+Aug 25, 2014 5:56:16 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+Aug 25, 2014 5:56:16 PM org.apache.solr.core.SolrDeletionPolicy onCommit
+INFO: SolrDeletionPolicy.onCommit: commits:num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/dbell/work/scheduler/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1f8a6890; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_26,generation=78,filenames=[_v.fdx, _n.nvd, _n_Lucene41_0.doc, _v_Lucene41_0.tip, _v_Lucene41_0.doc, _n.si, _v_Lucene41_0.tim, _d_Lucene41_0.doc, _v.fnm, segments_26, _n.fnm, _v.nvd, _v.fdt, _v.si, _n.fdt, _v_Lucene41_0.pos, _d.fnm, _v.nvm, _n.fdx, _d.fdx, _n_Lucene41_0.tim, _d.fdt, _n_Lucene41_0.pos, _d.nvd, _n_Lucene41_0.tip, _n.nvm, _d.si, _d_Lucene41_0.tim, _d.nvm, _d_Lucene41_0.tip, _d_Lucene41_0.pos]
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/dbell/work/scheduler/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@1f8a6890; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_27,generation=79,filenames=[_w.si, _w_Lucene41_0.pos, _w.nvd, _w.nvm, _n.nvd, _n_Lucene41_0.doc, _n.si, _d_Lucene41_0.doc, segments_27, _w.fnm, _n.fnm, _w.fdt, _w.fdx, _n.fdt, _d.fnm, _n.fdx, _w_Lucene41_0.doc, _d.fdx, _n_Lucene41_0.tim, _d.fdt, _n_Lucene41_0.pos, _w_Lucene41_0.tip, _w_Lucene41_0.tim, _d.nvd, _n_Lucene41_0.tip, _n.nvm, _d.si, _d_Lucene41_0.tim, _d.nvm, _d_Lucene41_0.tip, _d_Lucene41_0.pos]
+Aug 25, 2014 5:56:16 PM org.apache.solr.core.SolrDeletionPolicy updateCommits
+INFO: newest commit = 79[_w.si, _w_Lucene41_0.pos, _w.nvd, _w.nvm, _n.nvd, _n_Lucene41_0.doc, _n.si, _d_Lucene41_0.doc, segments_27, _w.fnm, _n.fnm, _w.fdt, _w.fdx, _n.fdt, _d.fnm, _n.fdx, _w_Lucene41_0.doc, _d.fdx, _n_Lucene41_0.tim, _d.fdt, _n_Lucene41_0.pos, _w_Lucene41_0.tip, _w_Lucene41_0.tim, _d.nvd, _n_Lucene41_0.tip, _n.nvm, _d.si, _d_Lucene41_0.tim, _d.nvm, _d_Lucene41_0.tip, _d_Lucene41_0.pos]
+Aug 25, 2014 5:56:16 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@2a717ef5 main
+Aug 25, 2014 5:56:16 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+Aug 25, 2014 5:56:16 PM org.apache.solr.core.SolrCore registerSearcher
+INFO: [development] Registered new searcher Searcher@2a717ef5 main{StandardDirectoryReader(segments_27:127:nrt _d(4.2):C2 _n(4.2):C2 _w(4.2):C2)}
+Aug 25, 2014 5:56:16 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {commit=} 0 20
+Aug 25, 2014 5:56:26 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=7:30+hernandez&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=1 status=0 QTime=5 
+Aug 25, 2014 5:56:37 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=math&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=1 status=0 QTime=28 
+Aug 25, 2014 5:56:45 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=7:30&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=2 status=0 QTime=3 
+Aug 25, 2014 5:56:48 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={fl=*+score&start=0&q=7:30+elderon&qf=subject_text+description_text+days_text+starts_text+hours_text+teacher_names_text&wt=ruby&fq=type:Klass&rows=30&defType=edismax} hits=1 status=0 QTime=4 

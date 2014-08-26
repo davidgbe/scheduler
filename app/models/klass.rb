@@ -13,7 +13,7 @@ class Klass < ActiveRecord::Base
       sections.map(&:days)
     end
     text :starts do
-      sections.map(&:start)
+      sections.map(&:get_start)
     end
     text :hours do
       sections.map(&:hours)
