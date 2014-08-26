@@ -1,0 +1,11 @@
+development:
+  client_id: 577003383542-4kpg3oichip3eckok1f90e1irgbsuhh1.apps.googleusercontent.com
+  secret: 7O68bpzghsPZIe9ai2pYKW5t
+
+test:
+  client_id: 12345
+  secret: abcdef
+
+production:
+  client_id: 23456s
+  secret: bcdefg

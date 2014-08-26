@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  root 'home#index'
+  get '/' => 'home#login'
+  get '/auth/google_oauth2/callback' => 'home#index'
 
   resources :users, only: [:index, :create, :show, :update, :destroy]
   resources :schedules, only: [:index, :create, :show, :update, :destroy]
