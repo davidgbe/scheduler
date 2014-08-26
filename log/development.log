@@ -3905,6 +3905,7 @@ Processing by KlassesController#index as HTML
   [1m[36mKlass Load (0.5ms)[0m  [1mSELECT "klasses".* FROM "klasses"  WHERE "klasses"."id" IN (2)[0m
   Rendered klasses/index.rabl (0.7ms)
 Completed 200 OK in 16ms (Views: 2.9ms | ActiveRecord: 0.5ms | Solr: 9.9ms)
+
   [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "klasses"[0m
   [1m[32mSOLR Request (130.5ms)[0m  [ path=[1m[1mupdate[0m parameters={} ]
   [1m[35mKlass Load (0.7ms)[0m  SELECT  "klasses".* FROM "klasses"   ORDER BY "klasses"."id" ASC LIMIT 50

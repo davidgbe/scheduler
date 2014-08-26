@@ -1,3 +1,6 @@
 scheduler_db/*
 solr/development/*
 log/*
+libiconv-1.13.1
+libiconv-1.13.1/*
+tmp/*
