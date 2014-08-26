@@ -6,3 +6,4 @@ libiconv-1.13.1/*
 tmp/*
 tmp/*/*
 tmp/*/*/*
+vendor/*
