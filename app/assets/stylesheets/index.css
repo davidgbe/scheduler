@@ -21,20 +21,67 @@
   position: absolute;
   top: 90px; 
   left: 50px;
-  }
-
-#sidebar {
-  background-color: #BCE024;
-  width: 18%;
-  Height: 90px;
 }
 
-#Find {
+#search bar {
+  background-color: #BCE024;
+  width: 30%;
+  height: 90px;
+  position: absolute;
+  top: 122.6px;
+}
+
+#find {
   margin: 0px;
   font-size: 150%;
-  font-family: source code pro;
-  font-weight: lighter;
+  font-family: Yanone Kaffeesatz;
   position: absolute;
   top: 145px;
   left: 50px;
+}
+
+.section-course {
+  width: 18%;
+  height: 50.22px;
+  position: absolute;
+}
+
+#section-course-one {
+  background-color: #C7DD45;
+  width: 18%;
+  top: 170px;
+  left: 20px;
+
+}
+
+
+#section-course-two {
+  background-color: #D1DB6A;
+  width: 18%;
+  top: 260px;
+  left: 20px;
+
+}
+
+#section-course-three {
+  background-color: #D0D385;
+  width: 18%;
+  top: 420px;
+  left: 20px;
+
+}
+
+#section-course-four {
+  background-color: #D1D1B0;
+  width: 18%;
+  top: 610px;
+  left: 20px;
+
+}
+
+#section-course-five {
+  background-color: #D1D1B0;
+  width: 18%;
+  top: 800px;
+  left: 20px;
 }
