@@ -17,7 +17,7 @@ class KlassesController < ApplicationController
   end
 
   def show
-    render json: params(:id)
+    @klass = Klass.find(params[:id])
   end
 
   def update
