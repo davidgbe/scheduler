@@ -1,9 +1,6 @@
-var Klass = Backbone.Model.extend({
+Scheduler.Models.Klass = Backbone.Model.extend({
   initialize: function() {
-    alert('You have created a new class')
+    alert('Created a class')
   },
   url: '/klasses'
 })
-
-
-window.Scheduler.Models['Klass'] = Klass
