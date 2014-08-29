@@ -8,7 +8,12 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true
   validates :password, presence: true
 
-  def self.encryptPassword(password)
-    Digest::MD5.new(options['password']) 
+  before_save :encrypt_password
+
+  def encrypt_password
+    if password.present?
+      self.password = Digest::MD5.hexdigest(password)
+    end
   end
+
 end

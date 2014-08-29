@@ -5,10 +5,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    
+    @new_user = User.create(user_params)
   end
 
   def show
+    @current_user = User.find(params[:id])
   end
 
   def update
