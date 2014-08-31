@@ -3,11 +3,7 @@
   width: 100%;
   height: 122.6px;
   margin: 0px;
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  top: 0px;
-  margin: 0px;
+  display: block;
  }
 
 #sched {
@@ -22,9 +18,6 @@
 #line {
   color: white;
   width: 45%;
-  position: absolute;
-  top: 90px; 
-  left: 50px;
 }
 
 #search-bar {
@@ -33,16 +26,12 @@
   height: 90px;
   float: left;
   clear: left;
-  position: absolute;
-  top: 122.6px;
-  margin: 0px;
-  left: 0px;
 }
 
 #find {
   margin: auto;
   font-size: 150%;
-  font-family: Gurmukhi MN;
+  font-family: Montserrat;
 }
 
 .section-course {
@@ -54,7 +43,6 @@
 }
 
 #section-course-one {
-  margin-top: 220px;
   background-color: #C7DD45;
 }
 
