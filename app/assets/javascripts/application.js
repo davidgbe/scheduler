@@ -21,5 +21,4 @@
 //= require_tree ./collections
 //= require_tree ./views
 //= require_tree ./routers
-//= require_tree ../stylesheets
 //= require_tree .
