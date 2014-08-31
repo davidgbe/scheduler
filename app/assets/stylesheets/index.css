@@ -1,3 +1,8 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
 #top-bar {
   background-color: #14153F;
   width: 100%;
