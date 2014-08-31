@@ -46,3 +46,32 @@
 #pulse-login {
   background-image: url("public/pulse.png");
 }
+
+#schedulizer-login-login {
+  background-color: rgba(209,229,92,.54);
+  width: 35%;
+  height: 200px;
+  margin: 150px auto;
+}
+
+.login-words-login {
+  font-size: 130%;
+  font-family: montserrat;
+  font-style: regular;
+  color: #0C0E2B;
+}
+
+#tag-line-login {
+  padding-top: 20px;
+  padding-left: 16.5%;
+}
+
+#username {
+  padding-top: 35px;
+  padding-left: 6%;
+}
+
+#password {
+  padding-top: 20px;
+  padding-left: 6%;
+}
