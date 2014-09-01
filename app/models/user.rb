@@ -16,4 +16,9 @@ class User < ActiveRecord::Base
     end
   end
 
+  def self.authenticate(user_email, password) 
+    user = User.find_by(email: user_email).first
+    user.password == Digest::MD5.hexdigest(password) ? user : nil
+  end
+
 end
