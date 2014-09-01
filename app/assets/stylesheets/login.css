@@ -15,10 +15,20 @@
   color: white;
   height: 200px;
   font-family: caviar dreams;
-  font-weight: bold;
   text-align: left;
   padding-left: 50px;
   padding-top: 40px;
+}
+
+#sched-descriptor-login {
+  color: white;
+  font-size: 95%;
+  font-family: futura;
+  font-style: italic;
+  text-align: left;
+  position: absolute;
+  top: 100px;
+  left: 70px;
 }
 
 #line-login {
@@ -32,26 +42,20 @@
 #content-login{
   background-color: #00ccd6;
   width: 100%;
-  height: 800px;
-}
-
-#thin-bar-login {
-  background-color: #FFD464;
-  width: 100%;
-  height: 19px;
+  height: 600px;
 }
 
 #bottom-bar-login {
-  background-color: #FFD464;
+  background-color: white;
   width: 100%;
-  height: 41px;
+  height: 40px;
   bottom: 0px;
   position: fixed;
 }
  
 #pulse-login {
   width: 100%;
-  height: 600px ;
+  height: 550px ;
   background-position: center;
   background-image: url("Pulsenew.png");
   background-size: 100% 100%;
@@ -75,9 +79,9 @@
 }
 
 #tag-line-login {
-  font-size: 190%;
+  font-size: 200%;
   padding: 20px;
-  margin-left: 35px;
+  margin-left: 40px;
   font-family: walkway bold;
   font-style: regular;
   color: #333333;
