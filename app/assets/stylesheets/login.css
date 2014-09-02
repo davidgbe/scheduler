@@ -4,7 +4,7 @@
 }
 
 #top-bar-login {
-  background-color: #14153F;
+  background-color: #333333;
   width: 100%;
   height: 122.6px;
 }
@@ -15,10 +15,20 @@
   color: white;
   height: 200px;
   font-family: caviar dreams;
-  font-weight: bold;
   text-align: left;
   padding-left: 50px;
   padding-top: 40px;
+}
+
+#sched-descriptor-login {
+  color: white;
+  font-size: 95%;
+  font-family: futura;
+  font-style: italic;
+  text-align: left;
+  position: absolute;
+  top: 100px;
+  left: 70px;
 }
 
 #line-login {
@@ -29,30 +39,30 @@
   left: 50px;
 }
 
-#thin-bar-login {
-  background-color: #FFD464;
+#content-login{
+  background-color: #00ccd6;
   width: 100%;
-  height: 19px;
+  height: 600px;
 }
 
 #bottom-bar-login {
-  background-color: #D1E55C;
+  background-color: white;
   width: 100%;
-  height: 41px;
+  height: 40px;
   bottom: 0px;
   position: fixed;
 }
  
 #pulse-login {
   width: 100%;
-  height: 600px ;
+  height: 550px ;
   background-position: center;
-  background-image: url("pulse.png");
+  background-image: url("Pulsenew.png");
   background-size: 100% 100%;
 }
 
 #schedulizer-login-login {
-  background-color: rgba(209,229,92,.54);
+  border: 1px solid black;
   width: 35%;
   height: 200px;
   margin: auto;
@@ -61,7 +71,7 @@
 }
 
 .login-words-login {
-  color: white;
+  color: #333333;
   padding-top: 20px;
   padding-left: 6%;
   font-family: montserrat;
@@ -69,9 +79,10 @@
 }
 
 #tag-line-login {
-  font-size: 190%;
+  font-size: 200%;
   padding: 20px;
-  margin-left: 35px;
+  margin-left: 40px;
   font-family: walkway bold;
   font-style: regular;
+  color: #333333;
 }
