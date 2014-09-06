@@ -4,8 +4,8 @@ window.Scheduler = {
   Views: {},
   Routers: {},
   initialize: function() {
-    console.log(this)
     this.router = new this.Routers.AppRouter()
+    this.session = new this.Models.Session()
     Backbone.history.start()
   }
 };
