@@ -9,34 +9,12 @@
   height: 122.6px;
 }
 
-#sched-login {
-  font-size: 300%;
-  font-weight: bold;
-  color: white;
-  height: 200px;
-  font-family: caviar dreams;
-  text-align: left;
-  padding-left: 50px;
-  padding-top: 40px;
-}
-
-#sched-descriptor-login {
-  color: white;
-  font-size: 95%;
-  font-family: futura;
-  font-style: italic;
-  text-align: left;
-  position: absolute;
-  top: 100px;
-  left: 70px;
-}
-
-#line-login {
-  color: white;
-  width: 45%;
-  position: absolute;
-  top: 95px; 
-  left: 50px;
+#horae {
+  width: 38%;
+  height: 102px;
+  position: relative;
+  top: 20px;
+  left: 20px;
 }
 
 #content-login{
@@ -46,7 +24,7 @@
 }
 
 #bottom-bar-login {
-  background-color: white;
+  background-color: #00ccd6;
   width: 100%;
   height: 40px;
   bottom: 0px;
@@ -67,7 +45,7 @@
   height: 200px;
   margin: auto;
   position: relative;
-  top: 175px;
+  top: 190px;
 }
 
 .login-words-login {
