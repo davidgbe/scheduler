@@ -1,5 +1,7 @@
 class SchedulesController < ApplicationController
   respond_to :json
+
+  before_filter :require_user
   
   def index
     @schedules = Schedule.find(1)

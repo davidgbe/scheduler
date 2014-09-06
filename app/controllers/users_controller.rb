@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   respond_to :json
+
+  before_filter :require_user, except: [:create]
   
   def index
   end

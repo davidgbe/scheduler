@@ -16,8 +16,11 @@ class User < ActiveRecord::Base
     end
   end
 
-  def self.authenticate(user_email, password) 
-    user = User.find_by(email: user_email).first
+  def self.authenticate(user_name, password) 
+    user = User.find_by(user_name: user_name)
+    if !user 
+      raise 'No user was found'
+    end
     user.password == Digest::MD5.hexdigest(password) ? user : nil
   end
 
