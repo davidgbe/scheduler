@@ -78,6 +78,10 @@
   font-size: 140%;
 }
 
+#login-form-login {
+  padding-left: 100px;
+}
+
 #tag-line-login {
   font-size: 200%;
   padding: 20px;
