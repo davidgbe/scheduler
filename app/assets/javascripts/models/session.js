@@ -1,7 +1,5 @@
 Scheduler.Models.Session = Backbone.Model.extend({
-  initialize: function() {
-    alert('Created a session')
-  },
+  initialize: function() {},
   urlRoot: '/sessions',
   loginAttempt: function(data) {
     this.set(data)
