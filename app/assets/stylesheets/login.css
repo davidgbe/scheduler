@@ -22,9 +22,9 @@ html, body {
 }
  
 #content-login{
-  height: calc(100% - 100px);
-  height: -moz-calc(100% - 100);
-  height: -webkit-calc(100% - 100px);
+  height: calc(100% - 102px);
+  height: -moz-calc(100% - 102px);
+  height: -webkit-calc(100% - 102px);
 }
 #pulse-login {
   background: url("essentials.jpg") center;
