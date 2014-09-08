@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/auth/google_oauth2/callback' => 'home#index'
 
   resources :users, only: [:index, :create, :show, :update, :destroy]
-  resources :schedules, only: [:index, :create, :show, :update, :destroy]
+  resources :schedules, only: [:index, :create, :destroy]
   resources :klasses, only: [:index, :create, :show, :update, :destroy]
   resources :sections, only: [:index, :create, :show, :update, :destroy]
   resources :teachers, only: [:index, :create, :show, :update, :destroy]

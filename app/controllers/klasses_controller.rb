@@ -13,7 +13,7 @@ class KlassesController < ApplicationController
   end
 
   def create
-    render json: Klass.find_or_create_by(params)
+    @new_klass = Klass.find_or_create_by(klass_params)
   end
 
   def show
@@ -21,10 +21,17 @@ class KlassesController < ApplicationController
   end
 
   def update
-
+    
   end
 
   def destroy
 
   end
+
+  private
+
+  def klass_params
+    params.require(:klass).permit(:subject, :level, :prerequisites, :corequisites, :description)
+  end
+
 end

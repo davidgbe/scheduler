@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @new_user = User.create(user_params)
+    @new_user = User.find_or_create_by(user_params)
   end
 
   def show
