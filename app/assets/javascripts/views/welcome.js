@@ -7,9 +7,33 @@ Scheduler.Views.Welcome = Backbone.View.extend({
   render: function() {
     var compiled = this.template({})
     this.$el.html(compiled)
-    this.loginView = new Scheduler.Views.Login({
-      el: '#pulse-login'
+    this.createChildViews()
+    this.selectView('login')
+  },
+  createChildViews: function() {
+    var loginView = new Scheduler.Views.Login({
+      el: '#loginview-login'
     })
-    this.loginView.render()
+    var joinView = new Scheduler.Views.Join({
+      el: '#joinview-login'
+    })
+    this.childViews = {
+      login: loginView,
+      join: joinView
+    }
+    for (var key in this.childViews) {
+      var thisView = this.childViews[key]
+      thisView.render()
+      thisView.hide()
+    }
+  },
+  selectView: function(view) {
+    if(this.currentView != view) {
+      if(this.currentView) {
+        this.childViews[this.currentView].hide()
+      }
+      this.currentView = view
+      this.childViews[view].show()
+    }
   }
 })
