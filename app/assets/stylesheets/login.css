@@ -22,15 +22,14 @@ html, body {
 }
  
 #content-login{
-  height: 100%;
+  height: calc(100% - 100px);
+  height: -moz-calc(100% - 100);
+  height: -webkit-calc(100% - 100px);
 }
 #pulse-login {
   background: url("essentials.jpg") center;
   background-size: cover;
-
-  height: calc(100% - 100px);
-  height: -moz-calc(100% - 100);
-  height: -webkit-calc(100% - 100px);
+  height: 100%;
 }
 
 #schedulizer-login-login {
@@ -80,8 +79,9 @@ html, body {
   -webkit-box-sizing: border-box;
 
   color: #666;
-  height: 3em;
-  padding: 0 1.5em;
+  font-size: 1.2em;
+  height: 2.5em;
+  padding: 0 1.25em;
 
   transition-duration: 0.25s;
   -moz-transition-duration: 0.25s;
