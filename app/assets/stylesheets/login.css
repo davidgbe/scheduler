@@ -3,56 +3,138 @@
   padding: 0px;
 }
 
+html, body {
+  height: 100%;
+  font-family: walkway bold;
+}
+
 #top-bar-login {
   background-color: #333333;
-  width: 100%;
   height: 102px;
+  width: 100%;
 }
 
 #horae {
   height: 100%;
-  height: 102px;
-  position: relative;
-  left: 20px;
+  margin: 0 0 0 20px;
 }
  
+#content-login{
+  height: 100%;
+}
 #pulse-login {
-  width: 100%;
-  height: 800px;
-  background-position: center;
-  background-image: url("essentials.jpg");
+  background: url("essentials.jpg") center;
   background-size: cover;
+
+  height: calc(100% - 100px);
+  height: -moz-calc(100% - 100);
+  height: -webkit-calc(100% - 100px);
 }
 
 #schedulizer-login-login {
   background-color: rgba(56, 192, 205, 0.82);
-  width: 350px;
-  height: 400px;
-  margin: auto;
-  position: relative;
-  top: 125px;
+  margin: 0 auto;
   padding: 15px;
-}
+  position: relative;
+  top: 50%;
 
-#login-form-login {
-  margin-right: auto;
-  margin-left: auto;
+  transform: translateY(-50%);
+  -ms-tranform: translateY(-50%);
+  -webkit-transform: translafteY(-50%);
+
+  width: 350px;
 }
 
 #tag-line-login {
-  font-size: 165%;
-  font-family: walkway bold;
-  font-style: regular;
   color: #333333;
+  font-size: 1.65em;
+  margin: 10px 0;
+  text-align: center;
 }
 
-#sign {
-  font-family: walkway bold;
-  font-size: 80%;
+#login-form {
   color: #333333;
+  font-size: 0.9em;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0 15px;
+}
+
+#login-form label {
+  display: block;
+  margin: 10px 1em;
 }
 
 .user-entry-login {
-  width: 200px;
+  background: rgb(230, 230, 230);
+  border: none;
+
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+
+  box-sizing: border-box;
+  -mox-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+  color: #666;
+  height: 3em;
+  padding: 0 1.5em;
+
+  transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  -webkit-transition-duration: 0.25s;
+
+  width: 100%;
 }
 
+.user-entry-login:focus {
+  background: white;
+
+  box-shadow: inset 0 0 7px rgb(56, 192, 205);
+  -moz-box-shadow: inset 0 0 7px rgb(56, 192, 205);
+  -webkit-box-shadow: inset 0 0 7px rgb(56, 192, 205);
+
+  color: #333;
+  outline: none;
+}
+
+#entry {
+  background: rgb(230, 230, 230);
+  border: none;
+
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+
+  box-shadow: 0 3px lightgrey;
+  -moz-box-shadow: 0 3px lightgrey;
+  -webkit-box-shadow: 0 3px lightgrey;
+
+  height: 3em;
+  margin: 36px 0;
+  position: relative;
+  width: 100%;
+}
+
+#entry:hover {
+  box-shadow: 0 2px lightgrey;
+  -moz-box-shadow: 0 2px lightgrey;
+  -webkit-box-shadow: 0 2px lightgrey;
+
+  top: 1px;
+}
+
+#entry:focus
+{
+  outline: none;
+}
+
+#entry:active {
+  box-shadow: 0 0;
+  -moz-box-shadow: 0 0;
+  -webkit-box-shadow: 0 0;
+
+  outline: none;
+  top: 2px;
+}
