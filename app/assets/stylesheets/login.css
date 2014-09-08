@@ -21,7 +21,7 @@
   height: 800px;
   background-position: center;
   background-image: url("essentials.jpg");
-  background-size: 100% 100%;
+  background-size: cover;
 }
 
 #schedulizer-login-login {
