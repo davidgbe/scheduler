@@ -6,7 +6,7 @@ Scheduler.Views.Join = Backbone.View.extend({
   },
   render: function() {
     var compiled = this.template({})
-    this.$el.html(compiled)
+    this.$el.append(compiled)
   },
   register: function() {
     //TODO

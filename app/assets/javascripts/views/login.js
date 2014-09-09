@@ -8,7 +8,7 @@ Scheduler.Views.Login = Backbone.View.extend({
   },
   render: function() {
     var compiled = this.template({})
-    this.$el.html(compiled)
+    this.$el.append(compiled)
   },
   login: function() {
     data = { user_name: $('#username').val(), password: $('#password').val() }

@@ -8,6 +8,7 @@
 html, body {
   height: 100%;
   font-family: walkway bold;
+  body: 0px;
 }
 
 #header {
@@ -32,12 +33,18 @@ html, body {
   height: 100%;
 }
 
+#welcome-carousel {
+
+}
+
 .welcome-child {
   background-color: rgba(56, 192, 205, 0.82);
   margin: 0 auto;
   padding: 15px;
   position: relative;
   top: 50%;
+  list-style-type: none;
+  display: inline-block;
 
   transform: translateY(-50%);
   -ms-tranform: translateY(-50%);
