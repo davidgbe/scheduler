@@ -28,7 +28,11 @@ Organize properties alphabetically
 html, body {
   height: 100%;
   font-family: walkway bold;
-  body: 0px;
+  overflow: hidden;
+}
+
+.clear {
+  clear: both;
 }
 
 #header {
@@ -54,27 +58,30 @@ html, body {
 }
 
 #welcome-carousel {
-  height: 100%;
-  width: 100%;
-}
+  left: calc(50% - 190px);
+  left: -moz-calc(50% - 190px);
+  left: -webkit-calc(50% - 190px);
 
-.welcome-child {
-  background-color: rgba(56, 192, 205, 0.82);
-  list-style-type: none;
-  margin: 0 auto;
-  padding: 15px;
+  overflow: hidden;
   position: relative;
   top: 50%;
 
   transform: translateY(-50%);
-  -ms-tranform: translateY(-50%);
+  -moz-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
 
-  width: 350px;
+  width: 3000px;
 }
 
-#join {
-  display: none;
+.welcome-child {
+  background-color: rgba(56, 192, 205, 0.82);
+  display: block;
+  float: left;
+  list-style-type: none;
+  position: relative;
+  margin: 0 800px 0 0;
+  padding: 15px;
+  width: 350px;
 }
 
 .welcome-child-tag-line {
@@ -106,7 +113,7 @@ html, body {
   -webkit-border-radius: 2px;
 
   box-sizing: border-box;
-  -mox-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 
   color: #666;
