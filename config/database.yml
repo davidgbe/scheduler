@@ -5,7 +5,7 @@ development:
   database: scheduler_db
   pool: 5
   username: myapp
-  password: 
+  password: myapp
 
 test:
   adapter: postgresql
