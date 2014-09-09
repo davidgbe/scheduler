@@ -13,10 +13,8 @@ Scheduler.Views.Join = Backbone.View.extend({
   },
   show: function() {
     $(this.el).show()
-    $(this.el).css('margin-left', 'auto')
   },
   hide: function() {
     $(this.el).hide()
-    $(this.el).css('margin-left', '600px')
   }
 })
