@@ -73,13 +73,17 @@ html, body {
   width: 3000px;
 }
 
+/*#welcome-carousel {
+  left: ;
+}*/
+
 .welcome-child {
   background-color: rgba(56, 192, 205, 0.82);
   display: block;
   float: left;
   list-style-type: none;
   position: relative;
-  margin: 0 800px 0 0;
+  margin: 0 20% 0 0;
   padding: 15px;
   width: 350px;
 }
