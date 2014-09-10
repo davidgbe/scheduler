@@ -165,8 +165,7 @@ html, body {
   top: 1px;
 }
 
-.welcome-child-button:focus
-{
+.welcome-child-button:focus {
   outline: none;
 }
 

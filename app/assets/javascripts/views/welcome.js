@@ -9,7 +9,7 @@ Scheduler.Views.Welcome = Backbone.View.extend({
     var compiled = this.template({})
     this.$el.html(compiled)
     this.createChildViews()
-    this.childViews[0].show()
+    $(window).on('resize', this.centerCurrentView)
   },
   createChildViews: function() {
     var loginView = new Scheduler.Views.Login({
@@ -27,11 +27,21 @@ Scheduler.Views.Welcome = Backbone.View.extend({
       thisView.render()
       thisView.hide()
     }
+    this.currentView = 0
+    this.childViews[this.currentView].show()
   },
   shiftRight: function() {
-    //$(this.carousel).animate({ left: })
+    var that = this
+    setTimeout(function() {
+      $(that.carousel).animate({ 'left': '-=1150px' })
+    },
+    5000)
   },
   shiftLeft: function() {
 
+  },
+  centerCurrentView: function() {
+    console.log($(window).width() - 3 * 800 + 'px')
+    $(this.carousel).css('left', $(window).width() - 3 * 800)
   }
 })
