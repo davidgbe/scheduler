@@ -3,38 +3,35 @@ Scheduler.Views.Welcome = Backbone.View.extend({
   events: {},
   initialize: function(options) {
     this.el = options.el
+    this.carousel = '#welcome-carousel'
   },
   render: function() {
     var compiled = this.template({})
     this.$el.html(compiled)
     this.createChildViews()
-    this.selectView('login')
+    this.childViews[0].show()
   },
   createChildViews: function() {
     var loginView = new Scheduler.Views.Login({
-      el: '#welcome-carousel'
+      el: this.carousel
     })
     var joinView = new Scheduler.Views.Join({
-      el: '#welcome-carousel'
+      el: this.carousel
     })
-    this.childViews = {
-      login: loginView,
-      join: joinView
-    }
-    for (var key in this.childViews) {
-      console.log(key)
-      var thisView = this.childViews[key]
+    this.childViews = [
+      loginView,
+      joinView
+    ]
+    for (var position in this.childViews) {
+      var thisView = this.childViews[position]
       thisView.render()
       thisView.hide()
     }
   },
-  selectView: function(view) {
-    if(this.currentView != view) {
-      if(this.currentView) {
-        this.childViews[this.currentView].hide()
-      }
-      this.currentView = view
-      this.childViews[view].show()
-    }
+  shiftRight: function() {
+    //$(this.carousel).animate({ left: })
+  },
+  shiftLeft: function() {
+
   }
 })
