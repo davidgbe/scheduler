@@ -2,9 +2,17 @@ Scheduler.Models.Session = Backbone.Model.extend({
   initialize: function() {},
   urlRoot: '/sessions',
   loginAttempt: function(data) {
+    var that = this
     this.set(data)
-    this.save()
-    this.clearPasswords()
+    this.save(null, {
+      success: function() {
+        that.clearPasswords()
+        window.location.hash = 'schedule'
+      },
+      error: function() {
+        alert('FUCK YOU GET IT RIGHT')
+      }
+    })
   },
   clearPasswords: function() {
     if(_.has(this.attributes, 'password')) {

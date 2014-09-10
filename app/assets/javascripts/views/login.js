@@ -1,7 +1,7 @@
 Scheduler.Views.Login = Backbone.View.extend({
   template: JST['client/login_template'],
   events: {
-    'click #entry': 'login'
+    'click #login-button': 'login'
   },
   initialize: function(options) {
     this.el = options.el
@@ -12,6 +12,7 @@ Scheduler.Views.Login = Backbone.View.extend({
   },
   login: function() {
     data = { user_name: $('#username').val(), password: $('#password').val() }
+    console.log(data)
     Scheduler.session.loginAttempt(data)
   },
   show: function() {
