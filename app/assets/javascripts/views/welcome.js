@@ -6,10 +6,17 @@ Scheduler.Views.Welcome = Backbone.View.extend({
     this.carousel = '#welcome-carousel'
   },
   render: function() {
+    var that = this
     var compiled = this.template({})
     this.$el.html(compiled)
     this.createChildViews()
-    $(window).on('resize', this.centerCurrentView)
+    $(window).on('resize', function() {
+      that.centerCurrentView(that.carousel, that.currentView)
+    })
+    setTimeout( function() {
+      that.shiftRight()
+    },
+    5000)
   },
   createChildViews: function() {
     var loginView = new Scheduler.Views.Login({
@@ -25,23 +32,28 @@ Scheduler.Views.Welcome = Backbone.View.extend({
     for (var position in this.childViews) {
       var thisView = this.childViews[position]
       thisView.render()
-      thisView.hide()
     }
     this.currentView = 0
-    this.childViews[this.currentView].show()
   },
   shiftRight: function() {
-    var that = this
-    setTimeout(function() {
-      $(that.carousel).animate({ 'left': '-=1150px' })
-    },
-    5000)
+    if(this.currentView < 1) {
+      this.currentView += 1
+      this.changeCurrentView(this.carousel, this.currentView)
+    }
   },
   shiftLeft: function() {
-
+    if(this.currentView) {
+      this.currentView -= 1
+      this.changeCurrentView(this.carousel, this.currentView)
+    }
   },
-  centerCurrentView: function() {
-    console.log($(window).width() - 3 * 800 + 'px')
-    $(this.carousel).css('left', $(window).width() - 3 * 800)
+  changeCurrentView: function(carousel, currView) {
+    $(carousel).animate(
+      { 'left': $(window).width() / 2 - 190 - currView * 1000 + 'px' }, 
+      { duration: 600, queue: false }
+    )
+  },
+  centerCurrentView: function(carousel, currView) {
+    $(carousel).css({ 'left': $(window).width() / 2 - 190 - currView * 1000 + 'px' })
   }
 })

@@ -10,11 +10,5 @@ Scheduler.Views.Join = Backbone.View.extend({
   },
   register: function() {
     //TODO
-  },
-  show: function() {
-    $(this.el).show()
-  },
-  hide: function() {
-    $(this.el).hide()
   }
 })
