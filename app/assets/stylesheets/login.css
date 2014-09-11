@@ -41,6 +41,13 @@ html, body {
   width: 100%;
 }
 
+.header-button {
+  float: right;
+  color: black;
+  padding: 15px;
+  position: relative;
+}
+
 #logo {
   height: 100%;
   margin: 0 0 0 20px;
@@ -82,6 +89,7 @@ html, body {
   margin: 0 20% 0 0;
   padding: 15px;
   width: 350px;
+  border-radius: 3px;
 }
 
 .welcome-child-tag-line {
