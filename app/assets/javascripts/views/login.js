@@ -14,11 +14,5 @@ Scheduler.Views.Login = Backbone.View.extend({
     data = { user_name: $('#username').val(), password: $('#password').val() }
     console.log(data)
     Scheduler.session.loginAttempt(data)
-  },
-  show: function() {
-    $(this.el).show()
-  },
-  hide: function() {
-    $(this.el).hide()
   }
 })
