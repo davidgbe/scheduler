@@ -24,9 +24,14 @@ Scheduler.Views.Welcome = Backbone.View.extend({
     var joinView = new Scheduler.Views.Join({
       el: this.carousel
     })
+    var aboutView = new Scheduler.Views.About({
+      el: this.carousel
+    })
+
     this.childViews = [
       loginView,
-      joinView
+      joinView,
+      aboutView
     ]
     for (var position in this.childViews) {
       var thisView = this.childViews[position]
@@ -35,14 +40,12 @@ Scheduler.Views.Welcome = Backbone.View.extend({
     this.currentView = 0
   },
   shiftRight: function() {
-    console.log("Happened")
-    if(this.currentView < 1) {
+    if(this.currentView < 2) {
       this.currentView += 1
       this.changeCurrentView(this.carousel, this.currentView)
     }
   },
   shiftLeft: function() {
-    console.log("happened2")
     if(this.currentView) {
       this.currentView -= 1
       this.changeCurrentView(this.carousel, this.currentView)
