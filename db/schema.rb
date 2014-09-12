@@ -17,11 +17,13 @@ ActiveRecord::Schema.define(version: 20140822173349) do
   enable_extension "plpgsql"
 
   create_table "klasses", force: true do |t|
-    t.string   "subject"
+    t.text     "title"
+    t.text     "subject"
     t.integer  "level"
     t.text     "prerequisites"
     t.text     "corequisites"
     t.text     "description"
+    t.float    "units"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
