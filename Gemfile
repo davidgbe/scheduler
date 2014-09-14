@@ -44,6 +44,8 @@ gem 'options', '~> 2.3.2'
 gem 'progress_bar', '~> 1.0.3'
 
 gem 'omniauth-google-oauth2'
+
+gem 'sidekiq'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

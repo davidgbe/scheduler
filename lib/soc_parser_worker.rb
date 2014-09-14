@@ -2,7 +2,7 @@ require 'open-uri'
 require 'json'
 require 'yaml'
 
-class SocParser
+class SocParserWorker
 
   def initialize(school)
     school_endpoints = YAML.load_file(Rails.root.to_s + '/config/soc.yml')
