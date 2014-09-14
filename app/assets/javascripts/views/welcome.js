@@ -1,8 +1,9 @@
 Scheduler.Views.Welcome = Backbone.View.extend({
   template: JST['client/welcome_template'],
   events: {
-    'click #left': 'shiftLeft',
-    'click #right': 'shiftRight'
+    'click #welcome-about-button': 'aboutButtonClick',
+    'click #welcome-join-button': 'joinButtonClick',
+    'click #welcome-login-button': 'loginButtonClick'
   },
   initialize: function(options) {
     this.el = options.el
@@ -39,17 +40,21 @@ Scheduler.Views.Welcome = Backbone.View.extend({
     }
     this.currentView = 0
   },
-  shiftRight: function() {
-    if(this.currentView < 2) {
-      this.currentView += 1
-      this.changeCurrentView(this.carousel, this.currentView)
-    }
+  loginButtonClick: function() {
+    this.shift(0 - this.currentView)
   },
-  shiftLeft: function() {
-    if(this.currentView) {
-      this.currentView -= 1
-      this.changeCurrentView(this.carousel, this.currentView)
+  joinButtonClick: function() {
+    this.shift(1 - this.currentView)
+  },
+  aboutButtonClick: function() {
+    this.shift(2 - this.currentView)
+  },
+  shift: function(spaces) {
+    if( !spaces || (spaces > 0 && this.currentView + spaces > 2) || (spaces < 0 && this.currentView - spaces < 0) ) {
+      return
     }
+    this.currentView += spaces
+    this.changeCurrentView(this.carousel, this.currentView)
   },
   changeCurrentView: function(carousel, currView) {
     $(carousel).animate(
