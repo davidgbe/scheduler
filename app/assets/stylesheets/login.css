@@ -42,10 +42,35 @@ html, body {
 }
 
 .header-button {
+  height: 30px;
+  width: 70px;
+
+  color: white;
+  text-align: center;
+  vertical-align: middle; 
+
   float: right;
-  color: black;
-  padding: 15px;
   position: relative;
+  top: -40px;
+
+  padding-top: 10px;
+  margin: 0 10px 0 10px;
+}
+
+.header-button:hover {
+  background-color: grey;
+
+  transition-duration: 0.50s;
+  -moz-transition-duration: 0.50s;
+  -webkit-transition-duration: 0.50s;
+}
+
+#footer {
+  background-color: #333333;
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
 }
 
 #logo {

@@ -6,7 +6,7 @@ class Klass < ActiveRecord::Base
     text :subject 
     integer :level
     text :description do 
-      description.downcase
+      description.downcase if description
     end
     #Section search params
     text :days do
