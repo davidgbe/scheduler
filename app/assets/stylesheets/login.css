@@ -25,14 +25,14 @@ Organize properties alphabetically
   padding: 0px;
 }
 
-html, body {
+html {
   height: 100%;
-  font-family: walkway bold;
-  overflow: hidden;
 }
 
-.clear {
-  clear: both;
+body {
+  height: 100%;
+  font-family: walkway bold;
+  overflow: auto;
 }
 
 #header {
@@ -59,18 +59,11 @@ html, body {
 
 .header-button:hover {
   background-color: grey;
+  cursor: pointer;
 
   transition-duration: 0.50s;
   -moz-transition-duration: 0.50s;
   -webkit-transition-duration: 0.50s;
-}
-
-#footer {
-  background-color: #333333;
-  height: 50px;
-  width: 100%;
-  position: absolute;
-  bottom: 0px;
 }
 
 #logo {
@@ -79,9 +72,9 @@ html, body {
 }
  
 #content {
-  height: calc(100% - 102px);
-  height: -moz-calc(100% - 102px);
-  height: -webkit-calc(100% - 102px);
+ height: calc(100% - 152px);
+ height: -moz-calc(100% - 152px);
+ height: -webkit-calc(100% - 152px);
 }
 #welcome {
   background: url("essentials.jpg") center;
@@ -96,7 +89,9 @@ html, body {
 
   overflow: hidden;
   position: relative;
-  top: 50%;
+  top: calc(50% - 40px);
+  top: -moz-calc(50% - 40px);
+  top: -webkit-calc(50% - 40px);
 
   transform: translateY(-50%);
   -moz-transform: translateY(-50%);
@@ -112,7 +107,6 @@ html, body {
   list-style-type: none;
   position: relative;
   margin: 0 20% 0 0;
-  padding: 15px;
   width: 350px;
   border-radius: 3px;
 }
@@ -209,4 +203,12 @@ html, body {
 
   outline: none;
   top: 2px;
+}
+
+#footer {
+  background-color: #333333;
+  bottom: 0px;
+  height: 50px;
+  position: absolute;
+  width: 100%;
 }
