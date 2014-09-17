@@ -1,5 +1,7 @@
 usc:
+  term: 20143
   terms: http://web-app.usc.edu/web/soc/api/terms
-  session: http://web-app.usc.edu/web/soc/api/session/001/20071
-  departments: http://web-app.usc.edu/web/soc/api/departments/20071
-  courses: http://web-app.usc.edu/web/soc/api/classes/code/20071
+  session: http://web-app.usc.edu/web/soc/api/session/session_code/term
+  departments: http://web-app.usc.edu/web/soc/api/depts/term
+  courses: http://web-app.usc.edu/web/soc/api/classes/dept_code/term
+

@@ -5,8 +5,8 @@ class CreateSections < ActiveRecord::Migration
       t.belongs_to :klass
       t.belongs_to :teacher
       t.text :days
-      t.float :start #17.5
-      t.float :hours
+      t.text :start #17.5
+      t.text :finish
       t.integer :max_capacity
       t.integer :current_capacity
       t.timestamps
