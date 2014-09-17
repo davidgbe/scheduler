@@ -114,7 +114,21 @@ body {
   margin: 0 0 0 0;
   padding: 0 30px;
   position: relative;
-  width: 350px;
+}
+
+.welcome-child-block {
+  float: left;
+  max-height: 300px;
+  width: 250px;
+}
+
+.welcome-child-line {
+  background-color: white;
+  display: inline-block;
+  float: left;
+  height: 240px;
+  margin: 0 30px;
+  width: 3px;
 }
 
 .welcome-child h2 { 
@@ -143,10 +157,14 @@ body {
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
 
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
   color: #666;
   font-size: 1.2em;
   height: 30px;
-  padding: 0 1.25em;
+  padding: 0 1em;
 
   transition-duration: 0.25s;
   -moz-transition-duration: 0.25s;
@@ -178,7 +196,7 @@ body {
   height: 30px;
   margin: 36px 0 10px 0;
   position: relative;
-  width: 100%;
+  width: 250px;
 }
 
 .welcome-child-button:hover {
