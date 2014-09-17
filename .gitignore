@@ -1,5 +1,6 @@
 scheduler_db/*
 solr/development/*
+solr/development/data/index/segments.gen 
 log/*
 libiconv-1.13.1
 libiconv-1.13.1/*
