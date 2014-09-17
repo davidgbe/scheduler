@@ -204,7 +204,10 @@ body {
   font-size: 0.85em;
   margin: 0 0 26px 0;
   text-align: center;
-  text-decoration: none;
+}
+
+.welcome-child p a {
+  color: white;
 }
 
 #footer {
