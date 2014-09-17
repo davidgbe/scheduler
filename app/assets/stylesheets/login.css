@@ -51,12 +51,13 @@ body {
   color: white;
   text-align: center;
   vertical-align: middle; 
+  top: 62px;
 
   float: right;
+  line-height: 30px;
   position: relative;
 
-  padding-top: 10px;
-  margin: 0 10px 0 10px;
+  padding: 5px 0;
   z-index: 10;
 }
 
