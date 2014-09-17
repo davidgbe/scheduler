@@ -94,7 +94,7 @@ class SocParserWorker
           end
         end
         klass_instance = Klass.find_or_create_by(klass_data)
-        #parse_for_sections_info klass['SectionData'], klass_instance
+        parse_for_sections_info klass['SectionData'], klass_instance
       end
     end
   end
@@ -103,17 +103,13 @@ class SocParserWorker
     if sections
       all_sections = []
       sections.each do |section|
-        # if section['session'] != @session 
-        #   return
-        # end
-        if section['start_time'].is_a?(Array) 
-          raise section.inspect
+        if !section.is_a?(Hash)
+          next
         end
-        start = section['start_time'].sub(':', '.').to_f
         section_data = {
           days: section['day'].to_s,
-          start: start,
-          hours: section['end_time'].sub(':', '.').to_f - start,
+          start: section['start_time'].to_s,
+          finish: section['end_time'].to_s,
           max_capacity: section['spaces_available'].to_i,
           current_capacity: section['number_registered'].to_i
         }
