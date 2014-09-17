@@ -85,10 +85,6 @@ body {
 }
 
 #welcome-carousel {
-  left: calc(50% - 190px);
-  left: -moz-calc(50% - 190px);
-  left: -webkit-calc(50% - 190px);
-
   overflow: hidden;
   position: relative;
 
@@ -104,7 +100,7 @@ body {
 }
 
 .welcome-child {
-  background-color: rgba(125, 125, 125, 0.15);
+  background-color: rgba(0, 0, 0, 0.15);
   border-radius: 3px;
 
   box-sizing: border-box;
@@ -115,7 +111,7 @@ body {
   display: block;
   float: left;
   list-style-type: none;
-  margin: 0 20% 0 0;
+  margin: 0 0 0 0;
   padding: 0 30px;
   position: relative;
   width: 350px;
