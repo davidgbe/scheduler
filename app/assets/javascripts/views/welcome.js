@@ -8,15 +8,18 @@ Scheduler.Views.Welcome = Backbone.View.extend({
   initialize: function(options) {
     this.el = options.el
     this.carousel = '#welcome-carousel'
+    this.childSpacing = 1000
   },
   render: function() {
     var that = this
     var compiled = this.template({})
     this.$el.html(compiled)
     this.createChildViews()
+    this.setChildMargins(this.childSpacing)
     $(window).on('resize', function() {
       that.centerCurrentView(that.carousel, that.currentView)
     })
+    this.centerCurrentView(this.carousel, 0)
   },
   createChildViews: function() {
     var loginView = new Scheduler.Views.Login({
@@ -58,11 +61,24 @@ Scheduler.Views.Welcome = Backbone.View.extend({
   },
   changeCurrentView: function(carousel, currView) {
     $(carousel).animate(
-      { 'left': $(window).width() / 2 - 190 - currView * 980 + 'px' }, 
+      { 'left': this.currentViewPosition() }, 
       { duration: 600, queue: false }
     )
   },
   centerCurrentView: function(carousel, currView) {
-    $(carousel).css({ 'left': $(window).width() / 2 - 190 - currView * 980 + 'px' })
+    $(carousel).css({ 'left': this.currentViewPosition() })
+  },
+  setChildMargins: function(margin) {
+    widths = []
+    for(i = 0; i < 3; i++) {
+      widths[i] = parseFloat( $(this.childViews[i].title).css('width') )
+    }
+    var firstMargin = margin - widths[0] / 2 - widths[1] / 2
+    var secondMargin = margin - widths[1] / 2 - widths[2] / 2
+    $(this.childViews[1].title).css('margin-left', firstMargin)
+    $(this.childViews[2].title).css('margin-left', secondMargin)
+  },
+  currentViewPosition: function() {
+    return $(window).width() / 2 - parseFloat( $(this.childViews[0].title).css('width') ) / 2 - this.currentView * this.childSpacing
   }
 })
