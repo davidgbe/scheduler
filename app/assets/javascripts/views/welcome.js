@@ -8,7 +8,7 @@ Scheduler.Views.Welcome = Backbone.View.extend({
   initialize: function(options) {
     this.el = options.el
     this.carousel = '#welcome-carousel'
-    this.childSpacing = 1000
+    this.childSpacing = $(document).width()
   },
   render: function() {
     var that = this
