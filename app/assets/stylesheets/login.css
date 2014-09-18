@@ -29,6 +29,10 @@ html {
   height: 100%;
 }
 
+.clear {
+  clear: both;
+}
+
 body {
   height: 100%;
   font-family: walkway bold;
@@ -39,7 +43,7 @@ body {
 #header {
   background-color: rgba(0, 0, 0, 0.70);
   border-bottom: solid 4px white;
-  height: 102px;
+  height: 80px;
   position: absolute;
   width: 100%;
 }
@@ -51,7 +55,7 @@ body {
   color: white;
   text-align: center;
   vertical-align: middle; 
-  top: 62px;
+  top: 40px;
 
   float: right;
   line-height: 30px;
@@ -112,7 +116,8 @@ body {
   float: left;
   list-style-type: none;
   margin: 0 0 0 0;
-  padding: 0 30px;
+  max-width: 623px;
+  padding: 30px 30px;
   position: relative;
 }
 
@@ -126,7 +131,7 @@ body {
   background-color: white;
   display: inline-block;
   float: left;
-  height: 240px;
+  height: 230px;
   margin: 0 30px;
   width: 3px;
 }
@@ -134,7 +139,7 @@ body {
 .welcome-child h2 { 
   font-size: 2em;
   font-weight: normal;
-  margin: 40px 0 20px 0;
+  margin: 0 0 20px 0;
   text-align: center;
 }
 
@@ -193,8 +198,9 @@ body {
   -webkit-border-radius: 2px;
 
   color: white;
+  display: block;
   height: 30px;
-  margin: 36px 0 10px 0;
+  margin: 36px auto 0 auto;
   position: relative;
   width: 250px;
 }
@@ -217,7 +223,7 @@ body {
 
 .welcome-child p {
   font-size: 0.85em;
-  margin: 0 0 26px 0;
+  margin: 10px 0  0;
   text-align: center;
 }
 
@@ -229,8 +235,8 @@ body {
   background-color: rgba(0, 0, 0, 0.7);
   bottom: 0px;
   color: white;
-  height: 50px;
-  line-height: 50px;
+  height: 40px;
+  line-height: 40px;
   position: absolute;
   text-align: center;
   width: 100%;
