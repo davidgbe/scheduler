@@ -5,6 +5,7 @@ Scheduler.Views.Login = Backbone.View.extend({
   },
   initialize: function(options) {
     this.el = options.el
+    this.title = '#login'
   },
   render: function() {
     var compiled = this.template({})

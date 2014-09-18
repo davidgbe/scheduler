@@ -82,6 +82,7 @@ body {
 #content {
  height: 100%;
 }
+
 #welcome {
   background: url("Background.png") center;
   background-size: cover;

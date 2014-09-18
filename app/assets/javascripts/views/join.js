@@ -5,6 +5,7 @@ Scheduler.Views.Join = Backbone.View.extend({
   },
   initialize: function(options) {
     this.el = options.el
+    this.title = '#join'
   },
   render: function() {
     var compiled = this.template({})

@@ -3,6 +3,7 @@ Scheduler.Views.About = Backbone.View.extend({
   events: {},
   initialize: function(options) {
     this.el = options.el
+    this.title = '#about'
   },
   render: function() {
     var compiled = this.template({})
