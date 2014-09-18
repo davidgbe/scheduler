@@ -27,6 +27,7 @@ Organize properties alphabetically
 
 html {
   height: 100%;
+  overflow-x: hidden;
 }
 
 .clear {
