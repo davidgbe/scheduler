@@ -116,12 +116,13 @@ header {
 
 #clock {
   background-image: url(clock.png);
-  left: -10em;
+  left: -14em;
 }
 
 #trees-front {
   background-image: url(trees_front.png);
-  left: -15em;
+  left: -19em;
+  width: 130%;
 }
 
 #welcome-carousel {
