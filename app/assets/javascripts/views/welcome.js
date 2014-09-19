@@ -13,7 +13,7 @@ Scheduler.Views.Welcome = Backbone.View.extend({
       { title: '#trees-back', distance: 15 },
       { title: '#building', distance: 30 },
       { title: '#clock', distance: 60 },
-      { title: '#tree-front', distance: 70 }
+      { title: '#trees-front', distance: 80 }
     ]
   },
   render: function() {
