@@ -98,7 +98,7 @@ header {
   left: 0;
   position: absolute;
   top: 0;
-  width: 100%;
+  width: 120%;
 }
 
 #sky {
@@ -107,6 +107,7 @@ header {
 
 #trees-back {
   background-image: url(trees_back.png);
+  left: -5em;
 }
 
 #building {
@@ -115,10 +116,12 @@ header {
 
 #clock {
   background-image: url(clock.png);
+  left: -10em;
 }
 
 #trees-front {
   background-image: url(trees_front.png);
+  left: -15em;
 }
 
 #welcome-carousel {
