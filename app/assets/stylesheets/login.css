@@ -107,7 +107,6 @@ header {
 
 #trees-back {
   background-image: url(trees_back.png);
-  left: -5em;
 }
 
 #building {
@@ -116,12 +115,10 @@ header {
 
 #clock {
   background-image: url(clock.png);
-  left: -14em;
 }
 
 #trees-front {
   background-image: url(trees_front.png);
-  left: -19em;
   width: 130%;
 }
 

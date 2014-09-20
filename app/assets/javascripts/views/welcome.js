@@ -10,8 +10,8 @@ Scheduler.Views.Welcome = Backbone.View.extend({
     this.carousel = '#welcome-carousel'
     this.childSpacing = $(document).width()
     this.parallaxItems = [
-      { title: '#trees-back', distance: 0.02 },
-      { title: '#building', distance: 0.04 },
+      { title: '#trees-back', distance: 0.005 },
+      { title: '#building', distance: -0.01 },
       { title: '#clock', distance: 0.07 },
       { title: '#trees-front', distance: 0.09 }
     ]
@@ -93,7 +93,7 @@ Scheduler.Views.Welcome = Backbone.View.extend({
     for(var i in this.parallaxItems) {
       var item = this.parallaxItems[i]
       $(item.title).animate(
-        { 'left': parseFloat( $(item.title).css('left') ) + spaces * item.distance * $(window).width() }, 
+        { 'left': parseFloat( $(item.title).css('left') ) - spaces * item.distance * $(window).width() }, 
         { duration: 600, queue: false }
       )
     }
