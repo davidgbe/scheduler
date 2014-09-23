@@ -8,7 +8,13 @@ Scheduler.Views.Welcome = Backbone.View.extend({
   initialize: function(options) {
     this.el = options.el
     this.carousel = '#welcome-carousel'
-    this.childSpacing = 1000
+    this.childSpacing = $(document).width()
+    this.parallaxItems = [
+      { title: '#trees-back', distance: 0.005 },
+      { title: '#building', distance: -0.01 },
+      { title: '#clock', distance: 0.07 },
+      { title: '#trees-front', distance: 0.09 }
+    ]
   },
   render: function() {
     var that = this
@@ -56,6 +62,7 @@ Scheduler.Views.Welcome = Backbone.View.extend({
     if( !spaces || (spaces > 0 && this.currentView + spaces > 2) || (spaces < 0 && this.currentView - spaces < 0) ) {
       return
     }
+    this.parallax(spaces)
     this.currentView += spaces
     this.changeCurrentView(this.carousel, this.currentView)
   },
@@ -80,5 +87,15 @@ Scheduler.Views.Welcome = Backbone.View.extend({
   },
   currentViewPosition: function() {
     return $(window).width() / 2 - parseFloat( $(this.childViews[0].title).css('width') ) / 2 - this.currentView * this.childSpacing
+  },
+  parallax: function(spaces) {
+    var that = this
+    for(var i in this.parallaxItems) {
+      var item = this.parallaxItems[i]
+      $(item.title).animate(
+        { 'left': parseFloat( $(item.title).css('left') ) - spaces * item.distance * $(window).width() }, 
+        { duration: 600, queue: false }
+      )
+    }
   }
 })
