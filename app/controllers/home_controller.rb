@@ -6,7 +6,7 @@ class HomeController < ApplicationController
   end
 
   def login
-    if false
+    if true
       parser = SocParserWorker.new('usc')
       parser.fetch_courses_data
     end

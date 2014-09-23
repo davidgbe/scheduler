@@ -13,7 +13,6 @@ Scheduler.Views.Join = Backbone.View.extend({
   },
   register: function() {
     var data = {
-      user_name: $('#join-username').val(),
       first_name: $('#join-first').val(),
       last_name: $('#join-last').val(),
       email: $('#join-email').val(),
