@@ -42,7 +42,7 @@ body {
 }
 
 header {
-  background-color: rgba(0, 0, 0, 0.70);
+  background-color: rgba(0, 4, 17, 0.70);
   border-bottom: solid 3px white;
   height: 80px;
   position: absolute;
@@ -224,7 +224,7 @@ form label {
 }
 
 .welcome-child button {
-  background: rgb(0, 0, 0);
+  background: rgba(0, 4, 17, .85);
   border: none;
 
   border-radius: 2px;
@@ -266,7 +266,7 @@ form label {
 }
 
 footer {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 4, 17, 0.7);
   border-top: solid 3px white;
   bottom: 0px;
   color: white;
