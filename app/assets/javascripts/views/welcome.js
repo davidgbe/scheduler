@@ -8,15 +8,24 @@ Scheduler.Views.Welcome = Backbone.View.extend({
   initialize: function(options) {
     this.el = options.el
     this.carousel = '#welcome-carousel'
+    this.childSpacing = $(document).width()
+    this.parallaxItems = [
+      { title: '#trees-back', distance: 0.005 },
+      { title: '#building', distance: -0.01 },
+      { title: '#clock', distance: 0.07 },
+      { title: '#trees-front', distance: 0.09 }
+    ]
   },
   render: function() {
     var that = this
     var compiled = this.template({})
     this.$el.html(compiled)
     this.createChildViews()
+    this.setChildMargins(this.childSpacing)
     $(window).on('resize', function() {
       that.centerCurrentView(that.carousel, that.currentView)
     })
+    this.centerCurrentView(this.carousel, 0)
   },
   createChildViews: function() {
     var loginView = new Scheduler.Views.Login({
@@ -53,16 +62,40 @@ Scheduler.Views.Welcome = Backbone.View.extend({
     if( !spaces || (spaces > 0 && this.currentView + spaces > 2) || (spaces < 0 && this.currentView - spaces < 0) ) {
       return
     }
+    this.parallax(spaces)
     this.currentView += spaces
     this.changeCurrentView(this.carousel, this.currentView)
   },
   changeCurrentView: function(carousel, currView) {
     $(carousel).animate(
-      { 'left': $(window).width() / 2 - 190 - currView * 980 + 'px' }, 
+      { 'left': this.currentViewPosition() }, 
       { duration: 600, queue: false }
     )
   },
   centerCurrentView: function(carousel, currView) {
-    $(carousel).css({ 'left': $(window).width() / 2 - 190 - currView * 980 + 'px' })
+    $(carousel).css({ 'left': this.currentViewPosition() })
+  },
+  setChildMargins: function(margin) {
+    widths = []
+    for(i = 0; i < 3; i++) {
+      widths[i] = parseFloat( $(this.childViews[i].title).css('width') )
+    }
+    var firstMargin = margin - widths[0] / 2 - widths[1] / 2
+    var secondMargin = margin - widths[1] / 2 - widths[2] / 2
+    $(this.childViews[1].title).css('margin-left', firstMargin)
+    $(this.childViews[2].title).css('margin-left', secondMargin)
+  },
+  currentViewPosition: function() {
+    return $(window).width() / 2 - parseFloat( $(this.childViews[0].title).css('width') ) / 2 - this.currentView * this.childSpacing
+  },
+  parallax: function(spaces) {
+    var that = this
+    for(var i in this.parallaxItems) {
+      var item = this.parallaxItems[i]
+      $(item.title).animate(
+        { 'left': parseFloat( $(item.title).css('left') ) - spaces * item.distance * $(window).width() }, 
+        { duration: 600, queue: false }
+      )
+    }
   }
 })

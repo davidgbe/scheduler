@@ -25,20 +25,29 @@ Organize properties alphabetically
   padding: 0px;
 }
 
-html, body {
+html {
   height: 100%;
-  font-family: walkway bold;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .clear {
   clear: both;
 }
 
-#header {
-  background-color: #333333;
-  height: 102px;
+body {
+  height: 100%;
+  font-family: walkway bold;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.70);
+  border-bottom: solid 3px white;
+  height: 80px;
+  position: absolute;
   width: 100%;
+  z-index: 90;
 }
 
 .header-button {
@@ -48,29 +57,23 @@ html, body {
   color: white;
   text-align: center;
   vertical-align: middle; 
+  top: 40px;
 
   float: right;
+  line-height: 30px;
   position: relative;
-  top: -40px;
 
-  padding-top: 10px;
-  margin: 0 10px 0 10px;
+  padding: 5px 0;
+  z-index: 100;
 }
 
 .header-button:hover {
   background-color: grey;
+  cursor: pointer;
 
   transition-duration: 0.50s;
   -moz-transition-duration: 0.50s;
   -webkit-transition-duration: 0.50s;
-}
-
-#footer {
-  background-color: #333333;
-  height: 50px;
-  width: 100%;
-  position: absolute;
-  bottom: 0px;
 }
 
 #logo {
@@ -79,65 +82,113 @@ html, body {
 }
  
 #content {
-  height: calc(100% - 102px);
-  height: -moz-calc(100% - 102px);
-  height: -webkit-calc(100% - 102px);
+ height: 100%;
 }
+
 #welcome {
-  background: url("essentials.jpg") center;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.welcome-background {
+  background-position: center;
   background-size: cover;
   height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 120%;
+}
+
+#sky {
+  background-image: url(sky.png);
+}
+
+#trees-back {
+  background-image: url(trees_back.png);
+}
+
+#building {
+  background-image: url(building.png);
+}
+
+#clock {
+  background-image: url(clock.png);
+}
+
+#trees-front {
+  background-image: url(trees_front.png);
+  width: 130%;
 }
 
 #welcome-carousel {
-  left: calc(50% - 190px);
-  left: -moz-calc(50% - 190px);
-  left: -webkit-calc(50% - 190px);
-
   overflow: hidden;
   position: relative;
-  top: 50%;
+
+  top: calc(50% - 40px);
+  top: -moz-calc(50% - 40px);
+  top: -webkit-calc(50% - 40px);
 
   transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
 
-  width: 3000px;
+  width: 9999px;
 }
 
 .welcome-child {
-  background-color: rgba(56, 192, 205, 0.82);
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+  color: white;
   display: block;
   float: left;
   list-style-type: none;
+  margin: 0 0 0 0;
+  max-width: 623px;
+  padding: 30px 30px;
   position: relative;
-  margin: 0 20% 0 0;
-  padding: 15px;
-  width: 350px;
-  border-radius: 3px;
 }
 
-.welcome-child-tag-line {
-  color: #333333;
-  font-size: 1.65em;
-  margin: 10px 0;
+.welcome-child .block {
+  float: left;
+  max-height: 300px;
+  width: 250px;
+}
+
+.welcome-child .line {
+  background-color: white;
+  display: inline-block;
+  float: left;
+  height: 230px;
+  margin: 0 30px;
+  width: 3px;
+}
+
+.welcome-child h2 { 
+  font-size: 2em;
+  font-weight: normal;
+  margin: 0 0 20px 0;
   text-align: center;
 }
 
-.welcome-child-form {
-  color: #333333;
-  font-size: 0.9em;
+form {
+  font-size: 1em;
   margin: 0 auto;
   overflow: hidden;
-  padding: 0 15px;
 }
 
-.welcome-child-form label {
+form label {
   display: block;
-  margin: 10px 1em;
+  margin: 10px 0;
 }
 
-.welcome-child-entry-field {
+.welcome-child input[type="text"], .welcome-child input[type="password"] {
   background: rgb(230, 230, 230);
   border: none;
 
@@ -151,8 +202,8 @@ html, body {
 
   color: #666;
   font-size: 1.2em;
-  height: 2.5em;
-  padding: 0 1.25em;
+  height: 30px;
+  padding: 0 1em;
 
   transition-duration: 0.25s;
   -moz-transition-duration: 0.25s;
@@ -161,7 +212,7 @@ html, body {
   width: 100%;
 }
 
-.welcome-child-entry-field:focus {
+.welcome-child input[type="text"]:focus, .welcome-child input[type="password"]:focus {
   background: white;
 
   box-shadow: inset 0 0 7px rgb(56, 192, 205);
@@ -172,30 +223,23 @@ html, body {
   outline: none;
 }
 
-.welcome-child-button {
-  background: rgb(230, 230, 230);
+.welcome-child button {
+  background: rgb(0, 0, 0);
   border: none;
 
   border-radius: 2px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
 
-  box-shadow: 0 3px lightgrey;
-  -moz-box-shadow: 0 3px lightgrey;
-  -webkit-box-shadow: 0 3px lightgrey;
-
-  height: 3em;
-  margin: 36px 0;
+  color: white;
+  display: block;
+  height: 30px;
+  margin: 36px auto 0 auto;
   position: relative;
-  width: 100%;
+  width: 250px;
 }
 
 .welcome-child-button:hover {
-  box-shadow: 0 2px lightgrey;
-  -moz-box-shadow: 0 2px lightgrey;
-  -webkit-box-shadow: 0 2px lightgrey;
-
-  top: 1px;
 }
 
 .welcome-child-button:focus {
@@ -209,4 +253,26 @@ html, body {
 
   outline: none;
   top: 2px;
+}
+
+.welcome-child p {
+  font-size: 0.85em;
+  margin: 10px 0  0;
+  text-align: center;
+}
+
+.welcome-child p a {
+  color: white;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-top: solid 3px white;
+  bottom: 0px;
+  color: white;
+  height: 30px;
+  line-height: 30px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
 }
