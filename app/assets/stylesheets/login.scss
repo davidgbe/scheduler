@@ -20,6 +20,12 @@ Organize properties alphabetically
   ░░░░░░▀▄▄▄▄▄▄▀▀▀▒▒▒▒▒▄▄▀░░░░░
   ░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▀▀░░░░░░░░*/
 
+  @import 'mixins';
+
+/*Setting header and footer height for easier math*/
+$hh: 80px;
+$fh: 30px;
+
 * {
   margin: 0px;
   padding: 0px;
@@ -44,7 +50,7 @@ body {
 header {
   background-color: rgba(0, 0, 0, 0.70);
   border-bottom: solid 3px white;
-  height: 80px;
+  height: $hh;
   position: absolute;
   width: 100%;
   z-index: 90;
@@ -70,10 +76,7 @@ header {
 .header-button:hover {
   background-color: grey;
   cursor: pointer;
-
-  transition-duration: 0.50s;
-  -moz-transition-duration: 0.50s;
-  -webkit-transition-duration: 0.50s;
+  @include transition-duration(0.5s);
 }
 
 #logo {
@@ -125,15 +128,10 @@ header {
 #welcome-carousel {
   overflow: hidden;
   position: relative;
-
-  top: calc(50% - 40px);
-  top: -moz-calc(50% - 40px);
-  top: -webkit-calc(50% - 40px);
-
-  transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-
+  top: calc(50%);
+  top: -moz-calc(50%);
+  top: -webkit-calc(50%);
+  @include translateY(-50%);
   width: 9999px;
 }
 
@@ -270,7 +268,7 @@ footer {
   border-top: solid 3px white;
   bottom: 0px;
   color: white;
-  height: 30px;
+  height: $fh;
   line-height: 30px;
   position: absolute;
   text-align: center;
