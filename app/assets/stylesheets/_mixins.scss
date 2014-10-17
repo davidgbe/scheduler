@@ -10,8 +10,27 @@
 	-webkit-transform: translateY($value);
 }
 
+@mixin translateX($value) {
+	transform:         translateX($value);
+	-moz-transform:    translateX($value);
+	-webkit-transform: translateX($value);
+}
+
 @mixin box-sizing($type) {
 	box-sizing:         $type;
 	-moz-box-sizing:    $type;
 	-webkit-box-sizing: $type;
+}
+
+@mixin border-radius($radius) {
+	border-radius: $radius;
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;
+}
+
+@mixin box-shadow($type, $offsetx, $offsety, $blur, $spread, $color) {
+	box-shadow: $type $offsetx $offsety $blur $spread $color;
+	-moz-box-shadow: $type $offsetx $offsety $blur $spread $color;
+	-webkit-box-shadow: $type $offsetx $offsety $blur $spread $color;
+
 }
