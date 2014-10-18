@@ -1,3 +1,4 @@
+<!-- insert the navigation buttons -->
 <div id="scheduler-home">
 	<div id="top-bar">
 		<h2>Welcome Back Student</h2>
@@ -21,7 +22,9 @@
 		<h2>Current Drafts</h2>
 		<div id="drafts">
 			<div id="main-draft">
-				<img src="draft">
+				<a href="/scheduler">
+					<img src="draft">
+				</a>
 				<div class="line"></div>
 				<div class="description">
 					<h2>Scheduled Courses</h2>
@@ -31,12 +34,24 @@
 				</div>
 			</div>
 			<div id="draft-carousel">
-				<a id="left-arrow"></a>
-				<div class="draft-carousel-child">
+				<button class="leftarrow"></button>
+				<a href="/scheduler" class="draft-carousel-child">
 					<img src="anotherdraft">
 					<p>draft name</p>
-				</div>
-				<a id="right-arrow"></a>
+				</a>
+				<a href="/scheduler" class="draft-carousel-child">
+					<img src="anotherdraft">
+					<p>draft name</p>
+				</a>
+				<a href="/scheduler" class="draft-carousel-child">
+					<img src="anotherdraft">
+					<p>draft name</p>
+				</a>
+				<a href="/scheduler" class="draft-carousel-child">
+					<img src="anotherdraft">
+					<p>draft name</p>
+				</a>
+				<button class="rightarrow"></button>
 			</div>
 		</div>
 	</div>
