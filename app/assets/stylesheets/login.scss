@@ -122,9 +122,9 @@ header {
 	@include translateY(-50%);
 	overflow: hidden;
 	position: relative;
-	top: -moz-calc(50%);
-	top: -webkit-calc(50%);
-	top: calc(50%);
+	top: 50%;
+	// height/2 - top/2 - bot/2 + top - button
+	top: calc(50% - 41.5px - 16.5px + 83px - 40px);
 	width: 9999px;
 }
 
@@ -133,13 +133,11 @@ header {
 	background-color: rgba(0, 0, 0, 0.15);
 	border-radius: 3px;
 	color: white;
-	display: block;
 	float: left;
 	list-style-type: none;
 	margin: 0 0 0 0;
 	max-width: 623px;
 	padding: 30px 30px;
-	position: relative;
 
 	h2 {
 		font-size: 2em;
