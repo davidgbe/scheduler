@@ -1,5 +1,5 @@
 Scheduler.Views.Main = Backbone.View.extend( {
-  template: JST['client/main_template'],
+  template: JST['scheduler_home'],
   events: {},
   initialize: function(options) {
     this.el = options.el
