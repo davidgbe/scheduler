@@ -11,7 +11,7 @@ Scheduler.Views.Welcome = Backbone.View.extend({
     this.childSpacing = $(document).width()
     this.parallaxItems = [
       { title: '#trees-back', distance: 0.005 },
-      { title: '#building', distance: -0.01 },
+      { title: '#building', distance: 0.025 },
       { title: '#clock', distance: 0.07 },
       { title: '#trees-front', distance: 0.09 }
     ]
@@ -77,7 +77,7 @@ Scheduler.Views.Welcome = Backbone.View.extend({
     $(carousel).css({ 'left': this.currentViewPosition() })
   },
   animationTime: function() {
-    return $(window).width()
+    return 'slow'
   },
   setChildMargins: function(margin) {
     widths = []

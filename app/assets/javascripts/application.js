@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require underscore
+//= require transit
 //= require backbone
 //= require scheduler
 //= require_tree ../templates
