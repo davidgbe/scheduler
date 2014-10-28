@@ -98,7 +98,8 @@ Scheduler.Views.Welcome = Backbone.View.extend({
       var item = this.parallaxItems[i]
       $(item.title).transition(
         { 'left': parseFloat( $(item.title).css('left') ) - spaces * item.distance * $(window).width() }, 
-        { duration: that.animationTime(), queue: false }
+        { duration: that.animationTime(), queue: false },
+        'ease'
       )
     }
   }

@@ -7,7 +7,7 @@ Scheduler.Models.Session = Backbone.Model.extend({
     this.save(null, {
       success: function() {
         that.clearPasswords()
-        window.location.hash = 'schedule'
+        window.location.hash = 'main'
       },
       error: function() {
         alert('FUCK YOU GET IT RIGHT')
