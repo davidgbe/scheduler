@@ -21,5 +21,8 @@ Scheduler.Models.Session = Backbone.Model.extend({
     if(_.has(this._previousAttributes, 'password')) {
       delete this._previousAttributes['password']
     }
+  },
+  isAuthenticated: function() {
+    return true//_.has(this.attributes, 'id') ? true : false
   }
 })

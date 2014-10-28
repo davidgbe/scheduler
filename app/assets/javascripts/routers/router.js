@@ -19,7 +19,7 @@ Scheduler.Routers.AppRouter = Backbone.Router.extend({
     if (!_.isRegExp(route)) route = this._routeToRegExp(route);
     if (!callback) callback = this[name];
     callback = _.wrap(callback, _.bind(function(cb) {
-      if (this.userIsLoggedIn() || name === 'welcome') {
+      if (Scheduler.session.isAuthenticated() || name === 'welcome') {
         _.bind(cb, this)();
       } else {
         this.navigate('login', {trigger: true});
@@ -32,8 +32,5 @@ Scheduler.Routers.AppRouter = Backbone.Router.extend({
       Backbone.history.trigger('route', this, name, args);
     }, this));
     return this;
-  },
-  userIsLoggedIn: function() {
-    return true
   }
 })
