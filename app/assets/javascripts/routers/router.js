@@ -1,7 +1,7 @@
 Scheduler.Routers.AppRouter = Backbone.Router.extend({
   routes: {
     'login':'welcome',
-    'schedule':'main'
+    'main':'main'
   },
   welcome: function() {
     var welcomeView = new Scheduler.Views.Welcome({ 

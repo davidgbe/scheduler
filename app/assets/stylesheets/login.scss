@@ -1,0 +1,241 @@
+/*
+Organize properties alphabetically
+	░░░░░░░░░▄░░░░░░░░░░░░░░▄░░░░
+	░░░░░░░░▌▒█░░░░░░░░░░░▄▀▒▌░░░
+	░░░░░░░░▌▒▒█░░░░░░░░▄▀▒▒▒▐░░░
+	░░░░░░░▐▄▀▒▒▀▀▀▀▄▄▄▀▒▒▒▒▒▐░░░
+	░░░░░▄▄▀▒░▒▒▒▒▒▒▒▒▒█▒▒▄█▒▐░░░
+	░░░▄▀▒▒▒░░░▒▒▒░░░▒▒▒▀██▀▒▌░░░ 
+	░░▐▒▒▒▄▄▒▒▒▒░░░▒▒▒▒▒▒▒▀▄▒▒▌░░
+	░░▌░░▌█▀▒▒▒▒▒▄▀█▄▒▒▒▒▒▒▒█▒▐░░
+	░▐░░░▒▒▒▒▒▒▒▒▌██▀▒▒░░░▒▒▒▀▄▌░
+	░▌░▒▄██▄▒▒▒▒▒▒▒▒▒░░░░░░▒▒▒▒▌░
+	▀▒▀▐▄█▄█▌▄░▀▒▒░░░░░░░░░░▒▒▒▐░
+	▐▒▒▐▀▐▀▒░▄▄▒▄▒▒▒▒▒▒░▒░▒░▒▒▒▒▌
+	▐▒▒▒▀▀▄▄▒▒▒▄▒▒▒▒▒▒▒▒░▒░▒░▒▒▐░
+	░▌▒▒▒▒▒▒▀▀▀▒▒▒▒▒▒░▒░▒░▒░▒▒▒▌░
+	░▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒░▒░▒▒▄▒▒▐░░
+	░░▀▄▒▒▒▒▒▒▒▒▒▒▒░▒░▒░▒▄▒▒▒▒▌░░
+	░░░░▀▄▒▒▒▒▒▒▒▒▒▒▄▄▄▀▒▒▒▒▄▀░░░
+	░░░░░░▀▄▄▄▄▄▄▀▀▀▒▒▒▒▒▄▄▀░░░░░
+	░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▀▀░░░░░░░░*/
+
+@import 'mixins';
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+html {
+	height: 100%;
+	overflow-x: hidden;
+}
+
+.clear {
+	clear: both;
+}
+
+body {
+	font-family: walkway bold;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+header {
+	background-color: rgba(0, 0, 0, 0.70);
+	border-bottom: solid 3px white;
+	height: 80px;
+	position: absolute;
+	width: 100%;
+	z-index: 90;
+}
+
+.header-button {
+	color: white;
+	float: right;
+	height: 30px;
+	line-height: 30px;
+	padding: 5px 0;
+	position: relative;
+	text-align: center;
+	top: 40px;
+	vertical-align: middle; 
+	width: 70px;
+	z-index: 100;
+
+	&:hover {
+		@include transition-duration(0.5s);
+		background-color: grey;
+		cursor: pointer;
+	}
+}
+
+#logo {
+	height: 100%;
+	margin: 0 0 0 20px;
+}
+ 
+#content {
+ height: 100%;
+}
+
+#welcome {
+	height: 100%;
+	position: relative;
+	width: 100%;
+}
+
+.welcome-background {
+	background-position: center;
+	background-size: cover;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 120%;
+}
+
+#sky {
+	background-image: url(sky.png);
+}
+
+#trees-back {
+	background-image: url(trees_back.png);
+}
+
+#building {
+	background-image: url(building.png);
+}
+
+#clock {
+	background-image: url(clock.png);
+}
+
+#trees-front {
+	background-image: url(trees_front.png);
+	width: 130%;
+}
+
+#welcome-carousel {
+	@include translateY(-50%);
+	overflow: hidden;
+	position: relative;
+	top: 50%;
+	// height/2 - top/2 - bot/2 + top - button
+	top: calc(50% - 41.5px - 16.5px + 83px - 40px);
+	width: 9999px;
+}
+
+.welcome-child {
+	@include box-sizing(border-box);
+	background-color: rgba(0, 0, 0, 0.15);
+	border-radius: 3px;
+	color: white;
+	float: left;
+	list-style-type: none;
+	margin: 0 0 0 0;
+	max-width: 623px;
+	padding: 30px 30px;
+
+	h2 {
+		font-size: 2em;
+		font-weight: normal;
+		margin: 0 0 20px 0;
+		text-align: center;
+	}
+
+	.block {
+		float: left;
+		max-height: 300px;
+		width: 250px;
+	}
+
+	.line {
+		background-color: white;
+		display: inline-block;
+		float: left;
+		height: 230px;
+		margin: 0 30px;
+		width: 3px;    
+	}
+
+	input[type="text"], input[type="password"] {
+		@include border-radius(2px);
+		@include box-sizing(border-box);
+		@include transition-duration(0.25s);
+		background: rgb(230, 230, 230);
+		border: none;
+		color: #666;
+		font-size: 1.2em;
+		height: 30px;
+		padding: 0 1em;
+		width: 100%;
+
+		&:focus {
+			@include box-shadow(inset, 0, 0, 7px, 0, rgb(56, 192, 205));
+			background: white;
+			color: #333;
+			outline: none;
+		}
+	}
+
+	button {
+		@include border-radius(2px);
+		background: rgb(0, 0, 0);
+		border: none;
+		color: white;
+		display: block;
+		height: 30px;
+		margin: 36px auto 0 auto;
+		position: relative;
+		width: 250px;
+
+		&:hover {
+
+		}
+
+		&:focus {
+			outline: none;
+		}
+
+		&:active {
+			outline: none;
+			top: 2px;
+		}
+	}
+
+	p {
+		font-size: 0.85em;
+		margin: 10px 0  0;
+		text-align: center;
+
+		a {
+			color: white;
+		}
+	}
+}
+
+form {
+	font-size: 1em;
+	margin: 0 auto;
+	overflow: hidden;
+
+	label {
+		display: block;
+		margin: 10px 0;
+	}
+}
+
+footer {
+	background-color: rgba(0, 0, 0, 0.7);
+	border-top: solid 3px white;
+	bottom: 0px;
+	color: white;
+	height: 30px;
+	line-height: 30px;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+}
