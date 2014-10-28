@@ -68,7 +68,7 @@ Scheduler.Views.Welcome = Backbone.View.extend({
   },
   changeCurrentView: function(carousel, currView) {
     var that = this
-    $(carousel).animate(
+    $(carousel).transition(
       { 'left': this.currentViewPosition() }, 
       { duration: that.animationTime(), queue: false }
     )
@@ -96,7 +96,7 @@ Scheduler.Views.Welcome = Backbone.View.extend({
     var that = this
     for(var i in this.parallaxItems) {
       var item = this.parallaxItems[i]
-      $(item.title).animate(
+      $(item.title).transition(
         { 'left': parseFloat( $(item.title).css('left') ) - spaces * item.distance * $(window).width() }, 
         { duration: that.animationTime(), queue: false }
       )
