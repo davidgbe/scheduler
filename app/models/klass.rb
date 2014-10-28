@@ -3,20 +3,22 @@ class Klass < ActiveRecord::Base
   has_many :sections
 
   searchable do 
-    text :subject 
+    text :title
     integer :level
+    text :subject 
     text :description do 
       description.downcase if description
     end
+    double :units
     #Section search params
     text :days do
       sections.map(&:days)
     end
     text :starts do
-      sections.map(&:get_start)
+      sections.map(&:start)
     end
-    text :hours do
-      sections.map(&:hours)
+    text :finish do
+      sections.map(&:finish)
     end
     #Teacher search params
     text :teacher_names do

@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   respond_to :html, :json
 
   def create 
-    @user = User.authenticate(params[:user_name], params[:password])
+    @user = User.authenticate(params[:email], params[:password])
     if @user 
       create_user_session(@user)
     end

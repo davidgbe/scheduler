@@ -2,7 +2,6 @@ require 'digest'
 class User < ActiveRecord::Base
   has_many :schedules
 
-  validates :user_name, uniqueness: { case_sensitive: false }, presence: true
   validates :email, uniqueness: { case_sensitive: false }, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -16,8 +15,8 @@ class User < ActiveRecord::Base
     end
   end
 
-  def self.authenticate(user_name, password) 
-    user = User.find_by(user_name: user_name)
+  def self.authenticate(email, password) 
+    user = User.find_by(email: email)
     if !user 
       raise 'No user was found'
     end
