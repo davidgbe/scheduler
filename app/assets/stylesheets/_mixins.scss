@@ -23,14 +23,30 @@
 }
 
 @mixin border-radius($radius) {
-	border-radius: $radius;
-	-moz-border-radius: $radius;
-	-webkit-border-radius: $radius;
+	border-radius:			$radius;
+	-moz-border-radius:		$radius;
+	-webkit-border-radius: 	$radius;
+}
+
+@mixin border-radius-corner($radiustl, $radiustr, $radiusbr, $radiusbl) {
+	border-top-left-radius: 			$radiustl;
+	border-top-right-radius: 			$radiustr;
+	border-bottom-right-radius: 		$radiusbr;
+	border-bottom-left-radius: 			$radiusbl;
+	-moz-border-top-left-radius: 		$radiustl;
+	-moz-border-top-right-radius: 		$radiustr;
+	-moz-border-bottom-right-radius: 	$radiusbr;
+	-moz-border-bottom-left-radius: 	$radiusbl;
+	-webkit-border-top-left-radius: 	$radiustl;
+	-webkit-border-top-right-radius: 	$radiustr;
+	-webkit-border-bottom-right-radius: $radiusbr;
+	-webkit-border-bottom-left-radius: 	$radiusbl;
+
 }
 
 @mixin box-shadow($type, $offsetx, $offsety, $blur, $spread, $color) {
-	box-shadow: $type $offsetx $offsety $blur $spread $color;
-	-moz-box-shadow: $type $offsetx $offsety $blur $spread $color;
+	box-shadow: 		$type $offsetx $offsety $blur $spread $color;
+	-moz-box-shadow: 	$type $offsetx $offsety $blur $spread $color;
 	-webkit-box-shadow: $type $offsetx $offsety $blur $spread $color;
 
 }

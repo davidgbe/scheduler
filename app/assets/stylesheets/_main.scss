@@ -1,0 +1,123 @@
+@import 'mixins';
+
+$leftbar: 400px;
+
+#scheduler-home {
+	@include box-sizing(border-box);
+	padding: 103px 20px 53px 20px;
+	position: relative;
+	height: 100%;
+}
+
+#top-bar {
+	@include box-sizing(border-box);
+	height: 40px;
+	width: 100%;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.70);
+
+	h2	{
+		display: inline-block;
+		margin: 0 10px;
+		font-weight: normal;
+		line-height: 40px;
+	}
+
+	select {
+		float: right;
+		position: relative;
+		height: 24px;
+		top: 50%;
+		margin: 0 10px;
+		padding: 0 50px;
+		@include translateY(-50%);
+	}
+}
+
+#left-bar {
+	@include box-sizing(border-box);
+	background-color: white;
+	color: black;
+	width: $leftbar;
+	@include border-radius-corner(0, 0, 10px, 10px);
+	padding: 0 40px;
+	overflow: auto;
+	float: left;
+	height: calc(100% - 40px);
+
+	h1 {
+		font-weight: normal;
+		text-align: center;
+		padding: 16px 0;
+		border-bottom: 3px solid lightblue;
+	}
+
+	p {
+		margin: 30px 0;
+
+		&:first-of-type {
+			margin: 10px 0 30px 0;
+		}
+	}
+}
+
+#main {
+	@include box-sizing(border-box);
+	width: calc(100% - 400px);
+	float: left;
+
+	h1	{
+		text-align: center;
+		font-weight: normal;
+		padding: 16px 0;
+	}
+
+	#main-draft {
+		@include box-sizing(border-box);
+		@include border-radius(10px);
+		background-color: rgba(0, 0, 0, 0.70);
+		margin: 0 0 0 20px;
+		color: white;
+		overflow: hidden;
+
+		// .line {
+		// 	background-color: white;
+		// 	display: inline-block;
+		// 	float: left;
+		// 	height: 100%;
+		// 	margin: 0 30px;
+		// 	width: 3px;    
+		// }
+
+		.description {
+			@include box-sizing(border-box);
+			width: calc(100% - 400px);
+			padding: 20px 0 0 20px;
+			float: left;
+		}
+
+		h2 {
+			font-weight: normal;
+		}
+	}
+
+	#draft-picture {
+		height: 300px;
+		width: 400px;
+		float: left;
+	}
+
+	#draft-carousel {
+		width: 100%;
+	}
+
+	#draft-carousel-child {
+		width: 100px;
+		height: 130px;
+		float: left;
+	}
+
+}
+
+
+

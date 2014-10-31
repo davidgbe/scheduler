@@ -20,7 +20,7 @@ Organize properties alphabetically
 	░░░░░░▀▄▄▄▄▄▄▀▀▀▒▒▒▒▒▄▄▀░░░░░
 	░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▀▀░░░░░░░░*/
 
-@import 'mixins';
+@import 'main';
 
 * {
 	margin: 0px;
@@ -208,7 +208,7 @@ header {
 
 	p {
 		font-size: 0.85em;
-		margin: 10px 0  0;
+		margin: 10px 0 0 0;
 		text-align: center;
 
 		a {
