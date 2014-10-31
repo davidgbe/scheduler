@@ -23,6 +23,6 @@ Scheduler.Models.Session = Backbone.Model.extend({
     }
   },
   isAuthenticated: function() {
-    return true//_.has(this.attributes, 'id') ? true : false
+    return _.has(this.attributes, 'id') ? true : false
   }
 })
