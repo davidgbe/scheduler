@@ -112,6 +112,17 @@ $leftbar: 400px;
 		float: left;
 	}
 
+	.draft-picture-img {
+		display: block;
+  	-moz-box-sizing: border-box;
+  	box-sizing: border-box;
+  	background: url('selected_schedule.png') no-repeat;
+  	width: 520px;
+  	height: 270px;
+  	padding-left: 270px;
+  	margin: 25px auto;
+	}
+
 	#draft-carousel {
 		@include box-sizing(border-box);
 		width: 1000px;
@@ -144,6 +155,17 @@ $leftbar: 400px;
 		height: 200px;
 		float: left;
 		margin: 0 10px;
+	}
+
+	.draft-carousel-child-img {
+  	display: block;
+  	-moz-box-sizing: border-box;
+  	box-sizing: border-box;
+  	background: url('carousel_schedule_1.png') no-repeat;
+  	width: 175px;
+  	height: 115px;
+  	padding-left: 115px;
+  	margin: 12px auto;
 	}
 
 }
