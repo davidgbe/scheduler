@@ -7,6 +7,8 @@ $leftbar: 400px;
 	padding: 103px 20px 53px 20px;
 	position: relative;
 	height: 100%;
+	max-width: 1600px;
+	margin: 0 auto;
 }
 
 #top-bar {
@@ -49,7 +51,7 @@ $leftbar: 400px;
 		font-weight: normal;
 		text-align: center;
 		padding: 16px 0;
-		border-bottom: 3px solid lightblue;
+		border-bottom: 2px solid #5acbf2;
 	}
 
 	p {
@@ -65,6 +67,8 @@ $leftbar: 400px;
 	@include box-sizing(border-box);
 	width: calc(100% - 400px);
 	float: left;
+	padding: 0 0 0 20px;
+	height: calc(100% - 40px);
 
 	h1	{
 		text-align: center;
@@ -76,22 +80,23 @@ $leftbar: 400px;
 		@include box-sizing(border-box);
 		@include border-radius(10px);
 		background-color: rgba(0, 0, 0, 0.70);
-		margin: 0 0 0 20px;
 		color: white;
 		overflow: hidden;
+		height: calc(100% - 200px - 69px - 20px);
+		margin: 0 0 20px 0;
 
-		// .line {
-		// 	background-color: white;
-		// 	display: inline-block;
-		// 	float: left;
-		// 	height: 100%;
-		// 	margin: 0 30px;
-		// 	width: 3px;    
-		// }
+		.line {
+			height: calc(100% - 40px);
+			width: 2px;
+			margin: 20px 0 20px 0;
+			display: block;
+			background-color: #5acbf2;
+			float: left;
+		}
 
 		.description {
 			@include box-sizing(border-box);
-			width: calc(100% - 400px);
+			width: 298px;
 			padding: 20px 0 0 20px;
 			float: left;
 		}
@@ -102,19 +107,43 @@ $leftbar: 400px;
 	}
 
 	#draft-picture {
-		height: 300px;
-		width: 400px;
+		height: 100%;
+		width: calc(100% - 300px);
 		float: left;
 	}
 
 	#draft-carousel {
-		width: 100%;
+		@include box-sizing(border-box);
+		width: 1000px;
+		padding: 0 0 0 0;
+		overflow: hidden;
+		height: 200px;
+
+		a {
+			color: white;
+			text-decoration: none;
+			text-align: center;
+		}
+
+		button {
+			position: relative;
+			top: 50%;
+			@include translateY(-50%);
+			display: block;
+			float: left;
+			width: 25px;
+			height: 25px;
+		}
 	}
 
-	#draft-carousel-child {
-		width: 100px;
-		height: 130px;
+	.draft-carousel-child {
+		@include border-radius(10px);
+		background-color: rgba(0, 0, 0, 0.70);
+		display: block;
+		width: 200px;
+		height: 200px;
 		float: left;
+		margin: 0 10px;
 	}
 
 }
