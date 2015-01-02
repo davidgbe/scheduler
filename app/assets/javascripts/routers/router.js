@@ -1,7 +1,8 @@
 Scheduler.Routers.AppRouter = Backbone.Router.extend({
   routes: {
     'login':'welcome',
-    'main':'main'
+    'main':'main',
+    'workstation':'workstation'
   },
   welcome: function() {
     var welcomeView = new Scheduler.Views.Welcome({ 
@@ -14,6 +15,12 @@ Scheduler.Routers.AppRouter = Backbone.Router.extend({
       el: '#content'
     })
     mainView.render()
+  },
+  workstation: function() {
+    var workStation = new Scheduler.Views.WSMain({
+      el: '#content'
+    })
+    workStation.render()
   },
   route: function(route, name, callback) {
     if (!_.isRegExp(route)) route = this._routeToRegExp(route);
