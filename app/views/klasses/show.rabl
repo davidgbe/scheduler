@@ -5,3 +5,4 @@ node(:level) { @klass.level }
 node(:prerequisites) { @klass.prerequisites }
 node(:corequisites) { @klass.corequisites }
 node(:description) { @klass.description }
+node(:deptTitle) { @klass.dept_title }

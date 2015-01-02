@@ -4,28 +4,19 @@ Scheduler.Collections.Klasses = Backbone.Collection.extend({
     relevantModels = []
     for(var i in results) {
       var klassData = results[i].klass
-      console.log(klassData)
       var model = this.get(klassData.id)
       if(model == null) {
         model = new Scheduler.Models.Klass
-        this.updateKlassModel(model, klassData)
         this.push(model)
       }
-      relevantModels.push(model)
+      var sections = Scheduler.sections.parseSections(klassData['sections'], model.get('id'))
+      delete klassData['sections']
+      model.set(klassData)
+      relevantModels.push({
+        klass: model,
+        sections: sections
+      })
     }
     return relevantModels
-  },
-  updateKlassModel: function(model, newData, setId) {
-    var dataToSet = {
-      corequisites: newData.corequisites,
-      prerequisites: newData.prerequisites,
-      description: newData.description,
-      level: newData.level,
-      subject: newData.subject
-    }
-    if(setId) {
-      dataToSet.id = newData.id
-    }
-    model.set(dataToSet)
   }
-});
+})

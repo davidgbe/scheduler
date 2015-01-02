@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20140822173349) do
   enable_extension "plpgsql"
 
   create_table "klasses", force: true do |t|
+    t.text     "dept_title"
     t.text     "title"
     t.integer  "level"
     t.text     "subject"

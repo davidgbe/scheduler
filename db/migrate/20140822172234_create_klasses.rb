@@ -2,6 +2,7 @@ class CreateKlasses < ActiveRecord::Migration
 
   def up
     create_table :klasses do |t|
+      t.text :dept_title
       t.text :title
       t.integer :level #e.g. 101
     	t.text :subject 

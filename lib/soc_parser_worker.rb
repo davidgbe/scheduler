@@ -71,20 +71,30 @@ class SocParserWorker
     if !department_data.has_key?('OfferedCourses') || !department_data['OfferedCourses'].has_key?('course')
       return
     end
-    parse_for_classes_info department_data['OfferedCourses']['course'], code
+    dept_name = ''
+    if department_data.has_key?('Dept_Info')
+      dept_info = department_data['Dept_Info']
+      if dept_info.has_key?('department')
+        dept_name = department_data['Dept_Info']['department']
+      end
+    end
+    parse_for_classes_info department_data['OfferedCourses']['course'], code, dept_name
   end
 
-  def parse_for_classes_info klasses, code
+  def parse_for_classes_info klasses, code, dept_name
     if klasses
       all_klasses = []
       klasses.each do |klass|
         next if !klass.is_a?(Hash) || !klass.has_key?('CourseData')
+        dept_title = klass['PublishedCourseID']
         klass = klass['CourseData']
         klass_data = {
           title: klass['title'],
           level: klass['number'].to_i,
           units: klass['units'].to_i,
-          description: klass['description'].to_s
+          description: klass['description'].to_s,
+          subject: dept_name,
+          dept_title: dept_title
         }
         klass_data['prerequisites'] = klass['prereq_text'].to_s if !klass['prereq_text'].empty?
         klass_data['corequisites'] = klass['coreq_text'].to_s if !klass['coreq_text'].empty?

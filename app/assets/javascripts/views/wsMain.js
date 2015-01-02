@@ -59,16 +59,19 @@ Scheduler.Views.WSMain = Backbone.View.extend({
     var url = window.location.protocol + '//' + window.location.host + '/klasses?search=' + searchText.replace(/\s+/g, '+')
     $.get(url, function(data) {
       var relevantModels = Scheduler.klasses.parseSearch(data)
+      console.log(relevantModels)
       that.populateSearchResults(relevantModels)
     })
   },
-  populateSearchResults: function(models) {
+  populateSearchResults: function(relevantModels) {
     $('.search-results-inner').empty()
-    for(var i in models) {
-      var model = models[i]
+    for(var i in relevantModels) {
+      var modelGroup = relevantModels[i]
       var searchedKlass = new Scheduler.Views.WSSearchedKlass({
         el: '.search-results-inner',
-        model: model
+        klass: modelGroup.klass,
+        sections: modelGroup.sections,
+        num: i, 
       })
       searchedKlass.render()
     }
