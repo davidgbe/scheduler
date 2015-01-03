@@ -1,19 +1,20 @@
 Scheduler.Views.WSSearchedKlass = Backbone.View.extend({
   template: JST['workstation/searchedKlass'],
   events: {
-    
+
   },
   initialize: function(options) {
+    var that = this
     this.el = options.el
     this.num = options.num
     this.model = options.klass
     if(_.has(options, 'sections')) {
       this.sections = options.sections
-    } 
+    }
   },
   render: function() {
     var data = { 
-      extraClass: 'searched-class-' + this.num,
+      extraClass: 'searched-class-div-' + this.num,
       title: this.model.get('title'),
       prerequisites: this.model.get('prerequisites'),
       corequisites: this.model.get('corequisites'),
@@ -37,7 +38,7 @@ Scheduler.Views.WSSearchedKlass = Backbone.View.extend({
     for(var i in this.sections) {
       section = this.sections[i]
       var searchedSection = new Scheduler.Views.WSSearchedSection({
-        el: '.searched-class-' + this.num,
+        el: '.searched-class-div-' + this.num,
         model: section
       })
       searchedSection.render()

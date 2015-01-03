@@ -78,6 +78,14 @@ Scheduler.Views.WSMain = Backbone.View.extend({
       })
       searchedKlass.render()
     }
+    $('.searched-class').click(function(e) {
+      var that = $(this)
+      if(that.hasClass('searched-class-selected')) {
+        that.removeClass('searched-class-selected')
+      } else {
+        that.addClass('searched-class-selected')
+      }
+    })
   },
   drag: function(e) {
     var that = this

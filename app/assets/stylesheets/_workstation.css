@@ -480,7 +480,16 @@ header h5:hover {
   width: 100%;
   padding: 5px 10px 5px 5px;
   background: white;
+  border-top: 1px solid transparent;
+  border-right: 1px solid transparent;
   border-bottom: 1px solid #d8d8d8;
+  border-left: 1px solid transparent;
+  cursor: pointer;
+  border-top-left-radius: 7px;
+}
+
+.searched-class-selected {
+  border-color: #4ad0ff;
 }
 
 .searched-class * {
