@@ -20,10 +20,10 @@ Scheduler.Views.WSSearchedKlass = Backbone.View.extend({
       description: this.model.get('description'),
       deptTitle: this.model.get('dept_title')
     }
-    if(data.prerequisites == null) {
+    if(data.prerequisites == null || data.prerequisites == {}) {
       data.prerequisites = 'None'
     }
-    if(data.corequisites == null) {
+    if(data.corequisites == null || data.corequisites == {}) {
       data.corequisites = 'None'
     }
     var compiled = this.template(data)

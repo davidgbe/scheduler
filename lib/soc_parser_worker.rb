@@ -112,28 +112,45 @@ class SocParserWorker
   def parse_for_sections_info sections, klass
     if sections
       all_sections = []
-      sections.each do |section|
-        if !section.is_a?(Hash)
-          next
+      if sections.is_a?(Hash)
+        #there's just single section
+        res = parse_section(sections)
+        if res 
+          all_sections << res
         end
-        section_data = {
-          days: section['day'].to_s,
-          start: section['start_time'].to_s,
-          finish: section['end_time'].to_s,
-          max_capacity: section['spaces_available'].to_i,
-          current_capacity: section['number_registered'].to_i
-        }
-        section_data.each do |key,value|
-          if value.is_a?(Hash)
-            raise section.to_s
+      elsif sections.is_a?(Array)
+        sections.each do |section|
+          res = parse_section(section)
+          if res 
+            all_sections << res
           end
         end
-        all_sections << section_data
+      else 
+        return
       end
       Section.create all_sections do |s|
         s.klass_id = klass.id
       end
     end
+  end
+
+  def parse_section section
+    if !section.is_a?(Hash)
+      return
+    end
+    section_data = {
+      days: section['day'].to_s,
+      start: section['start_time'].to_s,
+      finish: section['end_time'].to_s,
+      max_capacity: section['spaces_available'].to_i,
+      current_capacity: section['number_registered'].to_i
+    }
+    section_data.each do |key,value|
+      if value.is_a?(Hash)
+        raise section.to_s
+      end
+    end
+    section_data
   end
 
 end

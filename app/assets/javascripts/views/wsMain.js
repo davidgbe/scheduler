@@ -4,12 +4,15 @@ Scheduler.Views.WSMain = Backbone.View.extend({
     'click .search-tab': 'searchTabClick',
     'click .select-tab': 'selectTabClick',
     'click .search-bar-input': 'searchBarFirstClick',
-    'keydown .search-bar-input': 'executeSearch'
+    'keydown .search-bar-input': 'executeSearch',
+    'mousedown .side-bar-inner': 'drag'
   },
   initialize: function(options) {
     this.el = options.el
     this.title = '#workstation'
     this.alreadyClicked = false
+    this.dragging = false
+    this.lastX = null
   },
   render: function() {
     var compiled = this.template({})
@@ -75,5 +78,36 @@ Scheduler.Views.WSMain = Backbone.View.extend({
       })
       searchedKlass.render()
     }
+  },
+  drag: function(e) {
+    var that = this
+    this.dragging = true;
+    this.lastX = e.pageX
+
+    $(window).mousemove(function(e) {
+      e.preventDefault()
+      var sideBar = $('.side-bar')
+      var rightContainer = $('.right-container')
+      var diff = e.pageX - this.lastX
+      this.lastX = e.pageX
+      
+      if( (sideBar.width() !== 0 && diff < 0) || (rightContainer.width() !== 0 && diff > 0) ) {
+        var maxWidth = sideBar.parent().width() - parseFloat(rightContainer.css('min-width'))
+        var newWidth
+        if(sideBar.width() + diff >= maxWidth) {
+          newWidth = maxWidth + 'px'
+        } else {
+          newWidth = parseFloat(sideBar.css('width')) + diff + 'px'
+        }
+        sideBar.css('width', newWidth)
+      }
+    })
+
+    $(window).mouseup(function(e){
+      if(that.dragging) {
+        $(window).unbind('mousemove');
+        that.dragging = false;
+      }
+    })
   }
 })
