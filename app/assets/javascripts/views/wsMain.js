@@ -19,10 +19,10 @@ Scheduler.Views.WSMain = Backbone.View.extend({
     this.$el.append(compiled)
     $('.searched-classes').hide();
     $('.selected-classes').show();
-    var calendarView = new Scheduler.Views.WSCalendar({ 
+    this.calendarView = new Scheduler.Views.WSCalendar({ 
       el: this.el 
     })
-    calendarView.render()
+    this.calendarView.render()
   },
   searchTabClick: function() {
     var thisTab = $('.search-tab') 
@@ -112,6 +112,8 @@ Scheduler.Views.WSMain = Backbone.View.extend({
           newWidth = parseFloat(sideBar.css('width')) + diff + 'px'
         }
         sideBar.css('width', newWidth)
+
+        that.calendarView.doAllChangesForResize()
       }
     })
 
