@@ -20,7 +20,8 @@ Scheduler.Views.WSMain = Backbone.View.extend({
     $('.searched-classes').hide();
     $('.selected-classes').show();
     this.calendarView = new Scheduler.Views.WSCalendar({ 
-      el: this.el 
+      el: this.el,
+      count: 5
     })
     this.calendarView.render()
   },
@@ -62,11 +63,9 @@ Scheduler.Views.WSMain = Backbone.View.extend({
   },
   search: function(searchText) {
     var that = this
-    console.log(window.location.host)
     var url = window.location.protocol + '//' + window.location.host + '/klasses?search=' + searchText.replace(/\s+/g, '+')
     $.get(url, function(data) {
       var relevantModels = Scheduler.klasses.parseSearch(data)
-      console.log(relevantModels)
       that.populateSearchResults(relevantModels)
     })
   },

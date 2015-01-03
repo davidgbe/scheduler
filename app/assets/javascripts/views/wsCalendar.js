@@ -7,7 +7,7 @@ Scheduler.Views.WSCalendar = Backbone.View.extend({
   },
   initialize: function(options) {
     this.el = options.el
-    this.carouselCount = 4
+    this.carouselCount = options.count
     this.currentPos = 1
     this.shiftWidth = 700
   },
