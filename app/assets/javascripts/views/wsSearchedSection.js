@@ -15,9 +15,10 @@ Scheduler.Views.WSSearchedSection = Backbone.View.extend({
       maxCapacity: this.model.get('max_capacity'),
       currentCapacity: this.model.get('current_capacity')
     }
+    if(data.days == null || data.days == {} || data.days === '{}') {
+      data.days = 'None'
+    }
     var compiled = this.template(data)
-    console.log(this.$el)
-    console.log(compiled)
     this.$el.append(compiled)
   }
 })

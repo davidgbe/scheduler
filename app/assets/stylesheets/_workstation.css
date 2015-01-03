@@ -485,7 +485,6 @@ header h5:hover {
   border-bottom: 1px solid #d8d8d8;
   border-left: 1px solid transparent;
   cursor: pointer;
-  border-top-left-radius: 7px;
 }
 
 .searched-class-selected {
