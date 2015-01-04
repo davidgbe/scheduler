@@ -11,6 +11,7 @@ Scheduler.Views.WSCalendar = Backbone.View.extend({
     this.currentPos = 1
     this.shiftWidth = 700
     this.moving = false
+    this.workStation = options.workStation
   },
   render: function() {
     var compiled = this.template({})

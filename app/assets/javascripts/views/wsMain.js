@@ -7,8 +7,13 @@ Scheduler.Views.WSMain = Backbone.View.extend({
     'keydown .search-bar-input': 'executeSearch',
     'mousedown .side-bar-inner': 'drag'
   },
+  children: [],
+  searchedChildren: [],
+  selectedChildren: [],
+  selectedKlasses: [],
   initialize: function(options) {
     this.el = options.el
+    this.schedule = options.schedule
     this.title = '#workstation'
     this.alreadyClicked = false
     this.dragging = false
@@ -19,11 +24,6 @@ Scheduler.Views.WSMain = Backbone.View.extend({
     this.$el.append(compiled)
     $('.searched-classes').hide();
     $('.selected-classes').show();
-    this.calendarView = new Scheduler.Views.WSCalendar({ 
-      el: this.el,
-      count: 5
-    })
-    this.calendarView.render()
   },
   searchTabClick: function() {
     var thisTab = $('.search-tab') 
@@ -76,7 +76,8 @@ Scheduler.Views.WSMain = Backbone.View.extend({
       var modelGroup = relevantModels[i]
       var searchedKlass = new Scheduler.Views.WSSearchedKlass({
         klass: modelGroup.klass,
-        sections: modelGroup.sections
+        sections: modelGroup.sections,
+        parent: this
       })
       resultsArea.append(searchedKlass.render().el)
     }
@@ -91,8 +92,6 @@ Scheduler.Views.WSMain = Backbone.View.extend({
       var sideBar = $('.side-bar')
       var rightContainer = $('.right-container')
       var diff = e.pageX - that.lastX
-      console.log('event: ' + e.pageX)
-      console.log('last: ' + that.lastX)
 
       if( (sideBar.width() !== 0 && diff < 0) || (rightContainer.width() !== 0 && diff > 0) ) {
         that.lastX = e.pageX
@@ -115,5 +114,35 @@ Scheduler.Views.WSMain = Backbone.View.extend({
         that.dragging = false;
       }
     })
+  },
+  setCalendar: function(cal) {
+    this.calendarView = cal
+  },
+  addSelected: function(selected) {
+    this.selectedKlasses.push(selected)
+    var selectedKlass = new Scheduler.Views.WSSelectedKlass({
+      model: selected
+    })
+    this.selectedChildren.push(selectedKlass)
+    this.$el.find('.selected-classes').append(selectedKlass.render().el)
+  },
+  removeSelected: function(unselected) {
+    var toDelete
+    for(var i = 0; i < this.selectedKlasses.length; i++) {
+      var child = this.selectedKlasses[i];
+      if(child.id === unselected.id) {
+        toDelete = child.id
+        this.selectedKlasses.splice(i, 1);
+        break
+      }
+    }
+    for(var j = 0; j < this.selectedChildren.length; j++) {
+      var child = this.selectedChildren[j];
+      if(child.model.id === toDelete) {
+        child.destroy()
+        this.selectedChildren.splice(j, 1);
+        break
+      }
+    }
   }
 })

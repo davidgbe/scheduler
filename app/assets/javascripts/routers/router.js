@@ -17,10 +17,20 @@ Scheduler.Routers.AppRouter = Backbone.Router.extend({
     mainView.render()
   },
   workstation: function() {
+    var schedule = new Scheduler.Models.Schedule
     var workStation = new Scheduler.Views.WSMain({
-      el: '#content'
+      el: '#content',
+      schedule: schedule
     })
+    var calendarView = new Scheduler.Views.WSCalendar({ 
+      el: '#content',
+      count: 5,
+      workStation: workStation,
+      schedule: schedule
+    })
+    workStation.setCalendar(calendarView)
     workStation.render()
+    calendarView.render()
   },
   route: function(route, name, callback) {
     if (!_.isRegExp(route)) route = this._routeToRegExp(route);

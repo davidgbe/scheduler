@@ -8,6 +8,7 @@ Scheduler.Views.WSSearchedKlass = Backbone.View.extend({
     if(_.has(options, 'sections')) {
       this.sections = options.sections
     }
+    this.workStation = options.parent
   },
   render: function() {
     var data = { 
@@ -40,12 +41,14 @@ Scheduler.Views.WSSearchedKlass = Backbone.View.extend({
       sectionsArea.append(searchedSection.render().el)
     }
   },
-  clicked: function(e) {
+  clicked: function() {
     var that = this.$el.find('.searched-class')
     if(that.hasClass('searched-class-selected')) {
       that.removeClass('searched-class-selected')
+      this.workStation.removeSelected(this.model)
     } else {
       that.addClass('searched-class-selected')
+      this.workStation.addSelected(this.model)
     }
   }
 })

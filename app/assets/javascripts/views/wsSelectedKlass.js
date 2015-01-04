@@ -5,7 +5,6 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
     'mouseout': 'notHovering'
   },
   initialize: function(options) {
-    this.el = options.el
     this.model = options.model
   },
   render: function() {
@@ -26,6 +25,7 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
 
     var compiled = this.template(data)
     this.$el.append(compiled)
+    return this
   },
   setAppropriateBorderColor: function(that, selected, unselected) {
     var color
@@ -36,10 +36,16 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
     }
     that.css('border-color', color)
   },
-  hovering: function(e) {
-    setAppropriateBorderColor($(e.target), '#0050a8', '#4ad0ff')
+  hovering: function() {
+    this.setAppropriateBorderColor(this.$el.find('.side-bar-item'), '#0050a8', '#4ad0ff')
   },
-  notHovering: function(e) {
-    setAppropriateBorderColor($(e.target), '#4ad0ff', 'white')
+  notHovering: function() {
+    this.setAppropriateBorderColor(this.$el.find('.side-bar-item'), '#4ad0ff', 'white')
+  },
+  destroy: function() {
+    this.undelegateEvents();
+    this.$el.removeData().unbind(); 
+    this.remove();  
+    Backbone.View.prototype.remove.call(this);
   }
 })
