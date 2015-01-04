@@ -4,7 +4,6 @@ Scheduler.Views.WSSearchedSection = Backbone.View.extend({
     
   },
   initialize: function(options) {
-    this.el = options.el
     this.model = options.model
   },
   render: function() {
@@ -18,7 +17,10 @@ Scheduler.Views.WSSearchedSection = Backbone.View.extend({
     if(data.days == null || data.days == {} || data.days === '{}') {
       data.days = 'None'
     }
+
     var compiled = this.template(data)
     this.$el.append(compiled)
+    
+    return this
   }
 })

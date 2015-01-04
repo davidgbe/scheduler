@@ -25,19 +25,19 @@ Scheduler.Views.WSSearchedKlass = Backbone.View.extend({
     }
     var compiled = this.template(data)
     this.$el.append(compiled) 
-    // if(_.has(this, 'sections') && this.sections != null && this.sections != []) {
-    //   this.createSections(this.sections)
-    // }
+    if(_.has(this, 'sections') && this.sections != null && this.sections != []) {
+      this.createSections(this.sections)
+    }
     return this
   },
   createSections: function() {
+    var sectionsArea = this.$el.find('div')
     for(var i in this.sections) {
       section = this.sections[i]
       var searchedSection = new Scheduler.Views.WSSearchedSection({
-        el: this.el + ' div',
         model: section
       })
-      searchedSection.render()
+      sectionsArea.append(searchedSection.render().el)
     }
   },
   clicked: function(e) {
