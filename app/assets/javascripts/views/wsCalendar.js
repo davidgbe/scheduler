@@ -10,6 +10,7 @@ Scheduler.Views.WSCalendar = Backbone.View.extend({
     this.carouselCount = options.count
     this.currentPos = 1
     this.shiftWidth = 700
+    this.moving = false
   },
   render: function() {
     var compiled = this.template({})
@@ -35,10 +36,12 @@ Scheduler.Views.WSCalendar = Backbone.View.extend({
   updateBubble: function() {
     $('.selected-dot').removeClass('selected-dot')
     $('.dot:nth-of-type(' + this.currentPos + ')').addClass('selected-dot')
+    this.moving = false
   },
   moveRight: function(spaces) {
     var that = this
     if(this.currentPos + spaces > this.carouselCount) {
+      this.moving = false
       return
     }
     this.currentPos += spaces
@@ -54,6 +57,7 @@ Scheduler.Views.WSCalendar = Backbone.View.extend({
   moveLeft: function(spaces) {
     var that = this
     if(this.currentPos - spaces < 1) {
+      this.moving = false
       return
     }
     this.currentPos -= spaces
@@ -134,9 +138,15 @@ Scheduler.Views.WSCalendar = Backbone.View.extend({
     this.adjustList()
   },
   rightOne: function() {
-    this.moveRight(1)
+    if(!this.moving) {
+      this.moving = true
+      this.moveRight(1)
+    }
   },
   leftOne: function() {
-    this.moveLeft(1)
+    if(!this.moving) {
+      this.moving = true
+      this.moveLeft(1)
+    }
   }
 })

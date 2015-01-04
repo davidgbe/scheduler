@@ -70,39 +70,32 @@ Scheduler.Views.WSMain = Backbone.View.extend({
     })
   },
   populateSearchResults: function(relevantModels) {
-    $('.search-results-inner').empty()
+    var resultsArea = $('.search-results-inner')
+    resultsArea.empty()
     for(var i in relevantModels) {
       var modelGroup = relevantModels[i]
       var searchedKlass = new Scheduler.Views.WSSearchedKlass({
-        el: '.search-results-inner',
         klass: modelGroup.klass,
-        sections: modelGroup.sections,
-        num: i 
+        sections: modelGroup.sections
       })
-      searchedKlass.render()
+      resultsArea.append(searchedKlass.render().el)
     }
-    $('.searched-class').click(function(e) {
-      var that = $(this)
-      if(that.hasClass('searched-class-selected')) {
-        that.removeClass('searched-class-selected')
-      } else {
-        that.addClass('searched-class-selected')
-      }
-    })
   },
   drag: function(e) {
     var that = this
-    this.dragging = true;
+    this.dragging = true
     this.lastX = e.pageX
 
     $(window).mousemove(function(e) {
       e.preventDefault()
       var sideBar = $('.side-bar')
       var rightContainer = $('.right-container')
-      var diff = e.pageX - this.lastX
-      this.lastX = e.pageX
-      
+      var diff = e.pageX - that.lastX
+      console.log('event: ' + e.pageX)
+      console.log('last: ' + that.lastX)
+
       if( (sideBar.width() !== 0 && diff < 0) || (rightContainer.width() !== 0 && diff > 0) ) {
+        that.lastX = e.pageX
         var maxWidth = sideBar.parent().width() - parseFloat(rightContainer.css('min-width'))
         var newWidth
         if(sideBar.width() + diff >= maxWidth) {

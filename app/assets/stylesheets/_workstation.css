@@ -489,6 +489,7 @@ header h5:hover {
 
 .searched-class-selected {
   border-color: #4ad0ff;
+  background-color: #CFF1FC;
 }
 
 .searched-class * {
