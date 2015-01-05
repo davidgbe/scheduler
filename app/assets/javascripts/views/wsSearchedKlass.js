@@ -32,7 +32,7 @@ Scheduler.Views.WSSearchedKlass = Backbone.View.extend({
     return this
   },
   createSections: function() {
-    var sectionsArea = this.$el.find('div')
+    var sectionsArea = this.$el.find('.searched-sections')
     for(var i in this.sections) {
       section = this.sections[i]
       var searchedSection = new Scheduler.Views.WSSearchedSection({
@@ -45,10 +45,24 @@ Scheduler.Views.WSSearchedKlass = Backbone.View.extend({
     var that = this.$el.find('.searched-class')
     if(that.hasClass('searched-class-selected')) {
       that.removeClass('searched-class-selected')
-      this.workStation.removeSelected(this.model)
+      this.workStation.removeSelected(this)
     } else {
       that.addClass('searched-class-selected')
-      this.workStation.addSelected(this.model)
+      this.workStation.addSelected(this)
     }
+  },
+  toggleClicked: function() {
+    var that = this.$el.find('.searched-class')
+    if(that.hasClass('searched-class-selected')) {
+      that.removeClass('searched-class-selected')
+    } else {
+      that.addClass('searched-class-selected')
+    }
+  },
+  toggleOn: function() {
+    this.$el.find('.searched-class').addClass('searched-class-selected')
+  },
+  toggleOff: function() {
+    this.$el.find('.searched-class').removeClass('searched-class-selected')
   }
 })

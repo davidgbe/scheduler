@@ -182,7 +182,6 @@ header h5:hover {
 }
 
 .sections-outline {
-  margin-top: 5px;
   height: 0px;
   
   background-color: white;
@@ -199,10 +198,17 @@ header h5:hover {
   overflow: auto;
 }
 
-.section {
+.section-container p {
   color: #001b72;
   padding: 10px;
   font-family: 'Questrial';
+  font-size: 12px;
+  background-color: white;
+  color: black;
+}
+
+.section-container p:hover {
+  background-color: #E3E3E3;
 }
 
 .right-container {

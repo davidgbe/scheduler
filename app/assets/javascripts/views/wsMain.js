@@ -7,10 +7,7 @@ Scheduler.Views.WSMain = Backbone.View.extend({
     'keydown .search-bar-input': 'executeSearch',
     'mousedown .side-bar-inner': 'drag'
   },
-  children: [],
-  searchedChildren: [],
-  selectedChildren: [],
-  selectedKlasses: [],
+  selected: [],
   initialize: function(options) {
     this.el = options.el
     this.schedule = options.schedule
@@ -22,8 +19,8 @@ Scheduler.Views.WSMain = Backbone.View.extend({
   render: function() {
     var compiled = this.template({})
     this.$el.append(compiled)
-    $('.searched-classes').hide();
-    $('.selected-classes').show();
+    $('.selected-classes').hide();
+    $('.searched-classes').show();
   },
   searchTabClick: function() {
     var thisTab = $('.search-tab') 
@@ -110,7 +107,7 @@ Scheduler.Views.WSMain = Backbone.View.extend({
 
     $(window).mouseup(function(e){
       if(that.dragging) {
-        $(window).unbind('mousemove');
+        $(window).unbind('mousemove')
         that.dragging = false;
       }
     })
@@ -118,29 +115,32 @@ Scheduler.Views.WSMain = Backbone.View.extend({
   setCalendar: function(cal) {
     this.calendarView = cal
   },
-  addSelected: function(selected) {
-    this.selectedKlasses.push(selected)
-    var selectedKlass = new Scheduler.Views.WSSelectedKlass({
-      model: selected
-    })
-    this.selectedChildren.push(selectedKlass)
-    this.$el.find('.selected-classes').append(selectedKlass.render().el)
-  },
-  removeSelected: function(unselected) {
-    var toDelete
-    for(var i = 0; i < this.selectedKlasses.length; i++) {
-      var child = this.selectedKlasses[i];
-      if(child.id === unselected.id) {
-        toDelete = child.id
-        this.selectedKlasses.splice(i, 1);
-        break
-      }
+  addSelected: function(searchedView) {
+    var options = {
+      model: searchedView.model,
+      ws: this
     }
-    for(var j = 0; j < this.selectedChildren.length; j++) {
-      var child = this.selectedChildren[j];
-      if(child.model.id === toDelete) {
-        child.destroy()
-        this.selectedChildren.splice(j, 1);
+    if(_.has(searchedView, 'sections')) {
+      options.sections = searchedView.sections
+    }
+    var selectedView = new Scheduler.Views.WSSelectedKlass(options)
+    this.selected.push({
+      searched: searchedView,
+      selected: selectedView
+    })
+    searchedView.toggleOn()
+    this.$el.find('.selected-classes').append(selectedView.render().el)
+  },
+  removeSelected: function(view) {
+    for(var i = 0; i < this.selected.length; i++) {
+      var child = this.selected[i]
+      if(child.selected.model.get('id') === view.model.get('id')) {
+        child.selected.destroy()
+        child.searched.toggleOff()
+        this.selected.splice(i, 1)
+        if(i < this.selected.length && $('.select-tab').hasClass('selected-tab')) {
+          this.selected[i].selected.hovering()
+        }
         break
       }
     }

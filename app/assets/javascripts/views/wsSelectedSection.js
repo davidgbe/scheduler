@@ -1,7 +1,6 @@
-Scheduler.Views.WSSearchedSection = Backbone.View.extend({
-  template: JST['workstation/searchedSection'],
+Scheduler.Views.WSSelectedSection = Backbone.View.extend({
+  template: JST['workstation/selectedSection'],
   events: {
-    
   },
   initialize: function(options) {
     this.model = options.model
@@ -14,13 +13,14 @@ Scheduler.Views.WSSearchedSection = Backbone.View.extend({
       maxCapacity: this.model.get('max_capacity'),
       currentCapacity: this.model.get('current_capacity')
     }
-    if(data.days == null || data.days == {} || data.days === '{}') {
-      data.days = 'None'
-    }
-
     var compiled = this.template(data)
     this.$el.append(compiled)
-
     return this
+  },
+  destroy: function() {
+    this.undelegateEvents()
+    this.$el.removeData().unbind()
+    this.remove()
+    Backbone.View.prototype.remove.call(this)
   }
 })
