@@ -4,7 +4,8 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
     'mouseover .side-bar-item': 'hovering',
     'mouseout .side-bar-item': 'notHovering',
     'click .close': 'closeClick',
-    'click .expand': 'toggleExpand'
+    'click .expand': 'toggleExpand',
+    'click .side-bar-item': 'toggleSelect'
   },
   initialize: function(options) {
     this.model = options.model
@@ -53,6 +54,7 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
     this.workStation.removeSelected(this)
   },
   destroy: function() {
+    this.removeSections()
     this.undelegateEvents()
     this.$el.removeData().unbind()
     this.remove()
@@ -89,5 +91,15 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
       this.children[i].destroy()
     }
     this.children = []
+  },
+  toggleSelect: function() {
+    var that = this.$el.find('.side-bar-item')
+    if(that.hasClass('selected')) {
+      that.removeClass('selected')
+      that.css('border-color', '#4ad0ff')
+    } else {
+      that.addClass('selected')
+      that.css('border-color', '#0050a8')
+    }
   }
 })
