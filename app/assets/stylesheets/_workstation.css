@@ -198,7 +198,7 @@ header h5:hover {
   overflow: auto;
 }
 
-.section-container p {
+.section {
   color: #001b72;
   padding: 10px;
   font-family: 'Questrial';
@@ -207,7 +207,7 @@ header h5:hover {
   color: black;
 }
 
-.section-container p:hover {
+.section:hover {
   background-color: #E3E3E3;
 }
 

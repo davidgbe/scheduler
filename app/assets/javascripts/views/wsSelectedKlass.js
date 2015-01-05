@@ -7,12 +7,12 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
     'click .expand': 'toggleExpand'
   },
   initialize: function(options) {
-    console.log('here')
     this.model = options.model
     this.workStation = options.ws
     if(_.has(options, 'sections')) {
       this.sections = options.sections
     }
+    this.children = []
   },
   render: function() {
     var data = { 
@@ -64,7 +64,7 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
       this.$el.removeClass('expanded')
       var that = this
       this.$el.find('.sections-outline').animate({height: '0px'}, {complete: function() {
-        that.$el.find('.sections-outline').remove()
+        that.removeSections()
       }})
     } else {
       this.$el.addClass('expanded')
@@ -77,10 +77,17 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
   renderSections: function() {
     if(!_.has(this, 'sections')) { return }
     for(var i in this.sections) {
-      var sectionView = new Scheduler.Views.WSSearchedSection({
+      var sectionView = new Scheduler.Views.WSSelectedSection({
         model: this.sections[i]
       })
+      this.children.push(sectionView)
       this.$el.find('.section-container').append(sectionView.render().el)
     }
+  },
+  removeSections: function() {
+    for(var i in this.children) {
+      this.children[i].destroy()
+    }
+    this.children = []
   }
 })
