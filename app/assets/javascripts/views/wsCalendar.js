@@ -12,6 +12,7 @@ Scheduler.Views.WSCalendar = Backbone.View.extend({
     this.shiftWidth = 700
     this.moving = false
     this.workStation = options.workStation
+    this.schedules = []
   },
   render: function() {
     var compiled = this.template({})
@@ -27,12 +28,22 @@ Scheduler.Views.WSCalendar = Backbone.View.extend({
       dots.append('<div id="' + (i+1) + '" class="' + c + '"></div>')
     }
 
+    this.createSchedules()
+
     var that = this
     $(window).resize(function() {
       that.doAllChangesForResize()
-    })
+    })  
 
     $(window).trigger('resize')
+  },
+  createSchedules: function() {
+    for(var i = 0; i < this.carouselCount; i++) {
+      var scheduleView = new Scheduler.Views.WSSchedule({
+        sections: null
+      })
+      this.$el.find('.schedule-list').append(scheduleView.render().el)
+    }
   },
   updateBubble: function() {
     $('.selected-dot').removeClass('selected-dot')
@@ -103,21 +114,21 @@ Scheduler.Views.WSCalendar = Backbone.View.extend({
   changeWeekdayNames: function() {
     var firstRow = $('tr:first-of-type');
     if($('.right-container').width() < this.shiftWidth) {
-      firstRow.find('#Su').text('Su')
-      firstRow.find('#M').text('M')
-      firstRow.find('#T').text('T')
-      firstRow.find('#W').text('W')
-      firstRow.find('#Th').text('Th')
-      firstRow.find('#F').text('F')
-      firstRow.find('#Sa').text('Sa')
+      firstRow.find('.Su').text('Su')
+      firstRow.find('.M').text('M')
+      firstRow.find('.T').text('T')
+      firstRow.find('.W').text('W')
+      firstRow.find('.Th').text('Th')
+      firstRow.find('.F').text('F')
+      firstRow.find('.Sa').text('Sa')
     } else {
-      firstRow.find('#Su').text('Sunday')
-      firstRow.find('#M').text('Monday')
-      firstRow.find('#T').text('Tueday')
-      firstRow.find('#W').text('Wednesday')
-      firstRow.find('#Th').text('Thursday')
-      firstRow.find('#F').text('Friday')
-      firstRow.find('#Sa').text('Saturday')
+      firstRow.find('.Su').text('Sunday')
+      firstRow.find('.M').text('Monday')
+      firstRow.find('.T').text('Tueday')
+      firstRow.find('.W').text('Wednesday')
+      firstRow.find('.Th').text('Thursday')
+      firstRow.find('.F').text('Friday')
+      firstRow.find('.Sa').text('Saturday')
     }
   },
   adjustContainer: function() {

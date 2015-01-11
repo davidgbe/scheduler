@@ -7,9 +7,9 @@ Scheduler.Views.WSSelectedSection = Backbone.View.extend({
   },
   render: function() {
     var data = { 
-      days: this.model.get('days'),
-      start: this.model.get('start'),
-      finish: this.model.get('finish'),
+      days: this.model.parsedDays(),
+      start: this.model.startAsReadableString(),
+      finish: this.model.finishAsReadableString(),
       maxCapacity: this.model.get('max_capacity'),
       currentCapacity: this.model.get('current_capacity')
     }

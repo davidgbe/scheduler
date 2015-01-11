@@ -1,3 +1,11 @@
 <div class="section">
-  <%= start %> to <%= finish %> <%= days %> <%= currentCapacity %>/<%= maxCapacity %>
+  <ul>
+  <% for(var i in start) { %>
+    <% if(i != 0) { %>
+      and
+    <% } %>
+    <%= start[i] %> to <%= finish[i] %> <%= days[i] %>
+  <% } %>
+  </ul>
+  <p class="capacity"><%= currentCapacity %>/<%= maxCapacity %></p>
 </div>

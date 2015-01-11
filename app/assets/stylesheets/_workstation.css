@@ -296,17 +296,19 @@ header h5:hover {
   position: relative;
   left: 0px;
   width: 10000px;
-  
 }
 
-.schedule-list li {
+.schedule-list div {
+  height: 100%;
+}
+  
+.schedule {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   float: left;
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
   height: 100%;
-  
 }
 
 .schedule-outer {
@@ -361,28 +363,32 @@ header h5:hover {
 }
 
 .schedule-table tr {
+  height: 14px;
   width: 100%;
 }
 
 .schedule-table td {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
-  border-top: 1px solid rgba(0,0,0,.25);
   font-family: 'Lato';
 }
 
-.schedule-table td:first-of-type {
-  width: 20px;
-  border-color: transparent;
-  text-align: center;
-  position: relative;
-  top: -12px;
+.schedule-table tr:nth-child(odd) td {
+  border-top: 1px solid rgba(0,0,0,.25);
 }
 
 .schedule-table tr:first-of-type td {
   border-top: 1px solid transparent;
   text-align: center;
   height: 10px;
+}
+
+.schedule-table tr:nth-child(odd) td:first-of-type {
+  width: 20px;
+  border-color: transparent;
+  text-align: center;
+  position: relative;
+  top: -15px;
 }
 
 .controls {
@@ -517,6 +523,10 @@ header h5:hover {
 }
 
 .searched-class p {
+  font-size: 10px;
+}
+
+.searched-class ul {
   font-size: 10px;
 }
 
