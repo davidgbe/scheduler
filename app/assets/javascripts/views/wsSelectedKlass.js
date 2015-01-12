@@ -102,7 +102,10 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
     } else {
       that.addClass('selected')
       that.css('border-color', '#0050a8')
-      this.schedule.sections.push(this.sections[0]) //for now
+      this.schedule.sections.push({
+        model: this.sections[0],
+        rendered: false
+      })
       this.schedule.trigger('change')
     }
   }

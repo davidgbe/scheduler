@@ -17,7 +17,6 @@ Scheduler.Views.WSDrawnSection = function(section, schedule) {
           this.createDrawnSectionTime(starts[i], finishes[i], daysList[i], this.schedule, this)
         }
       }
-      console.log('in ds render')
       for(var j in this.drawnTimes) {
         this.drawnTimes[j].render()
       }
@@ -31,7 +30,6 @@ Scheduler.Views.WSDrawnSection = function(section, schedule) {
         schedule: schedule,
         parent: parent 
       })
-      console.log('in ds create')
       this.drawnTimes.push(drawnTime)
     }
   }
