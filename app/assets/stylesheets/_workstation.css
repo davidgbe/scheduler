@@ -391,6 +391,10 @@ header h5:hover {
   top: -15px;
 }
 
+.scheduled-section {
+  background-color: green;
+}
+
 .controls {
   box-sizing: border-box;
   -moz-box-sizing: border-box;

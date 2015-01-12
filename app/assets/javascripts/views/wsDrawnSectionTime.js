@@ -11,7 +11,7 @@ Scheduler.Views.WSDrawnSectionTime = Backbone.View.extend({
   },
   render: function() {
     var compiled = this.template({
-      rowSpan: 2 * (this.finish)
+      rowSpan: 2 * (this.finish - this.finish)
     })
     this.$el.append(compiled)
     

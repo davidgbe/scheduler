@@ -27,11 +27,7 @@ Scheduler.Models.Section = Backbone.Model.extend({
         timeInfo.pm = true
       } else {
         timeInfo.time = time
-        if(second === 2) {
-          timeInfo.pm = true
-        } else {
-          timeInfo.pm = false
-        }
+        timeInfo.pm = (second === 2) ? true : false
       }
     } else {
       timeInfo.time = time
@@ -59,24 +55,15 @@ Scheduler.Models.Section = Backbone.Model.extend({
     return this.forMultiple(this.get('finish'), callback)
   },
   timeAsNum: function(time) {
-    var parsed = this.parsedTime(time)
-    var parsedTime = parsed.time
-    if(parsedTime.indexOf(':') === -1) {
-      parsed.time = -1
-    } else if(parsedTime.length === 5) {
-      var hour = parseFloat(parsedTime.substring(0,2))
-      if(parsedTime.charAt(3) !== '0') {
-        parsed.time = hour + (parseFloat(parsedTime.substring(3,4)) / 10)
-      } else {
-        parsed.time = hour
-      }
+    var parsed = (time.charAt(0) === '0') ? time.substring(1, time.length) : time
+    if(parsed.indexOf(':') === -1) {
+      parsed = -1
+    } else if(parsed.length === 5) {
+      var hour = parseFloat(parsed.substring(0,2))
+      parsed = (parsed.charAt(3) !== '0') ? hour + (parseFloat(parsed.substring(3,4)) / 10) : hour
     } else {
-      var hour = parseFloat(parsedTime.substring(0,1))
-      if(parsedTime.charAt(2) !== '0') {
-        parsed.time = hour + (parseFloat(parsedTime.substring(2,3)) / 10)
-      } else {
-        parsed.time = hour
-      }
+      var hour = parseFloat(parsed.substring(0,1))
+      parsed = (parsed.charAt(2) !== '0') ? hour + (parseFloat(parsed.substring(2,3)) / 10) : hour
     }
     return parsed
   },
@@ -90,16 +77,11 @@ Scheduler.Models.Section = Backbone.Model.extend({
   },
   timeAsRoundedNum: function(time) {
     var toReturn = this.timeAsNum(time)
-    var minutes = toReturn.time - Math.floor(toReturn.time)
+    var minutes = toReturn - Math.floor(toReturn)
     if(minutes <= .3 && minutes !== 0) {
-      toReturn.time = Math.floor(toReturn.time) + .5
+      toReturn = Math.floor(toReturn) + .5
     } else if(minutes > .3) {
-      toReturn.time = Math.floor(toReturn.time) + 1
-      if(toReturn.time === 13) {
-        toReturn.time = 1
-      } else if(toReturn.time === 12) {
-        toReturn.pm = !toReturn.pm
-      }
+      toReturn = Math.floor(toReturn) + 1
     } 
     return toReturn
   },
