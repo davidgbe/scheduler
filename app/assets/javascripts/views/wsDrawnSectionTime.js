@@ -24,6 +24,7 @@ Scheduler.Views.WSDrawnSectionTime = Backbone.View.extend({
     })
     this.$el.append(compiled)
 
+    var toAppend = this.$el.find('td')
     var root = this.schedule.$el.find('.schedule-table')
 
     for(var i = 2 * this.start; i < 2 * this.finish; i++) {
@@ -33,11 +34,15 @@ Scheduler.Views.WSDrawnSectionTime = Backbone.View.extend({
     }
     var insertRow = root.find('tr:nth-child(' + (2 * this.start - 9) + ')')
     if(this.day === 'U') {
-      insertRow.prepend(this.$el.find('td'))
+      insertRow.prepend(toAppend)
     } else {
-      insertRow.find('td:nth-child(' + this.daysOrder[this.day] + ')').after(this.$el.find('td'))
+      insertRow.find('td:nth-child(' + this.daysOrder[this.day] + ')').after(toAppend)
     }
-    this.$el.find('td').css('border', '2px solid #0FC1FF')
+    toAppend.css({
+      'border-color': '#26C7FF', 
+      'border-width':'2px', 
+      'border-style':'solid'
+    })
   },
   destroy: function() {
     this.undelegateEvents()
