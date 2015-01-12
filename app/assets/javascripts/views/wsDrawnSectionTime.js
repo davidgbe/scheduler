@@ -11,10 +11,18 @@ Scheduler.Views.WSDrawnSectionTime = Backbone.View.extend({
   },
   render: function() {
     var compiled = this.template({
-      rowSpan: 2 * (this.finish - this.finish)
+      rowSpan: 2 * (this.finish - this.start)
     })
     this.$el.append(compiled)
-    
+    var root = this.schedule.$el.find('.schedule-table')
+    for(var i = 2 * this.start; i < 2 * this.finish; i++) {
+      root.find('tr:nth-child(' + (i - 9) + ')').remove()
+    }
+    if(this.start === 6) {
+      root.prepend(this.$el)
+    } else {
+      root.find('tr:nth-child(' + (i - 8) + ')').after(this.$el)
+    }
   },
   destroy: function() {
     this.undelegateEvents()

@@ -81,7 +81,7 @@ Scheduler.Models.Section = Backbone.Model.extend({
     if(minutes <= .3 && minutes !== 0) {
       toReturn = Math.floor(toReturn) + .5
     } else if(minutes > .3) {
-      toReturn = Math.floor(toReturn) + 1
+      toReturn = Math.floor(toReturn  ) + 1
     } 
     return toReturn
   },
