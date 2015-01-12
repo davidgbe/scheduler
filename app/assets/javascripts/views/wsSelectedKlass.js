@@ -15,6 +15,7 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
     }
     this.children = []
     this.schedule = options.schedule
+    this.dumbyCount = 0
   },
   render: function() {
     var data = { 
@@ -103,7 +104,7 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
       that.addClass('selected')
       that.css('border-color', '#0050a8')
       this.schedule.sections.push(this.sections[0]) //for now
-      this.schedule.set('math', 1)
+      this.schedule.set( ('math' + this.dumbyCount), this.dumbyCount++)
     }
   }
 })

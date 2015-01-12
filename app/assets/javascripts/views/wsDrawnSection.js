@@ -10,10 +10,10 @@ Scheduler.Views.WSDrawnSection = function(section, schedule) {
       for(var i in daysList) { 
         var len = daysList[i].length
         if(len > 1) {
-          for(var j = 0; j < len; j++) {
+          for(var j = len - 1; j >= 0; j--) {
             this.createDrawnSectionTime(starts[i], finishes[i], daysList[i].substring(j, j+1), this.schedule, this)
           }
-        } else if (len=== 1) {
+        } else if (len === 1) {
           this.createDrawnSectionTime(starts[i], finishes[i], daysList[i], this.schedule, this)
         }
       }

@@ -19,7 +19,7 @@ Scheduler.Views.WSSchedule = Backbone.View.extend({
     Backbone.View.prototype.remove.call(this)
   }, 
   drawAllSections: function() {
-    console.log('called')
+    console.log('CALLED')
     for(var i in this.schedule.sections) {
       var drawnSection = new Scheduler.Views.WSDrawnSection(this.schedule.sections[i], this)
       this.drawnSections.push(drawnSection)
