@@ -4,6 +4,7 @@ Scheduler.Views.WSSelectedSection = Backbone.View.extend({
   },
   initialize: function(options) {
     this.model = options.model
+    this.schedule = options.schedule
   },
   render: function() {
     var data = { 

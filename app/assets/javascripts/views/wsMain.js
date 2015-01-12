@@ -118,7 +118,8 @@ Scheduler.Views.WSMain = Backbone.View.extend({
   addSelected: function(searchedView) {
     var options = {
       model: searchedView.model,
-      ws: this
+      ws: this,
+      schedule: this.schedule
     }
     if(_.has(searchedView, 'sections')) {
       options.sections = searchedView.sections

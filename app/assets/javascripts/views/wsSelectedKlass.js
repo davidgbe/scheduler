@@ -14,6 +14,7 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
       this.sections = options.sections
     }
     this.children = []
+    this.schedule = options.schedule
   },
   render: function() {
     var data = { 
@@ -80,7 +81,8 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
     if(!_.has(this, 'sections')) { return }
     for(var i in this.sections) {
       var sectionView = new Scheduler.Views.WSSelectedSection({
-        model: this.sections[i]
+        model: this.sections[i],
+        schedule: this.schedule
       })
       this.children.push(sectionView)
       this.$el.find('.section-container').append(sectionView.render().el)
@@ -100,6 +102,8 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
     } else {
       that.addClass('selected')
       that.css('border-color', '#0050a8')
+      this.schedule.sections.push(this.sections[0]) //for now
+      this.schedule.set('math', 1)
     }
   }
 })

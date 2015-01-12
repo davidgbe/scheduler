@@ -13,6 +13,7 @@ Scheduler.Views.WSCalendar = Backbone.View.extend({
     this.moving = false
     this.workStation = options.workStation
     this.schedules = []
+    this.schedule = options.schedule
   },
   render: function() {
     var compiled = this.template({})
@@ -40,7 +41,7 @@ Scheduler.Views.WSCalendar = Backbone.View.extend({
   createSchedules: function() {
     for(var i = 0; i < this.carouselCount; i++) {
       var scheduleView = new Scheduler.Views.WSSchedule({
-        sections: null
+        schedule: this.schedule
       })
       this.$el.find('.schedule-list').append(scheduleView.render().el)
     }
