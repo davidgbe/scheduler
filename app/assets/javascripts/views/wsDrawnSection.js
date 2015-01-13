@@ -5,6 +5,7 @@ Scheduler.Views.WSDrawnSection = function(section, schedule) {
     drawnTimes: [],
     initialize: function() {
       this.model.on('change', this.destroy, this)
+      this.destroyed = false
     },
     render: function() {
       var daysList = this.model.parsedDays()
@@ -35,19 +36,19 @@ Scheduler.Views.WSDrawnSection = function(section, schedule) {
       this.drawnTimes.push(drawnTime)
     },
     destroy: function() {
-      console.log('DESTROY CALLED')
-      if(this.model.get('remove') === false) {
+      if(this.model.get('remove') === false || this.destroyed === true) {
         return
+      }
+      this.destroyed = true
+      for(var i = this.drawnTimes.length - 1; i >= 0; i--) {
+        this.drawnTimes[i].destroy()
       }
       for(var j in this.schedule.sections) {
         var section = this.schedule.sections[j]
         if(section.get('id') === this.model.get('id')) {
-          this.schedule.sections.splice(i, 1)
+          this.schedule.sections.splice(j, 1)
           break
         }
-      }
-      for(var i in this.drawnTimes) {
-        this.drawnTimes[i].destroy()
       }
     }
   }

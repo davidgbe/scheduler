@@ -44,19 +44,9 @@ Scheduler.Views.WSSearchedKlass = Backbone.View.extend({
   clicked: function() {
     var that = this.$el.find('.searched-class')
     if(that.hasClass('searched-class-selected')) {
-      that.removeClass('searched-class-selected')
       this.workStation.removeSelected(this)
     } else {
-      that.addClass('searched-class-selected')
       this.workStation.addSelected(this)
-    }
-  },
-  toggleClicked: function() {
-    var that = this.$el.find('.searched-class')
-    if(that.hasClass('searched-class-selected')) {
-      that.removeClass('searched-class-selected')
-    } else {
-      that.addClass('searched-class-selected')
     }
   },
   toggleOn: function() {

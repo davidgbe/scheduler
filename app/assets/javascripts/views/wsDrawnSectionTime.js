@@ -30,14 +30,11 @@ Scheduler.Views.WSDrawnSectionTime = Backbone.View.extend({
 
     for(var i = 2 * this.start; i < 2 * this.finish; i++) {
       var row = this.root.find('tr:nth-child(' + (i - 9) + ')')
-      row.find('td:nth-child(' + this.daysOrder[this.day] + ')').remove()
+      var removeNum = ((i - 9) % 2 === 0) ? this.daysOrder[this.day] + 1 : this.daysOrder[this.day]
+      row.find('td:nth-child(' + removeNum + ')').remove()
     }
     var insertRow = this.root.find('tr:nth-child(' + (2 * this.start - 9) + ')')
-    if(this.day === 'U') {
-      insertRow.prepend(toAppend)
-    } else {
-      insertRow.find('td:nth-child(' + this.daysOrder[this.day] + ')').after(toAppend)
-    }
+    insertRow.find('td:nth-child(' + this.daysOrder[this.day] + ')').after(toAppend)
     toAppend.css({
       'border-color': '#26C7FF', 
       'border-width':'2px', 
@@ -46,22 +43,17 @@ Scheduler.Views.WSDrawnSectionTime = Backbone.View.extend({
     this.rendered = true
   },
   destroy: function() {
-    if(this.rendered) {
-      var removeRow = this.root.find('tr:nth-child(' + (2 * this.start - 9) + ')')
-      removeRow.find('td:nth-child(' + this.daysOrder[this.day] + ')').remove()
-      for(var i = 2 * this.start; i < 2 * this.finish; i++) {
-        var row = this.root.find('tr:nth-child(' + (i - 9) + ')')
-        var num = this.daysOrder[this.day]
-        if(num === 1) {
-          row.preprend('<td></td>')
-        } else {
-          row.find('td:nth-child(' + (this.daysOrder[this.day] - 1) + ')').after('<td></td>')
-        }
-      }
+    var removeRow = this.root.find('tr:nth-child(' + (2 * this.start - 9) + ')')
+    removeRow.find('td:nth-child(' + (this.daysOrder[this.day] + 1) + ')').remove()
+    for(var j = 2 * this.start; j < 2 * this.finish; j++) {
+      var row = this.root.find('tr:nth-child(' + (j - 9) + ')')
+      var addNum = ((j - 9) % 2 === 0) ? this.daysOrder[this.day] : this.daysOrder[this.day] - 1
+      row.find('td:nth-child(' + addNum + ')').after('<td></td>')
     }
-    this.undelegateEvents()
-    this.$el.removeData().unbind()
-    this.remove()
-    Backbone.View.prototype.remove.call(this)
+
+    // this.undelegateEvents()
+    // this.$el.removeData().unbind()
+    // this.remove()
+    // Backbone.View.prototype.remove.call(this)
   }
 })
