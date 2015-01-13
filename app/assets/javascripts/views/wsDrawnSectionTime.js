@@ -36,12 +36,19 @@ Scheduler.Views.WSDrawnSectionTime = Backbone.View.extend({
       row.find('.' + this.daysOrder[this.day]).remove()
     }
     var insertRow = this.root.find('tr:nth-child(' + (2 * this.start - 9) + ')')
-
-    var pos = 1;
-    while(insertRow.find('.' + (this.daysOrder[this.day] - pos) ).length === 0) {
-      pos++
+    if(this.daysOrder[this.day] === 1) {
+      insertRow.prepend(toAppend)
+    } else {
+      var pos = 1;
+      while(insertRow.find('.' + (this.daysOrder[this.day] - pos) ).length === 0 && this.daysOrder[this.day] - pos !== 0) {
+        pos++
+      }
+      if(this.daysOrder[this.day] - pos === 0) {
+        insertRow.prepend(toAppend)
+      } else {
+        insertRow.find('.' + (this.daysOrder[this.day] - pos) ).after(toAppend)
+      }
     }
-    insertRow.find('.' + (this.daysOrder[this.day] - pos) ).after(toAppend)
     toAppend.css({
       'border-color': '#26C7FF', 
       'border-width':'2px', 
@@ -52,13 +59,22 @@ Scheduler.Views.WSDrawnSectionTime = Backbone.View.extend({
   destroy: function() {
     var removeRow = this.root.find('tr:nth-child(' + (2 * this.start - 9) + ')')
     removeRow.find('.' + this.daysOrder[this.day]).remove()
+    var toAppend = '<td class="' + this.daysOrder[this.day]+ '"></td>'
     for(var j = 2 * this.start; j < 2 * this.finish; j++) {
       var insertRow = this.root.find('tr:nth-child(' + (j - 9) + ')')
-      var pos = 1;
-      while(insertRow.find('.' + (this.daysOrder[this.day] - pos) ).length === 0) {
-        pos++
+      if(this.daysOrder[this.day] === 1) {
+        insertRow.prepend(toAppend)
+      } else {
+        var pos = 1;
+        while(insertRow.find('.' + (this.daysOrder[this.day] - pos) ).length === 0 && this.daysOrder[this.day] - pos !== 0) {
+          pos++
+        }
+        if(this.daysOrder[this.day] - pos === 0) {
+          insertRow.prepend(toAppend)
+        } else {
+          insertRow.find('.' + (this.daysOrder[this.day] - pos) ).after(toAppend)
+        }
       }
-      insertRow.find('.' + (this.daysOrder[this.day] - pos) ).after('<td class="' + this.daysOrder[this.day]+ '"></td>')
     }
 
     // this.undelegateEvents()
