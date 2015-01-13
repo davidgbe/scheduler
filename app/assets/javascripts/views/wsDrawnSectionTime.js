@@ -17,6 +17,7 @@ Scheduler.Views.WSDrawnSectionTime = Backbone.View.extend({
     this.day = options.day
     this.schedule = options.schedule
     this.parent = options.parent
+    this.rendered = false
   }, 
   render: function() {
     var compiled = this.template({
@@ -25,14 +26,13 @@ Scheduler.Views.WSDrawnSectionTime = Backbone.View.extend({
     this.$el.append(compiled)
 
     var toAppend = this.$el.find('td')
-    var root = this.schedule.$el.find('.schedule-table')
+    this.root = this.schedule.$el.find('.schedule-table')
 
     for(var i = 2 * this.start; i < 2 * this.finish; i++) {
-      console.log('time: ' + i)
-      var row = root.find('tr:nth-child(' + (i - 9) + ')')
+      var row = this.root.find('tr:nth-child(' + (i - 9) + ')')
       row.find('td:nth-child(' + this.daysOrder[this.day] + ')').remove()
     }
-    var insertRow = root.find('tr:nth-child(' + (2 * this.start - 9) + ')')
+    var insertRow = this.root.find('tr:nth-child(' + (2 * this.start - 9) + ')')
     if(this.day === 'U') {
       insertRow.prepend(toAppend)
     } else {
@@ -43,8 +43,22 @@ Scheduler.Views.WSDrawnSectionTime = Backbone.View.extend({
       'border-width':'2px', 
       'border-style':'solid'
     })
+    this.rendered = true
   },
   destroy: function() {
+    if(this.rendered) {
+      var removeRow = this.root.find('tr:nth-child(' + (2 * this.start - 9) + ')')
+      removeRow.find('td:nth-child(' + this.daysOrder[this.day] + ')').remove()
+      for(var i = 2 * this.start; i < 2 * this.finish; i++) {
+        var row = this.root.find('tr:nth-child(' + (i - 9) + ')')
+        var num = this.daysOrder[this.day]
+        if(num === 1) {
+          row.preprend('<td></td>')
+        } else {
+          row.find('td:nth-child(' + (this.daysOrder[this.day] - 1) + ')').after('<td></td>')
+        }
+      }
+    }
     this.undelegateEvents()
     this.$el.removeData().unbind()
     this.remove()

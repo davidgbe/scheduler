@@ -1,5 +1,7 @@
 Scheduler.Models.Section = Backbone.Model.extend({
   initialize: function() {
+    this.set('rendered', false)
+    this.set('remove', false)
   },
   urlRoot: '/sections',
   forMultiple: function(input, func) {
@@ -60,10 +62,10 @@ Scheduler.Models.Section = Backbone.Model.extend({
       parsed = -1
     } else if(parsed.length === 5) {
       var hour = parseFloat(parsed.substring(0,2))
-      parsed = (parsed.charAt(3) !== '0') ? hour + (parseFloat(parsed.substring(3,4)) / 10) : hour
+      parsed = (parsed.charAt(3) !== '0') ? ( hour + (parseFloat(parsed.substring(3,4)) / 10) ) : hour
     } else {
       var hour = parseFloat(parsed.substring(0,1))
-      parsed = (parsed.charAt(2) !== '0') ? hour + (parseFloat(parsed.substring(2,3)) / 10) : hour
+      parsed = (parsed.charAt(2) !== '0') ? ( hour + (parseFloat(parsed.substring(2,3)) / 10) ) : hour
     }
     return parsed
   },
@@ -78,9 +80,9 @@ Scheduler.Models.Section = Backbone.Model.extend({
   timeAsRoundedNum: function(time) {
     var toReturn = this.timeAsNum(time)
     var minutes = toReturn - Math.floor(toReturn)
-    if(minutes <= .3 && minutes !== 0) {
+    if(minutes <= .31 && minutes !== 0) {
       toReturn = Math.floor(toReturn) + .5
-    } else if(minutes > .3) {
+    } else if(minutes > .31) {
       toReturn = Math.floor(toReturn  ) + 1
     } 
     return toReturn

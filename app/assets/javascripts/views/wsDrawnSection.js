@@ -3,6 +3,9 @@ Scheduler.Views.WSDrawnSection = function(section, schedule) {
     model: section,
     schedule: schedule,
     drawnTimes: [],
+    initialize: function() {
+      this.model.on('change', this.destroy, this)
+    },
     render: function() {
       var daysList = this.model.parsedDays()
       var starts = this.model.startAsRoundedNum()
@@ -22,7 +25,6 @@ Scheduler.Views.WSDrawnSection = function(section, schedule) {
       }
     },
     createDrawnSectionTime: function(start, finish, day, schedule, parent) {
-      console.log('in ds create')
       var drawnTime = new Scheduler.Views.WSDrawnSectionTime({
         start: start,
         finish: finish,
@@ -31,7 +33,24 @@ Scheduler.Views.WSDrawnSection = function(section, schedule) {
         parent: parent 
       })
       this.drawnTimes.push(drawnTime)
+    },
+    destroy: function() {
+      console.log('DESTROY CALLED')
+      if(this.model.get('remove') === false) {
+        return
+      }
+      for(var j in this.schedule.sections) {
+        var section = this.schedule.sections[j]
+        if(section.get('id') === this.model.get('id')) {
+          this.schedule.sections.splice(i, 1)
+          break
+        }
+      }
+      for(var i in this.drawnTimes) {
+        this.drawnTimes[i].destroy()
+      }
     }
   }
+  content.initialize()
   return content
 }

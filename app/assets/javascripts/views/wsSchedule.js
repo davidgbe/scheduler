@@ -20,14 +20,14 @@ Scheduler.Views.WSSchedule = Backbone.View.extend({
   }, 
   drawAllSections: function() {
     for(var i in this.schedule.sections) {
-      var data = this.schedule.sections[i]
-      if(data.rendered === true) {
+      var section = this.schedule.sections[i]
+      if(section.get('rendered') === true) {
         continue
       }
-      var drawnSection = new Scheduler.Views.WSDrawnSection(data.model, this)
+      var drawnSection = new Scheduler.Views.WSDrawnSection(section, this)
       this.drawnSections.push(drawnSection)
       drawnSection.render()
-      data.rendered = true
+      section.set('rendered', true)
     }
   } 
 })
