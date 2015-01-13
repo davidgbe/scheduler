@@ -30,7 +30,7 @@ Scheduler.Views.WSDrawnSectionTime = Backbone.View.extend({
 
     for(var i = 2 * this.start; i < 2 * this.finish; i++) {
       var row = this.root.find('tr:nth-child(' + (i - 9) + ')')
-      var removeNum = ((i - 9) % 2 === 0) ? this.daysOrder[this.day] + 1 : this.daysOrder[this.day]
+      var removeNum = ((i - 9) % 2 === 1) ? (this.daysOrder[this.day] + 1) : (this.daysOrder[this.day])
       row.find('td:nth-child(' + removeNum + ')').remove()
     }
     var insertRow = this.root.find('tr:nth-child(' + (2 * this.start - 9) + ')')
@@ -47,7 +47,7 @@ Scheduler.Views.WSDrawnSectionTime = Backbone.View.extend({
     removeRow.find('td:nth-child(' + (this.daysOrder[this.day] + 1) + ')').remove()
     for(var j = 2 * this.start; j < 2 * this.finish; j++) {
       var row = this.root.find('tr:nth-child(' + (j - 9) + ')')
-      var addNum = ((j - 9) % 2 === 0) ? this.daysOrder[this.day] : this.daysOrder[this.day] - 1
+      var addNum = ((j - 9) % 2 === 1) ? (this.daysOrder[this.day]) : (this.daysOrder[this.day] - 1)
       row.find('td:nth-child(' + addNum + ')').after('<td></td>')
     }
 
