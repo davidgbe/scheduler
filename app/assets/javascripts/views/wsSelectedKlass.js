@@ -117,7 +117,10 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
           this.selected = newSelected
           this.selected.set('remove', false)
           this.selected.set('rendered', false)
-          this.schedule.sections.push(this.selected)
+          this.schedule.sections.push({
+            section: this.selected,
+            klass: this.model
+          })
           this.toggleSelect()
           this.schedule.trigger('change')
         }
@@ -125,7 +128,10 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
         this.selected = section
         this.selected.set('remove', false)
         this.selected.set('rendered', false)
-        this.schedule.sections.push(this.selected)
+        this.schedule.sections.push({
+          section: this.selected,
+          klass: this.model
+        })
         this.toggleSelect()
         this.schedule.trigger('change')
       }
@@ -135,11 +141,6 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
         this.selected = null
         this.toggleSelect()
       } else if(section.get('id') === this.selected.get('id')) {
-        console.log(section)
-        console.log(this.selected)
-        console.log('called')
-        console.log(section.get('id'))
-        console.log(this.selected.get('id'))
         this.selected.set('remove', true)
         this.selected = null
         this.toggleSelect()
@@ -149,7 +150,10 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
         this.selected = section
         this.selected.set('remove', false)
         this.selected.set('rendered', false)
-        this.schedule.sections.push(this.selected)
+        this.schedule.sections.push({
+          section: this.selected,
+          klass: this.model
+        })
       }
       this.schedule.trigger('change')
     }

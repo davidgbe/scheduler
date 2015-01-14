@@ -1,7 +1,8 @@
-Scheduler.Views.WSDrawnSection = function(section, schedule) {
+Scheduler.Views.WSDrawnSection = function(section, schedule, klass) {
   var content = {
     model: section,
     schedule: schedule,
+    klass: klass,
     drawnTimes: [],
     initialize: function() {
       this.model.on('change', this.destroy, this)
@@ -44,7 +45,7 @@ Scheduler.Views.WSDrawnSection = function(section, schedule) {
         this.drawnTimes[i].destroy()
       }
       for(var j in this.schedule.sections) {
-        var section = this.schedule.sections[j]
+        var section = this.schedule.sections[j].section
         if(section.get('id') === this.model.get('id')) {
           this.schedule.sections.splice(j, 1)
           break
