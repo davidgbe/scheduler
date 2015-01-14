@@ -143,7 +143,9 @@ class SocParserWorker
       start: section['start_time'].to_s,
       finish: section['end_time'].to_s,
       max_capacity: section['spaces_available'].to_i,
-      current_capacity: section['number_registered'].to_i
+      current_capacity: section['number_registered'].to_i,
+      teacher_first: section['instructor']['first_name'],
+      teacher_last: section['instructor']['last_name']
     }
     section_data.each do |key,value|
       if value.is_a?(Hash)
