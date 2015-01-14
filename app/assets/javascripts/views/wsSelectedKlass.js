@@ -5,7 +5,7 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
     'mouseout .side-bar-item': 'notHovering',
     'click .close': 'closeClick',
     'click .expand': 'toggleExpand',
-    'click .side-bar-item': 'toggleSelect'
+    'click .side-bar-item': 'selectKlass'
   },
   initialize: function(options) {
     this.model = options.model
@@ -15,6 +15,7 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
     }
     this.children = []
     this.schedule = options.schedule
+    this.selected = null
   },
   render: function() {
     var data = { 
@@ -82,7 +83,8 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
     for(var i in this.sections) {
       var sectionView = new Scheduler.Views.WSSelectedSection({
         model: this.sections[i],
-        schedule: this.schedule
+        schedule: this.schedule,
+        parent: this
       })
       this.children.push(sectionView)
       this.$el.find('.section-container').append(sectionView.render().el)
@@ -99,14 +101,57 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
     if(that.hasClass('selected')) {
       that.removeClass('selected')
       that.css('border-color', '#4ad0ff')
-      this.sections[0].set('remove', true)
     } else {
       that.addClass('selected')
       that.css('border-color', '#0050a8')
-      this.sections[0].set('remove', false)
-      this.sections[0].set('rendered', false)
-      this.schedule.sections.push(this.sections[0])
     }
-    this.schedule.trigger('change')
-  }
+  },
+  selectKlass: function() {
+    this.selectSection(null)
+  },
+  selectSection: function(section) {
+    if(this.selected == null) {
+      if(section == null) {
+        var newSelected = (this.sections.length !== 0) ? this.sections[0] : null
+        if(newSelected != null) {
+          this.selected = newSelected
+          this.selected.set('remove', false)
+          this.selected.set('rendered', false)
+          this.schedule.sections.push(this.selected)
+          this.toggleSelect()
+          this.schedule.trigger('change')
+        }
+      } else {
+        this.selected = section
+        this.selected.set('remove', false)
+        this.selected.set('rendered', false)
+        this.schedule.sections.push(this.selected)
+        this.toggleSelect()
+        this.schedule.trigger('change')
+      }
+    } else {
+      if(section == null) {
+        this.selected.set('remove', true)
+        this.selected = null
+        this.toggleSelect()
+      } else if(section.get('id') === this.selected.get('id')) {
+        console.log(section)
+        console.log(this.selected)
+        console.log('called')
+        console.log(section.get('id'))
+        console.log(this.selected.get('id'))
+        this.selected.set('remove', true)
+        this.selected = null
+        this.toggleSelect()
+      } else {
+        this.selected.set('remove', true)
+        this.schedule.trigger('change')
+        this.selected = section
+        this.selected.set('remove', false)
+        this.selected.set('rendered', false)
+        this.schedule.sections.push(this.selected)
+      }
+      this.schedule.trigger('change')
+    }
+  } 
 })

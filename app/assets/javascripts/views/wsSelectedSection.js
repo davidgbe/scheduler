@@ -1,10 +1,12 @@
 Scheduler.Views.WSSelectedSection = Backbone.View.extend({
   template: JST['workstation/selectedSection'],
   events: {
+    'click .section': 'toggleSelect'
   },
   initialize: function(options) {
     this.model = options.model
     this.schedule = options.schedule
+    this.parent = options.parent
   },
   render: function() {
     var data = { 
@@ -17,6 +19,10 @@ Scheduler.Views.WSSelectedSection = Backbone.View.extend({
     var compiled = this.template(data)
     this.$el.append(compiled)
     return this
+  },
+  toggleSelect: function() {
+    this.parent.selectSection(this.model)
+    return false
   },
   destroy: function() {
     this.undelegateEvents()
