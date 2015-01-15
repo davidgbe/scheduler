@@ -14,7 +14,9 @@ Scheduler.Views.WSSelectedSection = Backbone.View.extend({
       start: this.model.startAsReadableString(),
       finish: this.model.finishAsReadableString(),
       maxCapacity: this.model.get('max_capacity'),
-      currentCapacity: this.model.get('current_capacity')
+      currentCapacity: this.model.get('current_capacity'),
+      teacherFirst: this.model.get('teacher_first'),
+      teacherLast: this.model.get('teacher_last')
     }
     var compiled = this.template(data)
     this.$el.append(compiled)

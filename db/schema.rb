@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 20140822173349) do
     t.text     "finish"
     t.integer  "max_capacity"
     t.integer  "current_capacity"
+    t.text     "teacher_first"
+    t.text     "teacher_last"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

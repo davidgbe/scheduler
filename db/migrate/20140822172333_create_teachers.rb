@@ -1,10 +1,9 @@
-class CreateTeachers < ActiveRecord::Migration
-
+ class CreateTeachers < ActiveRecord::Migration
   def up
     create_table :teachers do |t|
-      t.string :name
-      t.string :email
-      t.text :personal_url
+      t.string :first_name
+      t.string :last_name
+      t.string :url
       t.timestamps
     end
   end
