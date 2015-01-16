@@ -1,5 +1,6 @@
 class Klass < ActiveRecord::Base
-  has_many :schedules, through: :schedules_klasses
+  has_many :schedules_klasses_relations, dependent: :destroy
+  has_many :schedules, through: :schedules_klasses_relations, :autosave => true
   has_many :sections
 
   searchable do 

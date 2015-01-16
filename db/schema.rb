@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140822173349) do
+ActiveRecord::Schema.define(version: 20150115024531) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,9 +35,9 @@ ActiveRecord::Schema.define(version: 20140822173349) do
     t.datetime "updated_at"
   end
 
-  create_table "schedules_klasses", id: false, force: true do |t|
-    t.integer "schedule_id", null: false
-    t.integer "klass_id",    null: false
+  create_table "schedules_klasses_relations", force: true do |t|
+    t.integer "schedule_id"
+    t.integer "klass_id"
   end
 
   create_table "sections", force: true do |t|
@@ -48,16 +48,19 @@ ActiveRecord::Schema.define(version: 20140822173349) do
     t.text     "finish"
     t.integer  "max_capacity"
     t.integer  "current_capacity"
-    t.text     "teacher_first"
-    t.text     "teacher_last"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  create_table "sections_teachers_relations", force: true do |t|
+    t.integer "section_id"
+    t.integer "teacher_id"
+  end
+
   create_table "teachers", force: true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.text     "personal_url"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

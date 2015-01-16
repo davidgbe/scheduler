@@ -1,10 +1,12 @@
 class CreateSectionsTeachers < ActiveRecord::Migration
   def up
-    create_join_table :sections, :teachers, table_name: :sections_teachers
+    create_table :sections_teachers_relations do |t|
+      t.column :section_id, :integer
+      t.column :teacher_id, :integer
+    end
   end
 
   def down
-    drop_join_table :sections_teachers do
-    end
+    drop_table :sections_teachers_relations
   end
 end

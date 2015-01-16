@@ -59,19 +59,15 @@ class SocParserWorker
   def fetch_courses_data
     fetch_active_term if !@term
     fetch_departments if !@department_codes
-    all_klasses = []
-    all_teachers = []
-    all_sections = []
     base_subject_url = @endpoints['courses'].sub('term', @term)
     @department_codes.each do |code|
       tailored_url = base_subject_url.sub('dept_code', code)
       department_data = JSON.parse(open(tailored_url).read)
-      parse_for_department_info department_data, code, all_klasses, all_sections, all_teachers
+      parse_for_department_info department_data, code
     end
-    insert_into_db all_klasses, all_sections, all_teachers
   end
 
-  def parse_for_department_info department_data, code, all_klasses, all_sections, all_teachers
+  def parse_for_department_info department_data, code
     if !department_data.has_key?('OfferedCourses') || !department_data['OfferedCourses'].has_key?('course')
       return
     end
@@ -82,10 +78,10 @@ class SocParserWorker
         dept_name = department_data['Dept_Info']['department']
       end
     end
-    parse_for_classes_info department_data['OfferedCourses']['course'], code, dept_name, all_klasses, all_sections, all_teachers
+    parse_for_classes_info department_data['OfferedCourses']['course'], code, dept_name
   end
 
-  def parse_for_classes_info klasses, code, dept_name, all_klasses, all_sections, all_teachers
+  def parse_for_classes_info klasses, code, dept_name
     if klasses
       klasses.each do |klass|
         next if !klass.is_a?(Hash) || !klass.has_key?('CourseData')
@@ -107,25 +103,20 @@ class SocParserWorker
           end
         end
         klass_instance = Klass.find_or_create_by(klass_data)
-        parse_for_sections_info klass['SectionData'], klass_instance, all_sections, all_teachers
+        parse_for_sections_info klass['SectionData'], klass_instance
       end
     end
   end
 
-  def parse_for_sections_info sections, klass, all_sections, all_teachers
+  def parse_for_sections_info sections, klass
     if sections
       if sections.is_a?(Hash)
         #there's just single section
-        res = parse_section(sections, klass, all_teachers)
-        if res 
-          all_sections << res
-        end
+        parse_section(sections, klass)
       elsif sections.is_a?(Array)
+        #multiple
         sections.each do |section|
-          res = parse_section(section, klass, all_teachers)
-          if res 
-            all_sections << res
-          end
+          parse_section(section, klass)
         end
       else 
         return
@@ -133,7 +124,7 @@ class SocParserWorker
     end
   end
 
-  def parse_section section, klass, all_teachers
+  def parse_section section, klass
     if !section.is_a?(Hash)
       return
     end
@@ -145,25 +136,26 @@ class SocParserWorker
       current_capacity: section['number_registered'].to_i,
       klass_id: klass.id
     }
-    if section.has_key?('instructor')
-      instructor = section['instructor']
-      if instructor.is_a?(Hash) 
-        parse_instructor(instructor, all_teachers)
-      elsif instructor.is_a?(Array)
-        instructor.each do |single_instructor| 
-          parse_instructor(single_instructor, all_teachers)
-        end
-      end
-    end
     section_data.each do |key,value|
       if value.is_a?(Hash)
         raise section.to_s
       end
     end
-    section_data
+    section_instance = Section.find_or_create_by(section_data)
+
+    if section.has_key?('instructor')
+      instructor = section['instructor']
+      if instructor.is_a?(Hash) 
+        parse_instructor(instructor, section_instance)
+      elsif instructor.is_a?(Array)
+        instructor.each do |single_instructor| 
+          parse_instructor(single_instructor, section_instance)
+        end
+      end
+    end
   end
 
-  def parse_instructor instructor, all_teachers
+  def parse_instructor instructor, section
     if instructor.nil?
       return
     end
@@ -171,13 +163,7 @@ class SocParserWorker
       first_name: (instructor.has_key?('first_name')) ? instructor['first_name'] : nil,
       last_name: (instructor.has_key?('last_name')) ? instructor['last_name'] : nil
     }
-    if (!ins_data['first_name'].nil?) && (!ins_data['last_name'].nil?)
-      all_teachers << ins_data
-    end
+    ins_instance = Teacher.find_or_create_by(ins_data)
+    section.sections_teachers_relations.create(teacher_id: ins_instance.id)
   end
-
-  def insert_into_db all_klasses, all_sections, all_teachers
-
-  end
-
 end
