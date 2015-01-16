@@ -9,7 +9,7 @@ Scheduler.Collections.Klasses = Backbone.Collection.extend({
         model = new Scheduler.Models.Klass
         this.push(model)
       }
-      var sections = Scheduler.sections.parseSections(klassData['sections'], model.get('id'))
+      var sections = Scheduler.sections.parseSections(klassData['sections'], klassData.id)
       delete klassData['sections']
       model.set(klassData)
       relevantModels.push({

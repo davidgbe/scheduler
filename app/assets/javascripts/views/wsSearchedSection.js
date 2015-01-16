@@ -13,8 +13,7 @@ Scheduler.Views.WSSearchedSection = Backbone.View.extend({
       finish: this.model.finishAsReadableString(),
       maxCapacity: this.model.get('max_capacity'),
       currentCapacity: this.model.get('current_capacity'),
-      teacherFirst: this.model.get('teacher_first'),
-      teacherLast: this.model.get('teacher_last')
+      teachers: this.model.get('teachers')
     }
     if(data.days == null || data.days == {} || data.days === '{}') {
       data.days = 'None'

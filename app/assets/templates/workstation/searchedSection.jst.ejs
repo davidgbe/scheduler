@@ -7,6 +7,16 @@
     <%= start[i] %> to <%= finish[i] %> <%= days[i] %>
   <% } %>
   </ul>
-  <p><%= teacherFirst %> <%= teacherLast %></p>
+  <ul>
+  <% for(var i in teachers) { %>
+    <% if(i != 0) { %>
+      and
+    <% } %>
+    <% if(teachers[i]) { %>
+      <%= (teachers[i].first_name) ? teachers[i].first_name : '' %> 
+      <%= (teachers[i].last_name) ? teachers[i].last_name : '' %>
+    <% } %>
+  <% } %>
+  </ul>
   <p class="capacity"><%= currentCapacity %>/<%= maxCapacity %></p>
 </p>

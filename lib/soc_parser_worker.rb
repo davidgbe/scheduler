@@ -110,13 +110,14 @@ class SocParserWorker
 
   def parse_for_sections_info sections, klass
     if sections
+      last_teacher = nil
       if sections.is_a?(Hash)
         #there's just single section
-        parse_section(sections, klass)
+        last_teacher = parse_section(sections, klass, last_teacher)
       elsif sections.is_a?(Array)
         #multiple
         sections.each do |section|
-          parse_section(section, klass)
+          last_teacher = parse_section(section, klass, last_teacher)
         end
       else 
         return
@@ -124,7 +125,7 @@ class SocParserWorker
     end
   end
 
-  def parse_section section, klass
+  def parse_section section, klass, last_teacher
     if !section.is_a?(Hash)
       return
     end
@@ -142,22 +143,28 @@ class SocParserWorker
       end
     end
     section_instance = Section.find_or_create_by(section_data)
-
     if section.has_key?('instructor')
       instructor = section['instructor']
+      to_return = nil
       if instructor.is_a?(Hash) 
-        parse_instructor(instructor, section_instance)
+        to_return = parse_instructor(instructor, section_instance)
       elsif instructor.is_a?(Array)
         instructor.each do |single_instructor| 
-          parse_instructor(single_instructor, section_instance)
+          to_return = parse_instructor(single_instructor, section_instance)
         end
       end
+      to_return
+    else 
+      if last_teacher.present?
+        section_instance.sections_teachers_relations.create(teacher_id: last_teacher.id)
+      end
+      last_teacher
     end
   end
 
   def parse_instructor instructor, section
     if instructor.nil?
-      return
+      raise instructor.inspect
     end
     ins_data = {
       first_name: (instructor.has_key?('first_name')) ? instructor['first_name'] : nil,
@@ -165,5 +172,6 @@ class SocParserWorker
     }
     ins_instance = Teacher.find_or_create_by(ins_data)
     section.sections_teachers_relations.create(teacher_id: ins_instance.id)
+    ins_instance
   end
 end

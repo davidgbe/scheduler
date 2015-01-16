@@ -10,6 +10,13 @@ Scheduler.Collections.Sections = Backbone.Collection.extend({
         this.push(model)
       }
       section.klass_id = klass_id
+      if(section.teachers !== null && section.teachers.length > 0) {
+        for(var i in section.teachers) {
+          section.teachers[i] = section.teachers[i]['teacher']
+        }
+      } else {
+        console.log(section)
+      }
       model.set(section)
       sectionModels.push(model)
     }
