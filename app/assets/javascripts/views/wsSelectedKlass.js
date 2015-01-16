@@ -54,6 +54,7 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
   },
   closeClick: function() {
     this.workStation.removeSelected(this)
+    return false
   },
   destroy: function() {
     this.removeSections()

@@ -23,6 +23,8 @@ Scheduler.Views.WSSelectedSection = Backbone.View.extend({
   },
   toggleSelect: function() {
     this.parent.selectSection(this.model)
+    this.parent.$el.find('.selected-selected-section').removeClass('selected-selected-section')
+    this.$el.find('.section').addClass('selected-selected-section')
     return false
   },
   destroy: function() {

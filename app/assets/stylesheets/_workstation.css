@@ -211,6 +211,11 @@ header h5:hover {
   background-color: #E3E3E3;
 }
 
+.selected-selected-section {
+  background-color: rgba(74, 208, 255, .5);
+  color: white;
+}
+
 .right-container {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
