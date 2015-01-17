@@ -9,9 +9,9 @@ Scheduler.Views.WSDrawnSection = function(section, schedule, klass) {
       this.destroyed = false
     },
     render: function() {
-      var daysList = this.model.parsedDays()
-      var starts = this.model.startAsRoundedNum()
-      var finishes = this.model.finishAsRoundedNum()
+      var daysList = this.model.get('parsedDaysList')
+      var starts = this.model.get('startNum')
+      var finishes = this.model.get('finishNum')
       for(var i in daysList) { 
         var len = daysList[i].length
         if(len > 1) {

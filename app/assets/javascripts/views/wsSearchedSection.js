@@ -8,9 +8,9 @@ Scheduler.Views.WSSearchedSection = Backbone.View.extend({
   },
   render: function() {
     var data = { 
-      days: this.model.parsedDays(),
-      start: this.model.startAsReadableString(),
-      finish: this.model.finishAsReadableString(),
+      days: this.model.get('parsedDaysList'),
+      start: this.model.get('startReadable'),
+      finish: this.model.get('finishReadable'),
       maxCapacity: this.model.get('max_capacity'),
       currentCapacity: this.model.get('current_capacity'),
       teachers: this.model.get('teachers')

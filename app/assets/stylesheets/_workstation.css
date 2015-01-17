@@ -199,8 +199,10 @@ header h5:hover {
 }
 
 .section {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border: 10px solid transparent;
   color: #001b72;
-  padding: 10px;
   font-family: 'Questrial';
   font-size: 12px;
   background-color: white;

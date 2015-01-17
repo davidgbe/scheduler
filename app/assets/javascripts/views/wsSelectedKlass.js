@@ -68,13 +68,15 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
       this.$el.find('.expand').html('>')
       this.$el.removeClass('expanded')
       var that = this
+      this.$el.find('.side-bar-item-container').animate({'margin-top': '0px'}, {queue: false})
       this.$el.find('.sections-outline').animate({height: '0px'}, {complete: function() {
-        that.removeSections()
+      that.removeSections()
       }})
     } else {
       this.$el.addClass('expanded')
       this.$el.find('.expand').html('v')
       this.renderSections()
+      this.$el.find('.side-bar-item-container').animate({'margin-top': '5px'}, {queue: false})
       this.$el.find('.sections-outline').animate({height: '140px'})
     }
     return false;

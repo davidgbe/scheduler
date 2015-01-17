@@ -7,6 +7,9 @@ class Klass < ActiveRecord::Base
     text :title
     integer :level
     text :subject 
+    text :dept_title
+    text :prerequisites
+    text :corequisites
     text :description do 
       description.downcase if description
     end
@@ -22,8 +25,10 @@ class Klass < ActiveRecord::Base
       sections.map(&:finish)
     end
     #Teacher search params
-    text :teacher_names do
-      sections.map(&:teacher_name)
-    end
+    text :teacher_names
+  end
+
+  def teacher_names
+    sections.map(&:teacher_names)
   end
 end

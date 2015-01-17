@@ -1,6 +1,6 @@
 Scheduler.Collections.Sections = Backbone.Collection.extend({
   model: Scheduler.Models.Section,
-  parseSections: function(sections, klass_id) {
+  parseSections: function(sections) {
     sectionModels = []
     for(var i in sections) {
       var section = sections[i]['section']
@@ -9,7 +9,6 @@ Scheduler.Collections.Sections = Backbone.Collection.extend({
         model = new Scheduler.Models.Section
         this.push(model)
       }
-      section.klass_id = klass_id
       if(section.teachers !== null && section.teachers.length > 0) {
         for(var i in section.teachers) {
           section.teachers[i] = section.teachers[i]['teacher']
@@ -18,6 +17,7 @@ Scheduler.Collections.Sections = Backbone.Collection.extend({
         console.log(section)
       }
       model.set(section)
+      model.setParsedValues()
       sectionModels.push(model)
     }
     return sectionModels

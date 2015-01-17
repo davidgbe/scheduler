@@ -97,5 +97,26 @@ Scheduler.Models.Section = Backbone.Model.extend({
   },
   parsedDays: function() {
     return this.forMultiple(this.get('days'), function(x) { return x })
+  },
+  allValuesFlattened: function() {
+    flattenedList = []
+    for(var i in this.get('parsedDaysList')) {
+      var days = this.get('parsedDaysList')[i]
+      for(var j = 0; j < days.length; j++) {
+        flattenedList.push({
+          start: this.get('startNum')[i],
+          finish: this.get('finishNun')[i],
+          day: days.substring(j, 1)
+        })
+      }
+    }
+    return flattenedList
+  },
+  setParsedValues: function() {
+    this.set('startNum', this.startAsRoundedNum())
+    this.set('finishNum', this.finishAsRoundedNum())
+    this.set('parsedDaysList', this.parsedDays())
+    this.set('startReadable', this.startAsReadableString())
+    this.set('finishReadable', this.finishAsReadableString())
   }
 })
