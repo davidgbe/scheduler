@@ -115,48 +115,38 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
   selectSection: function(section) {
     if(this.selected == null) {
       if(section == null) {
-        var newSelected = (this.sections.length !== 0) ? this.sections[0] : null
-        if(newSelected != null) {
-          this.selected = newSelected
-          this.selected.set('remove', false)
-          this.selected.set('rendered', false)
-          this.schedule.sections.push({
-            section: this.selected,
+        if(this.model.get('sections').length > 0) {
+          this.selected = this.schedule.schedule({
+            section: null,
             klass: this.model
-          })
+          }).section
           this.toggleSelect()
           this.schedule.trigger('change')
         }
       } else {
-        this.selected = section
-        this.selected.set('remove', false)
-        this.selected.set('rendered', false)
-        this.schedule.sections.push({
+        this.selected = this.schedule.schedule({
           section: this.selected,
           klass: this.model
-        })
+        }).section
         this.toggleSelect()
         this.schedule.trigger('change')
       }
     } else {
       if(section == null) {
-        this.selected.set('remove', true)
+        this.schedule.unschedule(this.selected)
         this.selected = null
         this.toggleSelect()
       } else if(section.get('id') === this.selected.get('id')) {
-        this.selected.set('remove', true)
+        this.schedule.unschedule(this.selected)
         this.selected = null
         this.toggleSelect()
       } else {
-        this.selected.set('remove', true)
+        this.schedule.unschedule(this.selected)
         this.schedule.trigger('change')
-        this.selected = section
-        this.selected.set('remove', false)
-        this.selected.set('rendered', false)
-        this.schedule.sections.push({
+        this.selected = this.schedule.schedule({
           section: this.selected,
           klass: this.model
-        })
+        }).section
       }
       this.schedule.trigger('change')
     }

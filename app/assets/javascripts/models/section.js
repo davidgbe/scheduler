@@ -105,7 +105,7 @@ Scheduler.Models.Section = Backbone.Model.extend({
       for(var j = 0; j < days.length; j++) {
         flattenedList.push({
           start: this.get('startNum')[i],
-          finish: this.get('finishNun')[i],
+          finish: this.get('finishNum')[i],
           day: days.substring(j, 1)
         })
       }
