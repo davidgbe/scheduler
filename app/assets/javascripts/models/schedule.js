@@ -61,9 +61,15 @@ Scheduler.Models.Schedule = Backbone.Model.extend({
         var newTime = newSectionVals[j]
         for(var k = 0; k < scheduledVals.length; k++) {
           var oldTime = scheduledVals[k]
+          console.log(newTime.day)
+          console.log(oldTime.day)
           if(newTime.day !== oldTime.day) {
             continue
           }
+          console.log('overlap')
+          console.log(newTime)
+          console.log(oldTime)
+          console.log('end')
           if(!this.notOverlapping(newTime.start, oldTime.start, newTime.finish, oldTime.finish)) {
             return false
           }
@@ -73,7 +79,7 @@ Scheduler.Models.Schedule = Backbone.Model.extend({
     return true
   },
   notOverlapping: function(start1, start2, finish1, finish2) {
-    if( (start1 > start2 && finish1 >= start2) || (start2 > start1 && finish2 >= start1) ) {
+    if( (start1 < start2 && finish1 <= start2) || (start2 < start1 && finish2 <= start1) ) {
       return true
     }
     return false
