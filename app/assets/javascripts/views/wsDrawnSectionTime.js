@@ -20,7 +20,6 @@ Scheduler.Views.WSDrawnSectionTime = Backbone.View.extend({
     this.rendered = false
   }, 
   render: function() {
-    console.log(this.parent.klass)
     var compiled = this.template({
       rowSpan: 2 * (this.finish - this.start),
       deptTitle: this.parent.klass.get('dept_title')
@@ -28,7 +27,6 @@ Scheduler.Views.WSDrawnSectionTime = Backbone.View.extend({
     this.$el.append(compiled)
 
     var toAppend = this.$el.find('td')
-    console.log(toAppend)
     toAppend.addClass( ('' + this.daysOrder[this.day]) )
 
     this.root = this.schedule.$el.find('.schedule-table')

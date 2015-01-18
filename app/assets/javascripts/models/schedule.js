@@ -4,11 +4,8 @@ Scheduler.Models.Schedule = Backbone.Model.extend({
   },
   urlRoot: '/schedules',
   schedule: function(sectionPackage) {
-    console.log(sectionPackage)
-    console.log('yyyy')
     if(sectionPackage.section != null) {
-      console.log('here1')
-      if(this.canSchedule(section)) {
+      if(this.canSchedule(sectionPackage.section)) {
         sectionPackage.section.set('remove', false)
         sectionPackage.section.set('rendered', false)
         this.sections.push(sectionPackage)
@@ -18,7 +15,6 @@ Scheduler.Models.Schedule = Backbone.Model.extend({
         return null
       }
     } else {
-      console.log('here')
       var klassSections = sectionPackage.klass.get('sections')
       for(var i in klassSections) {
         if(this.canSchedule(klassSections[i])) {
@@ -32,18 +28,35 @@ Scheduler.Models.Schedule = Backbone.Model.extend({
           return toReturn
         }
       }
-      alert('this class doesn\'t fit anywhere!')
+      alert('This class doesn\'t fit anywhere!')
       return null
     }
   },
   unschedule: function(section) {
     section.set('remove', true)
   },
+  removeSection: function(section) {
+    for(var i in this.sections) {
+      var existingSection = this.sections[i].section
+      if(existingSection.get('id') === section.get('id')) {
+        this.sections.splice(i, 1)
+        break
+      }
+    }
+  },
   canSchedule: function(section) {
     var newSectionVals = section.allValuesFlattened()
+    console.log('new')
+    console.log(newSectionVals)
+    console.log(section)
+    console.log('old')
     for(var i in this.sections) {
       var scheduled = this.sections[i].section
+      if(scheduled.get('id') === section.get('id')) {
+        continue
+      }
       var scheduledVals = scheduled.allValuesFlattened()
+      console.log(scheduledVals)
       for(var j = 0; j < newSectionVals.length; j++) {
         var newTime = newSectionVals[j]
         for(var k = 0; k < scheduledVals.length; k++) {
@@ -51,7 +64,7 @@ Scheduler.Models.Schedule = Backbone.Model.extend({
           if(newTime.day !== oldTime.day) {
             continue
           }
-          if(!this.notOverlapping(newTime.start, oldTime.finish, newTime.start, oldTime.finish)) {
+          if(!this.notOverlapping(newTime.start, oldTime.start, newTime.finish, oldTime.finish)) {
             return false
           }
         }
