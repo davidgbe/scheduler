@@ -57,6 +57,9 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
     return false
   },
   destroy: function() {
+    if(this.selected != null) {
+      this.schedule.unschedule(this.selected)
+    }
     this.removeSections()
     this.undelegateEvents()
     this.$el.removeData().unbind()
@@ -113,8 +116,7 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
     this.selectSection(null)
   },
   selectSection: function(section) {
-    console.log('shou')
-    console.log(section)
+    console.log(this.schedule.sections)
     if(this.selected == null) {
       if(section == null) {
         if(this.model.get('sections').length > 0) {
@@ -159,8 +161,10 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
         })
         if(newSelected != null) {
           this.selected = newSelected.section
-          this.toggleSelect()
           this.schedule.trigger('change')
+        } else {
+          this.selected = null
+          this.toggleSelect()
         }
       }
     }

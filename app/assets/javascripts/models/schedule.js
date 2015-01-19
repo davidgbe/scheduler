@@ -46,30 +46,19 @@ Scheduler.Models.Schedule = Backbone.Model.extend({
   },
   canSchedule: function(section) {
     var newSectionVals = section.allValuesFlattened()
-    console.log('new')
-    console.log(newSectionVals)
-    console.log(section)
-    console.log('old')
     for(var i in this.sections) {
       var scheduled = this.sections[i].section
       if(scheduled.get('id') === section.get('id')) {
         continue
       }
       var scheduledVals = scheduled.allValuesFlattened()
-      console.log(scheduledVals)
       for(var j = 0; j < newSectionVals.length; j++) {
         var newTime = newSectionVals[j]
         for(var k = 0; k < scheduledVals.length; k++) {
           var oldTime = scheduledVals[k]
-          console.log(newTime.day)
-          console.log(oldTime.day)
           if(newTime.day !== oldTime.day) {
             continue
           }
-          console.log('overlap')
-          console.log(newTime)
-          console.log(oldTime)
-          console.log('end')
           if(!this.notOverlapping(newTime.start, oldTime.start, newTime.finish, oldTime.finish)) {
             return false
           }

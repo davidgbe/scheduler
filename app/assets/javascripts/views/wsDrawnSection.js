@@ -44,7 +44,6 @@ Scheduler.Views.WSDrawnSection = function(section, schedule, klass) {
       for(var i = this.drawnTimes.length - 1; i >= 0; i--) {
         this.drawnTimes[i].destroy()
       }
-      console.log(this.schedule)
       this.schedule.schedule.removeSection(this.model)
     }
   }

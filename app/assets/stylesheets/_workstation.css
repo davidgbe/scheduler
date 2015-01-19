@@ -21,10 +21,10 @@ header {
   z-index: 10;
   min-width: 620px;
   
-  background-color: #e8e0da;
-  -moz-box-shadow:    0px 0px 3px 2px #ccc;
-  -webkit-box-shadow: 0px 0px 3px 2px #ccc;
-  box-shadow:         0px 0px 3px 2px #ccc;
+  background-color: #e2d6d0;
+  -moz-box-shadow:    0px 0px 2px 2px #ccc;
+  -webkit-box-shadow: 0px 0px 2px 2px #ccc;
+  box-shadow:         0px 0px 2px 2px #ccc;
  
 }
 
@@ -74,7 +74,7 @@ header h5:hover {
   height: 40px;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
-  background-color: #e0d0c6;
+  background-color: #d3c2ba;
   padding: 6px 6px 10px 6px;
   color: #001b72;
   cursor: pointer;
@@ -84,7 +84,7 @@ header h5:hover {
 }
 
 .selected-tab {
-  background-color: #e8e0da;
+  background-color: #e2d6d0;
   color: #0050a8;
 }
 
@@ -94,7 +94,7 @@ header h5:hover {
   width: 100%;
   height: calc(100% - 25px);
   padding: 12px 12px 12px 12px;
-  background-color: #e8e0da;
+  background-color: #e2d6d0;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
@@ -117,7 +117,7 @@ header h5:hover {
 
 .selected-classes {
   overflow-y: auto;
-  background-color: #e8e0da;
+  background-color: #e2d6d0;
 }
 
 .side-bar-item {
