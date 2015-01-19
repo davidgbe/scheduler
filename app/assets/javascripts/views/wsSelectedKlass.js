@@ -47,10 +47,10 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
     that.css('border-color', color)
   },
   hovering: function() {
-    this.setAppropriateBorderColor(this.$el.find('.side-bar-item'), '#0050a8', '#4ad0ff')
+    this.setAppropriateBorderColor(this.$el.find('.side-bar-item'), '#0050a8', '#84cdea')
   },
   notHovering: function() {
-    this.setAppropriateBorderColor(this.$el.find('.side-bar-item'), '#4ad0ff', 'white')
+    this.setAppropriateBorderColor(this.$el.find('.side-bar-item'), '#84cdea', 'white')
   },
   closeClick: function() {
     this.workStation.removeSelected(this)
@@ -106,7 +106,7 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
     var that = this.$el.find('.side-bar-item')
     if(that.hasClass('selected')) {
       that.removeClass('selected')
-      that.css('border-color', '#4ad0ff')
+      that.css('border-color', '#84cdea')
     } else {
       that.addClass('selected')
       that.css('border-color', '#0050a8')

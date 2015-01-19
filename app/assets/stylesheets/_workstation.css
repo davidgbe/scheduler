@@ -4,7 +4,7 @@ ul {
 }
 
 body {
-  background-color: #F2F2F2;
+  background-color: white;
   /* background-image: url(http://i60.tinypic.com/2yo78sh.jpg); */
 }
 
@@ -21,11 +21,7 @@ header {
   z-index: 10;
   min-width: 620px;
   
-  background-color: #e2d6d0;
-  -moz-box-shadow:    0px 0px 2px 2px #ccc;
-  -webkit-box-shadow: 0px 0px 2px 2px #ccc;
-  box-shadow:         0px 0px 2px 2px #ccc;
- 
+  background-color: #3686be;
 }
 
 header img {
@@ -38,11 +34,11 @@ header h5 {
   -moz-box-sizing: border-box;
   
   height: 30px;
-  color: #0050a8;
+  color: white;
   text-align: center;
   font-family: 'Lato';
   font-size: 14px;
-  
+  font-weight: 100;
   float: right;
   padding: 10px 10px 0 10px;
   
@@ -74,18 +70,19 @@ header h5:hover {
   height: 40px;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
-  background-color: #d3c2ba;
-  padding: 6px 6px 10px 6px;
-  color: #001b72;
+  background-color: #13659E;
+  padding: 3px 6px 13px 6px;
+  color: white;
   cursor: pointer;
   text-align: center;
-  font-family: 'Questrial';
+  font-family: 'Lato';
+  font-weight: 100;
   z-index: 5;
+  font-size: 16px;
 }
 
 .selected-tab {
-  background-color: #e2d6d0;
-  color: #0050a8;
+  background-color: #3686be;
 }
 
 .side-bar-inner {
@@ -94,7 +91,7 @@ header h5:hover {
   width: 100%;
   height: calc(100% - 25px);
   padding: 12px 12px 12px 12px;
-  background-color: #e2d6d0;
+  background-color: #3686be;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
@@ -117,7 +114,9 @@ header h5:hover {
 
 .selected-classes {
   overflow-y: auto;
-  background-color: #e2d6d0;
+  background-color: white;
+  border-radius: 4px;
+  padding-top: 5px; 
 }
 
 .side-bar-item {
@@ -127,7 +126,8 @@ header h5:hover {
   padding: 10px;
   margin: 0 5px 5px 5px;
   position: relative;
-  font-family: 'Questrial';
+  font-family: 'Lato';
+  font-weight: 300;
   
   color: #0050a8;
   
@@ -142,7 +142,7 @@ header h5:hover {
 
 .side-bar-item:hover {
   color: white;
-  background-color: #4ad0ff;
+  background-color: #84cdea;
   cursor: pointer;
   
  /* -webkit-transition:background 1s;
@@ -247,11 +247,12 @@ header h5:hover {
 }
 
 .title {
-  color: #0050a8;
+  color: #13659E;
   height: 100%;
   width: 100%;
   font-size: 20px;
   font-family: 'Lato';
+  font-family: 300;
   text-align: center;
   margin: 0px auto;
   padding: 5px 20px 5px 20px;
@@ -321,7 +322,7 @@ header h5:hover {
 .schedule-outer {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
-  background-color: #001b72;
+  background-color: white;
   border-radius: 4px;
   padding: 10px;
   height: 100%;
@@ -378,6 +379,7 @@ header h5:hover {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   font-family: 'Lato';
+  font-weight: 300;
 }
 
 .schedule-table tr:nth-child(odd) td {
@@ -433,13 +435,13 @@ header h5:hover {
   height: 10px;
   width: 10px;
   border-radius: 5px;
-  background-color: #4ad0ff;
+  background-color: #84cdea;
   margin: 0px 10px 0px 10px;
   cursor: pointer;
 }
 
 .selected-dot {
-  background-color: #001b72;
+  background-color: #174A6E;
 }
 
 .button {
@@ -467,7 +469,7 @@ header h5:hover {
 
 .left {
   float: left;
-    -webkit-transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
   -moz-transform: rotate(270deg);
   -o-transform: rotate(270deg);
   transform:rotate(270deg);
@@ -517,34 +519,38 @@ header h5:hover {
 }
 
 .searched-class-selected {
-  border-color: #4ad0ff;
-  background-color: #CFF1FC;
+  background-color: rgba(250, 154, 52, .2);
+  border-color: #FA9A34;
 }
 
 .searched-class * {
-  font-family: 'Questrial';
+  font-family: 'Lato';
+  font-weight: 300;
 }
 
 .searched-class h2 {
-  font-size: 16px;
-  color: #001b72;
+  font-size: 18px;
+  color: #174A6E;
 }
 
 .searched-class h3 {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .searched-class h4 {
-  font-size: 12px;
-  color: #4ad0ff;
+  font-size: 14px;
+  color: #84cdea;
+  font-weight: 400;
 }
 
 .searched-class p {
   font-size: 10px;
+  font-weight: 400;
 }
 
 .searched-class ul {
   font-size: 10px;
+  font-weight: 400;
 }
 
 form {
@@ -566,7 +572,7 @@ input {
   -moz-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
-  color: #4ad0ff;
+  color: #84cdea;
   font-family: 'Lato';
   font-size: 15px;
   padding-left: 35px;
