@@ -5,6 +5,7 @@ Scheduler.Models.Section = Backbone.Model.extend({
   },
   urlRoot: '/sections',
   forMultiple: function(input, func) {
+    
     if(input.indexOf('[') === -1) {
       return [
         func(input)

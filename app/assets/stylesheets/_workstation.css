@@ -38,9 +38,10 @@ header h5 {
   -moz-box-sizing: border-box;
   
   height: 30px;
-  color: #0050a8;
+  color: #001b72;
   text-align: center;
-  font-family: 'Lato';
+  font-family: 'Questrial';
+/*  font-weight: 300;*/
   font-size: 14px;
   
   float: right;
@@ -321,7 +322,7 @@ header h5:hover {
 .schedule-outer {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
-  background-color: #001b72;
+  background-color: white;
   border-radius: 4px;
   padding: 10px;
   height: 100%;

@@ -5,7 +5,8 @@ Scheduler.Views.WSMain = Backbone.View.extend({
     'click .select-tab': 'selectTabClick',
     'click .search-bar-input': 'searchBarFirstClick',
     'keydown .search-bar-input': 'executeSearch',
-    'mousedown .side-bar-inner': 'drag'
+    'mousedown .side-bar-inner': 'drag',
+    'mousdown input': 'inputClick'
   },
   selected: [],
   initialize: function(options) {
@@ -80,6 +81,9 @@ Scheduler.Views.WSMain = Backbone.View.extend({
     }
   },
   drag: function(e) {
+    if($(e.target).hasClass('search-bar-input')) {
+      return true
+    }
     var that = this
     this.dragging = true
     this.lastX = e.pageX
