@@ -50,7 +50,7 @@ Scheduler.Views.WSDrawnSectionTime = Backbone.View.extend({
       }
     }
     toAppend.css({
-      'border-color': '#26C7FF', 
+      'border-color': '#FA9A34', 
       'border-width':'2px', 
       'border-style':'solid'
     })

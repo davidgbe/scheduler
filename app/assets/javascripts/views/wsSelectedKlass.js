@@ -47,7 +47,7 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
     that.css('border-color', color)
   },
   hovering: function() {
-    this.setAppropriateBorderColor(this.$el.find('.side-bar-item'), '#0050a8', '#84cdea')
+    this.setAppropriateBorderColor(this.$el.find('.side-bar-item'), '#13659E', '#84cdea')
   },
   notHovering: function() {
     this.setAppropriateBorderColor(this.$el.find('.side-bar-item'), '#84cdea', 'white')
