@@ -116,7 +116,6 @@ Scheduler.Views.WSSelectedKlass = Backbone.View.extend({
     this.selectSection(null)
   },
   selectSection: function(section) {
-    console.log(this.schedule.sections)
     if(this.selected == null) {
       if(section == null) {
         if(this.model.get('sections').length > 0) {

@@ -346,6 +346,29 @@ header h5:hover {
   color: #4ad0ff;
 }
 
+.right-iteration {
+  float: right;
+  margin-right: 20px;
+}
+
+.left-iteration {
+  float: left;
+  margin-left: 20px;
+}
+
+.iteration-button {
+  color: #001b72;
+  font-family: 'Lato';
+  font-weight: 300;
+  position: relative;
+  margin-top: 40px;
+  cursor: pointer;
+}
+
+.iteration-button:hover {
+  color: red;
+}
+
 .small-tools {
   float: none;
   left: 50%;
@@ -465,6 +488,7 @@ header h5:hover {
 .schedule-table td {
   font-family: 'Lato';
   font-weight: 300;
+  position: relative;
 }
 
 .schedule-table tr:nth-child(odd) td {
@@ -481,7 +505,6 @@ header h5:hover {
   width: 20px;
   border-color: transparent;
   text-align: center;
-  position: relative;
   top: -15px;
 }
 
@@ -496,12 +519,6 @@ header h5:hover {
 }
 
 .scheduled-section p {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
 }
 
 .controls {

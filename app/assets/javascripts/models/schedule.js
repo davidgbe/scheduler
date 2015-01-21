@@ -15,7 +15,7 @@ Scheduler.Models.Schedule = Backbone.Model.extend({
     })
     var baseSchedule = []
     for(var i in locked) {
-      if(this.fitsWith(locked[i], baseSchedule) {
+      if(this.fitsWith(locked[i], baseSchedule)) {
         baseSchedule.push(locked[i])
       } else {
         return null
@@ -23,14 +23,16 @@ Scheduler.Models.Schedule = Backbone.Model.extend({
     }
     var viableSchedules = []
     this.placeNextSection(baseSchedule, unlocked, 0, viableSchedules)
+    return viableSchedules
   },
   placeNextSection: function(existingSectionList, unlocked, index, viableSchedules) {
     if(index === unlocked.length) {
       viableSchedules.push(existingSectionList)
     } else {
       var klass = unlocked[index]
-      for(var i in klass.sections) {
-        var toPlace = klass.sections[i]
+      console.log(klass)
+      for(var i in klass.get('sections')) {
+        var toPlace = klass.get('sections')[i]
         if(this.fitsWith(toPlace, existingSectionList)) {
           var newExisting = []
           existingSectionList.map(function(s) {
