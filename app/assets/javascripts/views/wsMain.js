@@ -80,6 +80,9 @@ Scheduler.Views.WSMain = Backbone.View.extend({
     }
   },
   drag: function(e) {
+    if($(e.target).hasClass('search-bar-input')) {
+      return true
+    }
     var that = this
     this.dragging = true
     this.lastX = e.pageX

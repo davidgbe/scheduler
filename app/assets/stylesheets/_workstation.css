@@ -25,10 +25,17 @@ header {
 
 }
 
+@media (min-width: 100px) and (max-width: 600px) {
+  header {
+    min-width: 0px;
+    height: 10%;
+  }
+}
+
 header img {
   float: left;
   position: relative;
-  height: 60px;
+  height: 100%;
   width: auto;
 }
 
@@ -39,8 +46,9 @@ header h1 {
   -moz-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
+  font-family: 'Lato';
   color: white;
-  font-size: 30px;
+  font-size: 27px;
   float: left;
 }
 
@@ -62,6 +70,16 @@ header h5 {
   top: 30px;
 }
 
+@media (min-width: 100px) and (max-width: 600px) {
+  header h5 {
+    height: 8%;
+    padding: 2px 5px 0 5px;
+    top: 2%;
+    font-size: 15px;
+    font-weight: 300;
+  }
+}
+
 header h5:hover {
   color: #4ad0ff;
 }
@@ -72,10 +90,17 @@ header h5:hover {
   left: 0;
   
   width: 240px;
-  min-width: 230px;
+  min-width: 10%;
   height: calc(100% - 70px);
   
   overflow: hidden;
+}
+
+@media (min-width: 100px) and (max-width: 600px) {
+  .side-bar {
+    top: 12%;
+    height: 88%;
+  }
 }
 
 .tab {
@@ -123,6 +148,17 @@ header h5:hover {
   width: calc(100% - 24px);
   height: calc(100% - 24px);
   position: absolute;
+}
+
+@media (min-width: 100px) and (max-width: 600px) {
+  .side-bar-inner {
+    padding: 6px;
+  }
+
+  .side-bar-content {
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+  }
 }
 
 .selected-classes {
@@ -223,7 +259,7 @@ header h5:hover {
 }
 
 .section:hover {
-  background-color: #E3E3E3;
+  background-color: #F0F0F0;
 }
 
 .selected-selected-section {
@@ -240,7 +276,22 @@ header h5:hover {
   left: 240px;
   height: calc(100% - 60px);
   overflow: hidden;
-  min-width: 330px;
+  min-width: 250px;
+}
+
+@media (min-width: 100px) and (max-width: 600px) {
+  .side-bar {
+    min-width: 30%;
+    width: 40%;
+  }
+
+  .right-container {
+    left: 30%;
+    height: 90%;
+    width: 60%;
+    top: 10%;
+    min-width: 50%;
+  }
 }
 
 .title-container {
@@ -277,6 +328,18 @@ header h5:hover {
   -moz-transform: translateX(-50%);
   -o-transform: translateX(-50%);
   transform: translateX(-50%);
+}
+
+@media (min-width: 100px) and (max-width: 600px) {
+  .title-container {
+    border-top: 0px;
+    border-bottom: 0px;
+  }
+
+  .title {
+    padding: 0px 5px 0px 5px;
+    font-size: 14px;
+  }
 }
 
 .title:hover {
@@ -343,6 +406,17 @@ header h5:hover {
   z-index: -1;
 }
 
+@media (min-width: 100px) and (max-width: 600px) {
+  .schedule {
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+  }
+
+  .schedule-outer {
+    padding: 2px;
+  }
+}
+
 .schedule-inner {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -378,7 +452,7 @@ header h5:hover {
   width: calc(100% - 5px);
   height: 100%;
   empty-cells: show; 
-  border-spacing: 0;
+  border-spacing: 0px;
   border-collapse: collapse;
   table-layout: fixed;
 }
@@ -389,8 +463,6 @@ header h5:hover {
 }
 
 .schedule-table td {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
   font-family: 'Lato';
   font-weight: 300;
 }
@@ -421,6 +493,15 @@ header h5:hover {
   text-align: center;
   font-family: 'Lato';
   font-size: 10px;
+}
+
+.scheduled-section p {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .controls {
@@ -507,6 +588,20 @@ header h5:hover {
   width: 100%;
   height: calc(100% - 50px);
   overflow: hidden;
+}
+
+@media (min-width: 100px) and (max-width: 600px) {
+  .search-bar {
+    height: 40px;
+  }
+
+  .search-results {
+    height: calc(100% - 40px);
+  }
+
+  .glass {
+    top: 2px;
+  }
 }
 
 .search-results-inner {

@@ -3,6 +3,18 @@ Scheduler.Models.Schedule = Backbone.Model.extend({
     this.sections = []
   },
   urlRoot: '/schedules',
+  findAllSchedules: function() {
+    var locked = []
+    var unlocked = []
+    for(var i in this.sections) {
+      if(this.sections[i].klass.get('locked') === true) {
+        locked.push(this.sections[i].klass)
+      } else {
+        unlocked.push(this.sections[i].klass)
+      }
+    }
+
+  },
   schedule: function(sectionPackage) {
     if(sectionPackage.section != null) {
       if(this.canSchedule(sectionPackage.section)) {
@@ -52,16 +64,22 @@ Scheduler.Models.Schedule = Backbone.Model.extend({
         continue
       }
       var scheduledVals = scheduled.allValuesFlattened()
-      for(var j = 0; j < newSectionVals.length; j++) {
-        var newTime = newSectionVals[j]
-        for(var k = 0; k < scheduledVals.length; k++) {
-          var oldTime = scheduledVals[k]
-          if(newTime.day !== oldTime.day) {
-            continue
-          }
-          if(!this.notOverlapping(newTime.start, oldTime.start, newTime.finish, oldTime.finish)) {
-            return false
-          }
+      if(!this.noConflict(newSectionVals, scheduledVals)) {
+        return false
+      }
+    }
+    return true
+  },
+  noConflict: function(firstSectionVals, secondSectionVals) {
+    for(var j = 0; j < firstSectionVals.length; j++) {
+      var newTime = firstSectionVals[j]
+      for(var k = 0; k < secondSectionVals.length; k++) {
+        var oldTime = secondSectionVals[k]
+        if(newTime.day !== oldTime.day) {
+          continue
+        }
+        if(!this.notOverlapping(newTime.start, oldTime.start, newTime.finish, oldTime.finish)) {
+          return false
         }
       }
     }
