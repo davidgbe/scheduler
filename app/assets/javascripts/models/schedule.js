@@ -6,14 +6,41 @@ Scheduler.Models.Schedule = Backbone.Model.extend({
   findAllSchedules: function() {
     var locked = []
     var unlocked = []
-    for(var i in this.sections) {
-      if(this.sections[i].klass.get('locked') === true) {
-        locked.push(this.sections[i].klass)
+    this.sections.map(function(element) {
+      if(element.klass.get('locked') === true) {
+        locked.push(element.section)
       } else {
-        unlocked.push(this.sections[i].klass)
+        unlocked.push(element.klass)
+      }
+    })
+    var baseSchedule = []
+    for(var i in locked) {
+      if(this.fitsWith(locked[i], baseSchedule) {
+        baseSchedule.push(locked[i])
+      } else {
+        return null
       }
     }
-
+    var viableSchedules = []
+    this.placeNextSection(baseSchedule, unlocked, 0, viableSchedules)
+  },
+  placeNextSection: function(existingSectionList, unlocked, index, viableSchedules) {
+    if(index === unlocked.length) {
+      viableSchedules.push(existingSectionList)
+    } else {
+      var klass = unlocked[index]
+      for(var i in klass.sections) {
+        var toPlace = klass.sections[i]
+        if(this.fitsWith(toPlace, existingSectionList)) {
+          var newExisting = []
+          existingSectionList.map(function(s) {
+            newExisting.push(s)
+          })
+          newExisting.push(toPlace)
+          this.placeNextSection(newExisting, unlocked, index + 1, viableSchedules)
+        }
+      }
+    }
   },
   schedule: function(sectionPackage) {
     if(sectionPackage.section != null) {
@@ -57,9 +84,16 @@ Scheduler.Models.Schedule = Backbone.Model.extend({
     }
   },
   canSchedule: function(section) {
-    var newSectionVals = section.allValuesFlattened()
+    var existingSections = []
     for(var i in this.sections) {
-      var scheduled = this.sections[i].section
+      existingSections.push(this.sections[i].section)
+    }
+    return this.fitsWith(section, existingSections)
+  },
+  fitsWith: function(section, existingSections) {
+    var newSectionVals = section.allValuesFlattened()
+    for(var i in existingSections) {
+      var scheduled = existingSections[i]
       if(scheduled.get('id') === section.get('id')) {
         continue
       }
