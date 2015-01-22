@@ -9,6 +9,9 @@ class CreateSections < ActiveRecord::Migration
       t.text :finish
       t.integer :max_capacity
       t.integer :current_capacity
+      t.integer :wait_quantity
+      t.text :category
+      t.text :location
       t.timestamps
     end
   end

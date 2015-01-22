@@ -9,7 +9,7 @@ class CreateKlasses < ActiveRecord::Migration
     	t.text :prerequisites #stringified arr of class names
       t.text :corequisites
       t.text :description
-      t.float :units
+      t.integer :units
       t.timestamps
     end
   end

@@ -135,6 +135,9 @@ class SocParserWorker
       finish: section['end_time'].to_s,
       max_capacity: section['spaces_available'].to_i,
       current_capacity: section['number_registered'].to_i,
+      wait_quantity: section['wait_qty'].to_i,
+      category: section['type'],
+      location: section['location'].to_s,
       klass_id: klass.id
     }
     section_data.each do |key,value|
