@@ -31,6 +31,7 @@ header {
 header img {
   float: left;
   position: relative;
+  top: -20px;
 }
 
 header h5 {
