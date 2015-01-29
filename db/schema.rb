@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20150115024531) do
     t.text     "prerequisites"
     t.text     "corequisites"
     t.text     "description"
-    t.float    "units"
+    t.integer  "units"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -48,6 +48,9 @@ ActiveRecord::Schema.define(version: 20150115024531) do
     t.text     "finish"
     t.integer  "max_capacity"
     t.integer  "current_capacity"
+    t.integer  "wait_quantity"
+    t.text     "category"
+    t.text     "location"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -14,7 +14,7 @@ Scheduler.Collections.Sections = Backbone.Collection.extend({
           section.teachers[i] = section.teachers[i]['teacher']
         }
       } else {
-        console.log(section)
+        //stuff
       }
       model.set(section)
       model.setParsedValues()

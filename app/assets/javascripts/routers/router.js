@@ -24,7 +24,7 @@ Scheduler.Routers.AppRouter = Backbone.Router.extend({
     })
     var calendarView = new Scheduler.Views.WSCalendar({ 
       el: '#content',
-      count: 5,
+      count: 1,
       workStation: workStation,
       schedule: schedule
     })

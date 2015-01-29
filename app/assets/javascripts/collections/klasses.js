@@ -12,6 +12,9 @@ Scheduler.Collections.Klasses = Backbone.Collection.extend({
       var sections = Scheduler.sections.parseSections(klassData['sections'])
       klassData['sections'] = sections
       model.set(klassData)
+      sections.map(function(s) {
+        s.set('parent', model)
+      })
       relevantModels.push({
         klass: model,
         sections: sections
